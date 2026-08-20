@@ -190,6 +190,51 @@ footer a:hover { text-decoration: underline; }
   height: 16px;
   cursor: pointer;
 }
+.pinyin-lookup-section {
+  margin-bottom: 18px;
+  text-align: center;
+}
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  background: #5b7f9e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.toggle-btn:hover { background: #1a5276; }
+.toggle-btn.active { background: #2980b9; }
+#pinyinInput {
+  width: 300px;
+  max-width: 60vw;
+  padding: 12px 16px;
+  font-size: 1.2em;
+  border: 2px solid #a3c1d9;
+  border-radius: 8px;
+  background: #f8fbfe;
+  color: #1a2a3a;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: "Times New Roman", "Noto Serif", serif;
+}
+#pinyinInput:focus { border-color: #2980b9; }
+#pinyinInput::placeholder { color: #a3c1d9; }
+#pinyinSearchBtn {
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+#pinyinSearchBtn:hover { background: #1a5276; }
 @media (max-width: 600px) {
   body { padding: 12px; }
   h1 { font-size: 1.5em; }
@@ -216,6 +261,18 @@ footer a:hover { text-decoration: underline; }
 <button id="searchBtn" onclick="doSearch()">查詢</button>
 </div>
 <p class="hint">可輸入繁體或簡體字，簡體字會得自動轉換為對應繁體字查詢。一簡對多繁个辰光列出全部个結果。</p>
+<div class="pinyin-lookup-section">
+  <button id="pinyinLookupToggle" onclick="togglePinyinLookup()" class="toggle-btn">拼音反查</button>
+  <div id="pinyinLookupPanel" style="display:none;">
+    <div class="search-box">
+      <input type="text" id="pinyinInput" placeholder="輸入拼音" autocomplete="off">
+      <button id="pinyinSearchBtn" onclick="doPinyinLookup()">查詢</button>
+    </div>
+    <p class="hint">輸入帶數字聲調个拼音末卽可精確查詢（如 ku5），弗帶聲調末則查詢所有聲調个結果（如 hoe）。僅查詢蘇滬混合腔。</p>
+    <div id="pinyinErrorBox"></div>
+    <div class="results" id="pinyinResults"></div>
+  </div>
+</div>
 <div class="dialect-filter">
   <label><input type="checkbox" id="chk_suhu" checked> 蘇滬混合腔</label>
   <label><input type="checkbox" id="chk_qingmo" checked> 清末蘇州話</label>
@@ -376,6 +433,135 @@ function escapeHtml(text) {
 // Enter key triggers search
 document.getElementById('charInput').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') doSearch();
+});
+
+// 拼音反查功能
+function togglePinyinLookup() {
+  var panel = document.getElementById('pinyinLookupPanel');
+  var btn = document.getElementById('pinyinLookupToggle');
+  if (panel.style.display === 'none') {
+    panel.style.display = 'block';
+    btn.classList.add('active');
+  } else {
+    panel.style.display = 'none';
+    btn.classList.remove('active');
+  }
+}
+
+// 特殊兼容映射：ou音节 -> u音节
+const OU_TO_U_MAP = {
+  'pou': 'pu', 'phou': 'phu', 'mou': 'mu', 'fou': 'fu', 'vou': 'vu',
+  'tou': 'tu', 'thou': 'thu', 'nou': 'nu', 'lou': 'lu',
+  'kou': 'ku', 'khou': 'khu', 'hou': 'hu', 'ghou': 'wu', 'ngou': 'ngu',
+  'tsou': 'tsu', 'tshou': 'tshu', 'sou': 'su', 'zou': 'zu'
+};
+
+function doPinyinLookup() {
+  var errorBox = document.getElementById('pinyinErrorBox');
+  var resultsDiv = document.getElementById('pinyinResults');
+  errorBox.innerHTML = '';
+  resultsDiv.innerHTML = '';
+  
+  var input = document.getElementById('pinyinInput').value.trim().toLowerCase();
+  if (!input) {
+    errorBox.innerHTML = '<div class="error-msg">請輸入拼音。</div>';
+    return;
+  }
+  
+  // 检查是否带声调数字
+  var hasTone = /[1-9]$/.test(input);
+  var queryPinyin = input;
+  var toneNum = '';
+  
+  if (hasTone) {
+    toneNum = input.slice(-1);
+    queryPinyin = input.slice(0, -1);
+  }
+  
+  // 处理特殊兼容情况：ou -> u
+  if (OU_TO_U_MAP[queryPinyin]) {
+    queryPinyin = OU_TO_U_MAP[queryPinyin];
+    // 重新构建完整拼音
+    if (hasTone) {
+      input = queryPinyin + toneNum;
+    } else {
+      input = queryPinyin;
+    }
+  }
+  
+  // 遍历DB_suhu查找匹配的字
+  var results = [];
+  var db = DB_suhu;
+  
+  for (var char in db) {
+    var entries = db[char];
+    for (var i = 0; i < entries.length; i++) {
+      var reading = entries[i][0]; // 拼音
+      var ipa = entries[i][1];     // IPA
+      var note = entries[i][2];    // 备注
+      
+      var readingLower = reading.toLowerCase();
+      
+      if (hasTone) {
+        // 精确匹配：声韵调都要匹配
+        if (readingLower === input) {
+          results.push({ char: char, reading: reading, ipa: ipa, note: note });
+        }
+      } else {
+        // 模糊匹配：只匹配声韵，忽略声调
+        var readingWithoutTone = readingLower.replace(/[1-9]$/, '');
+        if (readingWithoutTone === queryPinyin) {
+          results.push({ char: char, reading: reading, ipa: ipa, note: note });
+        }
+      }
+    }
+  }
+  
+  // 显示结果
+  if (results.length === 0) {
+    resultsDiv.innerHTML = '<div class="char-card"><p class="no-result">未找到拼音「' + escapeHtml(input) + '」對應的字。</p></div>';
+    return;
+  }
+  
+  // 按拼音排序
+  results.sort(function(a, b) {
+    return a.reading.localeCompare(b.reading);
+  });
+  
+  var html = '<div class="char-card">';
+  html += '<h2><span class="char-main">拼音反查：' + escapeHtml(input) + '</span></h2>';
+  html += '<div class="dialect-section">';
+  html += '<h3>蘇滬混合腔</h3>';
+  
+  // 按拼音分组
+  var groupedByReading = {};
+  for (var i = 0; i < results.length; i++) {
+    var r = results[i];
+    if (!groupedByReading[r.reading]) {
+      groupedByReading[r.reading] = { ipa: r.ipa, note: r.note, chars: [] };
+    }
+    groupedByReading[r.reading].chars.push(r.char);
+  }
+  
+  // 显示分组结果
+  for (var reading in groupedByReading) {
+    var group = groupedByReading[reading];
+    html += '<div class="reading-item">';
+    html += '<div class="reading-ipa">' + escapeHtml(reading);
+    if (group.ipa) html += ' <span class="reading-ipa-val">[' + escapeHtml(group.ipa) + ']</span>';
+    html += '</div>';
+    if (group.note) html += '<div class="reading-note">' + escapeHtml(group.note) + '</div>';
+    html += '<div class="reading-note">字：' + group.chars.join('、') + '</div>';
+    html += '</div>';
+  }
+  
+  html += '</div></div>';
+  resultsDiv.innerHTML = html;
+}
+
+// Enter key triggers pinyin lookup
+document.getElementById('pinyinInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') doPinyinLookup();
 });
 </script>
 </body>
