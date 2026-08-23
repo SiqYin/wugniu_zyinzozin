@@ -33,6 +33,7 @@ body {
 }
 .top-section {
   flex: 1;
+  position: relative;
 }
 .container {
   max-width: 960px;
@@ -241,7 +242,7 @@ footer a:hover { text-decoration: underline; }
   color: #1a2a3a;
   outline: none;
   transition: border-color 0.2s;
-  font-family: "Times New Roman", "Noto Serif", serif;
+  font-family: inherit;
 }
 #pinyinInput:focus { border-color: #2980b9; }
 #pinyinInput::placeholder { color: #a3c1d9; }
@@ -272,10 +273,71 @@ footer a:hover { text-decoration: underline; }
   .reading-item { padding: 4px 8px; }
   .reading-ipa { font-size: 1.05em; }
 }
+
+/* i18n language switcher */
+.lang-switcher { position: absolute; top: 14px; right: 18px; z-index: 100; }
+.lang-btn {
+  padding: 6px 14px; font-size: 0.85em; background: #2980b9; color: #fff;
+  border: none; border-radius: 6px; cursor: pointer; white-space: nowrap;
+  font-family: inherit;
+}
+.lang-btn:hover { background: #1a6da2; }
+.lang-menu {
+  display: none; position: absolute; top: 100%; right: 0; margin-top: 4px;
+  background: #fff; border: 1px solid #ccc; border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15); overflow: hidden; min-width: 110px;
+  z-index: 200;
+}
+.lang-menu.open { display: block; }
+.lang-menu-item {
+  display: block; width: 100%; padding: 8px 16px; font-size: 0.9em;
+  background: none; border: none; cursor: pointer; text-align: left;
+  font-family: inherit; color: #1a2a3a; white-space: nowrap;
+}
+.lang-menu-item:hover { background: #eef3f9; }
+.lang-menu-item.active { font-weight: 600; background: #d6e8f7; }
+.footer-note { font-size: 0.82em; color: #8aa0b5; text-align: center; margin-bottom: 8px; line-height: 1.5; }
+
+/* Phonology panel */
+.phon-overlay {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); z-index: 500; overflow-y: auto;
+}
+.phon-overlay.open { display: block; }
+.phon-panel {
+  max-width: 780px; margin: 40px auto; background: #fff; border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25); padding: 32px 36px;
+  transform: translateY(-30px); opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  font-family: "Times New Roman", "Noto Serif", serif; color: #1a2a3a;
+  line-height: 1.7; font-size: 0.95em;
+}
+.phon-overlay.open .phon-panel { transform: translateY(0); opacity: 1; }
+.phon-panel h2 { font-size: 1.3em; color: #1a5276; margin-bottom: 16px; border-bottom: 2px solid #c8dae8; padding-bottom: 8px; }
+.phon-panel h3 { font-size: 1.05em; color: #1a5276; margin: 18px 0 8px; }
+.phon-panel p { margin: 8px 0; }
+.phon-panel .phon-close {
+  position: sticky; top: 0; float: right; background: #2980b9; color: #fff;
+  border: none; border-radius: 6px; padding: 6px 14px; cursor: pointer;
+  font-size: 0.9em; font-family: inherit; z-index: 10;
+}
+.phon-panel .phon-close:hover { background: #1a5276; }
+.phon-panel table { border-collapse: collapse; margin: 8px 0; width: 100%; }
+.phon-panel td, .phon-panel th { border: 1px solid #c8dae8; padding: 4px 8px; font-size: 0.92em; }
+.phon-panel th { background: #e8f0f8; }
+.phon-panel .example { background: #f0f5fb; padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-style: italic; border-left: 3px solid #2980b9; }
 </style>
 </head>
 <body>
 <div class="top-section">
+<div class="lang-switcher" id="langSwitcher">
+  <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">吳語</button>
+  <div class="lang-menu" id="langMenu">
+    <button class="lang-menu-item active" onclick="setLang('wu')">吳語</button>
+    <button class="lang-menu-item" onclick="setLang('en')">English</button>
+    <button class="lang-menu-item" onclick="setLang('ja')">日本語</button>
+  </div>
+</div>
 <div class="container">
 <h1>吳語字音查詢</h1>
 <p class="subtitle">蘇滬混合腔 · 清末蘇州話 · 上海話 · 蘇州話 · 蘇州評彈音</p>
@@ -309,9 +371,9 @@ footer a:hover { text-decoration: underline; }
 </div>
 <footer>
 <div class="footer-inner">
-<p>數據來源：蘇滬混合腔（Rime wugniu_suwu）、清末蘇州話、上海話、蘇州話、蘇州評彈音韻</p>
-<p>網頁生成工具：<a href="https://reasonix.com" target="_blank">Reasonix</a></p>
-<p style="text-align:center;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">吳語蘇滬混合腔輸入法請撳此鏈接</a></p>
+<p class="footer-note" id="footerNote"><a href="#" onclick="showPhonologyWu(); return false;">請撳箇搭以瞭解蘇滬混合腔</a></p>
+<p id="footerData">數據來源：蘇滬混合腔（Rime wugniu_suwu）、清末蘇州話、上海話、蘇州話、蘇州評彈音韻</p>
+<p id="footerInput" style="text-align:center;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">吳語蘇滬混合腔輸入法請撳此鏈接</a></p>
 <p style="text-align:center;font-family:'Times New Roman',serif;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Wugniu 'Souwu wengheqchiaon 'syuzeqfaeq tshin chin tshy lietsiq.</a></p>
 </div>
 </footer>
@@ -374,20 +436,20 @@ function doSearch() {
   resultsDiv.innerHTML = '';
   
   if (!input) {
-    showError('請輸入至少一個漢字。');
+    showError(currentLang === 'en' ? 'Please enter at least one character.' : currentLang === 'ja' ? '少なくとも1文字を入力してください。' : '請輸入至少一個漢字。');
     return;
   }
   
   const chars = [...input];
   if (chars.length > 8) {
-    showError('最多同時查詢8個漢字。');
+    showError(currentLang === 'en' ? 'Maximum 8 characters at a time.' : currentLang === 'ja' ? '最大8文字まで同時検索できます。' : '最多同時查詢8個漢字。');
     return;
   }
   
   const queryChars = getChars(chars);
   
   if (queryChars.length === 0) {
-    showError('無法識別輸入的漢字。');
+    showError(currentLang === 'en' ? 'Unable to recognize the entered characters.' : currentLang === 'ja' ? '入力された文字を識別できません。' : '無法識別輸入的漢字。');
     return;
   }
   
@@ -413,10 +475,10 @@ function doSearch() {
       var db = DBS[di];
       var entries = db.data[ch];
       html += '<div class="dialect-section">';
-      html += '<h3>' + db.name + '</h3>';
+      var displayName = (currentLang !== 'wu' && i18n[currentLang] && i18n[currentLang][db.name]) ? i18n[currentLang][db.name] : db.name;      html += '<h3>' + displayName + '</h3>';
       
       if (!entries || entries.length === 0) {
-        html += '<p class="no-result">未收錄</p>';
+        html += '<p class="no-result">' + (currentLang === 'en' ? 'Not in database' : currentLang === 'ja' ? '未収録' : '未收錄') + '</p>';
       } else {
         hasAnyResult = true;
         for (var ei = 0; ei < entries.length; ei++) {
@@ -548,7 +610,7 @@ function doPinyinLookup() {
   
   // 显示结果
   if (results.length === 0) {
-    resultsDiv.innerHTML = '<div class="char-card"><p class="no-result">未找到拼音「' + escapeHtml(input) + '」對應的字。</p></div>';
+    resultsDiv.innerHTML = '<div class="char-card"><p class="no-result">' + (currentLang === 'en' ? 'No characters found for romanization "' + escapeHtml(input) + '".' : currentLang === 'ja' ? 'ローマ字「'+ escapeHtml(input) +'」に該当する文字がありません。' : '未找到拼音「'+ escapeHtml(input) +'」對應的字。') + '</p></div>';
     return;
   }
   
@@ -558,9 +620,9 @@ function doPinyinLookup() {
   });
   
   var html = '<div class="char-card">';
-  html += '<h2><span class="char-main">拼音反查：' + escapeHtml(input) + '</span></h2>';
+  var plTitle = currentLang === 'en' ? 'Romanization Lookup: ' : currentLang === 'ja' ? 'ローマ字検索：' : '拼音反查：';    html += '<h2><span class="char-main">' + plTitle + escapeHtml(input) + '</span></h2>';
   html += '<div class="dialect-section">';
-  html += '<h3>蘇滬混合腔</h3>';
+  var suhuName = currentLang === 'en' ? 'common language' : currentLang === 'ja' ? '共通語' : '蘇滬混合腔';  html += '<h3>' + suhuName + '</h3>';
   
   // 按拼音分组
   var groupedByReading = {};
@@ -580,7 +642,7 @@ function doPinyinLookup() {
     if (group.ipa) html += ' <span class="reading-ipa-val">[' + escapeHtml(group.ipa) + ']</span>';
     html += '</div>';
     if (group.note) html += '<div class="reading-note">' + escapeHtml(group.note) + '</div>';
-    html += '<div class="reading-note">字：' + group.chars.join('、') + '</div>';
+    var charLabel = currentLang === 'en' ? 'Characters: ' : currentLang === 'ja' ? '文字：' : '字：';    html += '<div class="reading-note">' + charLabel + group.chars.join('、') + '</div>';
     html += '</div>';
   }
   
@@ -593,5 +655,501 @@ document.getElementById('pinyinInput').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') doPinyinLookup();
 });
 </script>
+<script>
+// ============ i18n ============
+var currentLang = 'wu';
+var i18n = {
+  en: {
+    title: 'Wu Language Character Query',
+    subtitle: 'common language \u00b7 Late Qing Suzhounese \u00b7 Shanghainese \u00b7 Suzhounese \u00b7 pingtan pronunciation',
+    hint_char: 'Enter Traditional or Simplified characters. Simplified characters are automatically converted to their Traditional equivalents. When one Simplified character maps to multiple Traditional forms, all results are shown.',
+    hint_pinyin: 'Enter romanization with a tone number for exact lookup (e.g. ku5). Without a tone number, all tones are returned (e.g. hoe). Only searches the common language database.',
+    query: 'Query',
+    enter_at_least: 'Please enter at least one character.',
+    max_8: 'Maximum 8 characters at a time.',
+    cannot_identify: 'Unable to recognize the entered characters.',
+    pinyin_lookup: 'Romanization Lookup',
+    pinyin_placeholder: 'Enter romanization',
+    footer_data: 'Data source: common language (Rime wugniu_suwu), Late Qing Suzhounese, Shanghainese, Suzhounese, pingtan phonology',
+    footer_input: 'Wu romanization IME (click to download)',
+    footer_note: '<strong>Note:</strong> "common language" here refers to a hybrid accent blending Suzhounese and Shanghainese (<a href="#" onclick="showPhonology(); return false;">click to learn more</a>).',
+    '\u8607\u6eec\u6df7\u5408\u8154': 'common language',
+    '\u6e05\u672b\u8607\u5dde\u8a71': 'Late Qing Suzhounese',
+    '\u4e0a\u6d77\u8a71': 'Shanghainese',
+    '\u8607\u5dde\u8a71': 'Suzhounese',
+    '\u8607\u5dde\u8a55\u5f48\u97f3': 'pingtan pronunciation'
+  },
+  ja: {
+    title: '\u5449\u8d8a\u8a9e\u3000\u5b57\u97f3\u691c\u7d22',
+    subtitle: '\u5171\u901a\u8a9e \u00b7 \u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e \u00b7 \u4e0a\u6d77\u8a9e \u00b7 \u8607\u5dde\u8a9e \u00b7 \u8607\u5dde\u8a55\u5f3e\u97f3',
+    hint_char: '\u7e41\u4f53\u5b57\u307e\u305f\u306f\u7c21\u4f53\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u7c21\u4f53\u5b57\u306f\u5bfe\u5fdc\u3059\u308b\u7e41\u4f53\u5b57\u306b\u81ea\u52d5\u5909\u63db\u3055\u308c\u307e\u3059\u3002\u7c21\u4f53\u5b57\u4e00\u5b57\u304c\u8907\u6570\u306e\u7e41\u4f53\u5b57\u306b\u5bfe\u5fdc\u3059\u308b\u5834\u5408\u3001\u3059\u3079\u3066\u306e\u7d50\u679c\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002',
+    hint_pinyin: '\u58f0\u8abf\u756a\u53f7\u4ed8\u304d\u30ed\u30fc\u30de\u5b57\u3067\u6b63\u78ba\u306b\u691c\u7d22\u3067\u304d\u307e\u3059\uff08\u4f8b\uff1aku5\uff09\u3002\u58f0\u8abf\u756a\u53f7\u306a\u3057\u3067\u3059\u3079\u3066\u306e\u58f0\u8abf\u3092\u691c\u7d22\u3057\u307e\u3059\uff08\u4f8b\uff1ahoe\uff09\u3002\u5171\u901a\u8a9e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u307f\u5bfe\u5fdc\u3002',
+    query: '\u691c\u7d22',
+    enter_at_least: '\u5c11\u306a\u304f\u3068\u30821\u6587\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002',
+    max_8: '\u6700\u59278\u6587\u5b57\u307e\u3067\u540c\u6642\u691c\u7d22\u3067\u304d\u307e\u3059\u3002',
+    cannot_identify: '\u5165\u529b\u3055\u308c\u305f\u6587\u5b57\u3092\u8b58\u5225\u3067\u304d\u307e\u305b\u3093\u3002',
+    pinyin_lookup: '\u30ed\u30fc\u30de\u5b57\u691c\u7d22',
+    pinyin_placeholder: '\u30ed\u30fc\u30de\u5b57\u3092\u5165\u529b',
+    footer_data: '\u30c7\u30fc\u30bf\u51fa\u5178\uff1a\u5171\u901a\u8a9e\uff08Rime wugniu_suwu\uff09\u3001\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e\u3001\u4e0a\u6d77\u8a9e\u3001\u8607\u5dde\u8a9e\u3001\u8607\u5dde\u8a55\u5f3e\u97f3\u97fb',
+    footer_input: '\u5449\u8d8a\u8a9e\u30ed\u30fc\u30de\u5b57\u5165\u529b\uff08\u30ea\u30f3\u30af\u5148\u3067\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\uff09',
+    footer_note: '<strong>\u6ce8\uff1a</strong> \u3053\u3053\u3067\u8a00\u3046\u300c\u5171\u901a\u8a9e\u300d\u3068\u306f\u3001\u8607\u5dde\u8a9e\u3068\u4e0a\u6d77\u8a9e\u306e\u6df7\u5408\u30a2\u30af\u30bb\u30f3\u30c8\u3092\u6307\u3057\u307e\u3059\u3002 (<a href="#" onclick="showPhonologyJa(); return false;">\u30af\u30ea\u30c3\u30af\u3057\u3066\u8a73\u7d30\u3092\u898b\u308b</a>)',
+    '\u8607\u6eec\u6df7\u5408\u8154': '\u5171\u901a\u8a9e',
+    '\u6e05\u672b\u8607\u5dde\u8a71': '\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e',
+    '\u4e0a\u6d77\u8a71': '\u4e0a\u6d77\u8a9e',
+    '\u8607\u5dde\u8a71': '\u8607\u5dde\u8a9e',
+    '\u8607\u5dde\u8a55\u5f48\u97f3': '\u8607\u5dde\u8a55\u5f3e\u97f3'
+  }
+};
+function t(key) {
+  if (currentLang === 'wu') return null;
+  return (i18n[currentLang] && i18n[currentLang][key]) || null;
+}
+function toggleLangMenu() {
+  document.getElementById('langMenu').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var sw = document.getElementById('langSwitcher');
+  if (sw && !sw.contains(e.target)) document.getElementById('langMenu').classList.remove('open');
+});
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('langMenu').classList.remove('open');
+  document.getElementById('langBtn').textContent = lang === 'wu' ? '\u5433\u8a9e' : lang === 'en' ? 'English' : '\u65e5\u672c\u8a9e';
+  // Font switching per language
+  document.body.style.fontFamily = lang === 'en'
+    ? '"Times New Roman", "Noto Serif", serif'
+    : lang === 'ja'
+    ? '"教科書体", "Noto Serif JP", serif'
+    : '"楷体_GB2312", "Noto Serif TC", "Source Han Serif TC", "SimSun", serif';
+  var items = document.querySelectorAll('.lang-menu-item');
+  items.forEach(function(it) { it.classList.remove('active'); });
+  items[lang === 'wu' ? 0 : lang === 'en' ? 1 : 2].classList.add('active');
+  var titleEl = document.querySelector('h1');
+  if (!titleEl.dataset.wu) titleEl.dataset.wu = titleEl.textContent;
+  titleEl.textContent = t('title') || titleEl.dataset.wu;
+  var subEl = document.querySelector('.subtitle');
+  if (!subEl.dataset.wu) subEl.dataset.wu = subEl.textContent;
+  subEl.textContent = t('subtitle') || subEl.dataset.wu;
+  var hintEl = document.querySelector('.hint');
+  if (hintEl && !hintEl.dataset.wu) hintEl.dataset.wu = hintEl.textContent;
+  if (hintEl) hintEl.textContent = t('hint_char') || hintEl.dataset.wu;
+  var phintEl = document.querySelector('#pinyinLookupPanel .hint');
+  if (phintEl && !phintEl.dataset.wu) phintEl.dataset.wu = phintEl.textContent;
+  if (phintEl) phintEl.textContent = t('hint_pinyin') || phintEl.dataset.wu;
+  var pltBtn = document.getElementById('pinyinLookupToggle');
+  if (pltBtn && !pltBtn.dataset.wu) pltBtn.dataset.wu = pltBtn.textContent;
+  if (pltBtn) pltBtn.textContent = t('pinyin_lookup') || pltBtn.dataset.wu;
+  var ci = document.getElementById('charInput');
+  if (!ci.dataset.wu) ci.dataset.wu = ci.placeholder;
+  ci.placeholder = (currentLang === 'en' ? 'Enter characters (max 8)' : currentLang === 'ja' ? '\u6f22\u5b57\u3092\u5165\u529b\uff08\u6700\u59278\u6587\u5b57\uff09' : ci.dataset.wu);
+  var pi = document.getElementById('pinyinInput');
+  if (!pi.dataset.wu) pi.dataset.wu = pi.placeholder;
+  pi.placeholder = t('pinyin_placeholder') || pi.dataset.wu;
+  var sb = document.getElementById('searchBtn');
+  if (!sb.dataset.wu) sb.dataset.wu = sb.textContent;
+  sb.textContent = t('query') || sb.dataset.wu;
+  var pb = document.getElementById('pinyinSearchBtn');
+  if (!pb.dataset.wu) pb.dataset.wu = pb.textContent;
+  pb.textContent = t('query') || pb.dataset.wu;
+  var chkLabels = document.querySelectorAll('.dialect-filter label');
+  chkLabels.forEach(function(label) {
+    if (!label.dataset.wu) label.dataset.wu = label.textContent.trim();
+    var cb = label.querySelector('input[type="checkbox"]');
+    if (cb) {
+      var orig = label.dataset.wu;
+      var translated = t(orig);
+      label.textContent = '';
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(translated ? ' ' + translated : ' ' + orig));
+    }
+  });
+  var fd = document.getElementById('footerData');
+  if (fd && !fd.dataset.wu) fd.dataset.wu = fd.innerHTML;
+  if (fd) fd.innerHTML = t('footer_data') || fd.dataset.wu;
+  var fi = document.getElementById('footerInput');
+  if (fi && !fi.dataset.wu) fi.dataset.wu = fi.innerHTML;
+  if (fi) {
+    if (t('footer_input')) {
+      fi.innerHTML = '<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">' + t('footer_input') + '</a>';
+    } else {
+      fi.innerHTML = fi.dataset.wu;
+    }
+  }
+  var noteEl = document.getElementById('footerNote');
+  if (lang === 'wu') {
+    if (noteEl) {
+      noteEl.innerHTML = '<a href="#" onclick="showPhonologyWu(); return false;">請撳箇搭以瞭解蘇滬混合腔</a>';
+      noteEl.style.display = '';
+    }
+  } else {
+    var noteHtml = t('footer_note');
+    if (noteEl && noteHtml) {
+      noteEl.innerHTML = noteHtml;
+      noteEl.style.display = '';
+    }
+  
+  }
+}
+
+function showPhonology() {
+  document.getElementById('phonOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePhonology() {
+  document.getElementById('phonOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showPhonologyJa() {
+  document.getElementById('phonOverlayJa').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePhonologyJa() {
+  document.getElementById('phonOverlayJa').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showPhonologyWu() {
+  document.getElementById('phonOverlayWu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePhonologyWu() {
+  document.getElementById('phonOverlayWu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+<div class="phon-overlay" id="phonOverlay" onclick="if(event.target===this)closePhonology()">
+<div class="phon-panel">
+<button class="phon-close" onclick="closePhonology()">&times;</button>
+<h2>Wu Common Language — Phonological System</h2>
+<div style="white-space:pre-wrap;font-family:'Times New Roman','Noto Serif',serif;line-height:1.8;">
+The Wu common language is a mixed dialect based on two closely related Wu dialects — mid-generation Suzhounese and old Shanghainese — and incorporates phonological features of various northern Wu dialects. Its phonology and character readings have undergone editorial review and phonetic standardization. The Wu common language is a standardized variant of natural Wu dialects.
+
+27 initials:
+p [p]　ph [pʰ]　b [b]　m [m]　f [f]　v [v] 
+t [t]　th [tʰ]　d [d]　n [n]　gn [ɲ]　l [l] 
+k [k]　kh [kʰ]　g [ɡ]　ng [ŋ]　h [h]　gh [ɦ] 
+ts [ts]　tsh [tsʰ]　s [s]　z [z] 
+ci [tɕ]　chi [tɕʰ]　ji [dʑ]　shi [ɕ] 
+zero initial
+
+48 finals:
+a [ɑ]　ua [uɑ]　ia [iɑ] 
+o [o̝]　io [io̝] 
+y [ɿ]　yu [ʮ] 
+i [iᶽ] u [uᵝ~əuᵝ]¹　iu [y] 
+ie [i] e [e̞]　ue [ue̞] 
+au [ɔ]　iau [iɔ] 
+eu [ɤɯ]　ieu [iɤɯ] 
+oe [ø]　uoe [uø]　ioe [iø] 
+an [ã]　uan [uã]　ian [iã] 
+aon [ɑ̃]　uaon [uɑ̃]　iaon [iɑ̃] 
+on [oŋ]　ion [ioŋ] 
+en [ən]　uen [uən]　
+in [iɲ]　iun [yɲ] 
+aeq [aʔ]　uaeq [uaʔ]　iaeq [iaʔ]　iuaeq [yaʔ] 
+aq [ɑʔ]　iaq [iɑʔ] 
+eq [əʔ]　ueq [uəʔ]　
+iq [iɪʔieʔ]²　iuq [yeʔ] 
+oq [oʔ]　ioq [ioʔ] 
+er [əl]　n [n̩]　m [m̩]　ng [ŋ̩]
+
+Tones:
+Inbin 1: ā 44 
+Yanbin 2: ngá 223 
+Inzaon 3: à 51 
+Inchi 5: ǎ 523 
+Yanzaonchi 6: ngâ 231 
+Inzeq 7: aq 43 
+Yanzeq 8: ngaq 23
+Tone sandhi rules and tone classes (the following are Suzhou-style tone sandhi; Shanghai-style tone sandhi is also compatible). Tone class names use a digit to denote the tone of the preceding syllable. “Pre.” denotes the applicable range of preceding tones; “Post.” denotes the applicable range of following tones.
+
+1X 55-21 aba — Pre. 1, some 5, few 3 
+2X 22-44 ngaba — Pre. 2, some 6 
+3X 52-21 àba — Pre. only certain Tone 3 words such as “九” 
+5X 41-34 ǎba — Pre. some 5, most 3 
+6X 24-21 ngâba — Pre. some 6 
+7XA 55-34 aqba — Pre. 7; Post. 1, 2, some 3/5/6 
+7XB 55-52 aqbà — Pre. 7; Post. most 3/5/6 
+7XC 55-55 aqbaq — Pre. 7; Post. 7, 8 
+7XD 55-412 aqpǎ — Pre. 7; Post. individual Tone 5 
+8XA 23-52 ngaqba — Pre. 8; Post. most 1/2/3/5/6 
+8XB 23-55 ngaqbaq — Pre. 8; Post. most 7/8 
+8XD 23-412 ngaqpǎ — Pre. 8; Post. individual Tone 5 
+8XC 23-44 geqba — Pre. only certain Tone 8 words such as “箇”
+
+Tone diacritics notation:
+1X 55-21 aba — no mark 
+2X 22-44 ngaba — no mark 
+3X 52-21 àba — falling tone mark on the main vowel of the first syllable 
+5X 41-34 ǎba — fall–rising tone mark on the main vowel of the first syllable 
+6X 24-21 ngâba — rising–falling tone mark on the main vowel of the first syllable 
+7XA 55-34 aqba — no mark 
+7XB 55-52 aqbà — falling tone mark on the main vowel of the second syllable 
+7XC 55-55 aqbaq — no mark 
+7XD 55-412 aqpǎ — fall–rising tone mark on the main vowel of the second syllable 
+8XA 23-52 ngaqba — no mark 
+8XB 23-55 ngaqbaq — no mark 
+8XD 23-412 ngaqpǎ — fall–rising tone mark on the main vowel of the second syllable 
+8XC 23-44 geqba — no mark
+
+Romanized text example:
+‘Wengheqchiaon’ inyi keq senyunbu ciyu lâupha Zaonheghegho yû tsonpha Soutseughegho, sendiau yu piědiau ciyu tsonpha Soutseughegho bîn cieyon tsonpha Zaonheghegho piěthi, jiûthi zyin ciyu Zaonhegho, Soutseugho bîn kenciu yunsyu ciǎute zyin, ieusie zeqtshiu baqdoq. Donzen těyu sianciauyu Wugniu jitha faonye, Sou, Wûgniu gondon keq tshǎonsin ze thiqzyutheq, bîn ì poqbù Wugniu keq tsyǜlieu doqin tshiǰde tsyu.
+
+Simplified tone notation³:
+1X 55-21 ‘aba — small apostrophe before the syllable 
+2X 22-44 ngaba — no mark 
+3X 52-21 aba — no mark 
+5X 41-34 aba — no mark 
+6X 24-21 ngaba — no mark 
+7XA 55-34 aqba — no mark 
+7XB 55-52 aqba — no mark 
+7XC 55-55 aqbaq — no mark 
+7XD 55-412 aqpa — no mark 
+8XA 23-52 ngaqba — no mark 
+8XB 23-55 ngaqbaq — no mark 
+8XD 23-412 ngaqpa — no mark 
+8XC 23-44 geqba — no mark
+
+When the initials m, n, l combine with yin-register tones, they are written as ‘m, ‘n, ‘l. For example: 美好 (me3hau3–5x) is written ‘mehau; 拉 (la1) is written ‘la. er6 is written er; er1 is written ‘er.
+
+The phonological system of the “Wu common language” is grounded in old Shanghainese and mid-generation Suzhounese. The tonal system and tone sandhi are based on mid-generation Suzhounese while remaining compatible with mid-generation Shanghainese variants. Individual character readings are based on Shanghainese and Suzhounese, cross-checked against rhyme books, with colloquial readings given priority. At the same time, innovations shared exclusively by Suzhounese and Shanghainese (i.e., innovations not found in other Wu dialects) are removed and replaced with mainstream northern Wu readings⁴.
+
+Notes:
+1.pu, phu, bu, mu, fu, vu, u are realized as [uᵝ] (i.e., [wu] → [uᵝ]); in all other cases the realization is [əuᵝ]. When the realization is [əuᵝ], the spelling may optionally be written as ou.
+2.ciq, chiq, jiq, shiq, iq/yiq, gniq are realized as [ieʔ]; in all other cases the realization is [iɪʔ].
+3.This scheme can mark Shanghai-style tone sandhi perfectly and precisely, but for Suzhou-style tone sandhi certain cases (such as 3x/5x, 2x/6x) cannot be distinguished. In such cases the reader should judge the tone class from context. The primary purpose of this scheme is for extended Wu-language romanized texts, making Wu-language input and writing faster and more convenient.
+au [ɔ], iau [iɔ], eu [ɤ], ieu [iɤ] follow Shanghainese; i is realized as [iᶽ]; iu as [y]; ie as [i] with an iq-like rhyme (the exact perception varies among speakers); all other initials, finals, and tones follow Suzhounese. Where Shanghainese and Suzhounese differ in character readings, mainstream Wu dialect readings are consulted to decide the choice (e.g.,“流” is read as lieu2 rather than the Suzhou form leu2 — i.e., Shanghainese ieu-class syllables that merged into eu in Suzhounese are all rendered as ieu;“歳” is read as se5 rather than the Shanghainese form soe5 — i.e., the mainstream Wu form with an e-like rhyme follows the Suzhou reading e). Certain phonetic features distinctive only to Suzhounese or Shanghainese are replaced with mainstream Wu readings. The vocabulary embraces both northern and southern Wu, and permits a wide range of dialectal vocabulary. The grammar, while grounded in northern Wu, draws heavily on southern Wu to restore traditional Wu grammar and reduce Mandarin influence.
+</div>
+</div>
+</div>
+<div class="phon-overlay" id="phonOverlayJa" onclick="if(event.target===this)closePhonologyJa()">
+<div class="phon-panel">
+<button class="phon-close" onclick="closePhonologyJa()">&times;</button>
+<h2>呉越共通語 — 音韻体系</h2>
+<div style="white-space:pre-wrap;font-family:'Times New Roman','Noto Serif',serif;line-height:1.8;">
+呉越共通語は、中派蘇州語と老派上海語という近接する二つの呉越語方言を基礎とし、北部呉越語の諸方言の音韻特徴を参考にした混合的な腔口である。呉越共通語の音系と字音は、審音および音声規範を経たものである。呉越共通語は、呉越語の自然方言の規範化変体に属する。
+
+声母27個 
+p[p] ph[pʰ] b[b] m[m] f[f] v[v] 
+t[t] th[tʰ] d[d] n[n] gn[ɲ] l[l] 
+k[k] kh[kʰ] g[ɡ] ng[ŋ] h[h] gh[ɦ] 
+ts[ts] tsh[tsʰ] s[s] z[z] 
+ci[tɕ] chi[tɕʰ] ji[dʑ] shi[ɕ] 
+零声母
+
+韻母48個 
+a[ɑ] ua[uɑ] ia[iɑ] 
+o[o̝] io[io̝] 
+y[ɿ] yu[ʮ] 
+i[iᶽ] u[uᵝ~əuᵝ]¹ iu[y] 
+ie[i] e[e̞] ue[ue̞] 
+au[ɔ] iau[iɔ] 
+eu[ɤɯ] ieu[iɤɯ] 
+oe[ø] uoe[uø] ioe[iø] 
+an[ã] uan[uã] ian[iã] 
+aon[ɑ̃] uaon[uɑ̃] iaon[iɑ̃] 
+on[oŋ] ion[ioŋ] 
+en[ən] uen[uən] 
+in[iɲ] iun[yɲ] 
+aeq[aʔ] uaeq[uaʔ] iaeq[iaʔ] iuaeq[yaʔ] 
+aq[ɑʔ] iaq[iɑʔ] 
+eq[əʔ] ueq[uəʔ] 
+iq[iɪʔieʔ]² iuq[yeʔ] 
+oq[oʔ] ioq[ioʔ] 
+er[əl] n[n̩] m[m̩] ng[ŋ̩]
+
+声調 
+陰平1 ā 44 
+陽平2 ngá 223 
+陰上3 à 51 
+陰去5 ǎ 523 
+陽上去6 ngâ 231 
+陰入7 aq 43 
+陽入8 ngaq 23
+
+変調規則および調類（以下は蘇州式変調であり、上海式変調にも対応する） 
+調類名の数字は前字の声調を表す。「前」は適用される前字の範囲、「後」は適用される後字の範囲を示す。 
+1X 55-21 aba 前1、一部5、少数3に使用 
+2X 22-44 ngaba 前2、一部6に使用 
+3X 52-21 àba 前は3調の「九」等の特定の字のみに使用 
+5X 41-34 ǎba 前一部5、大部分3に使用 
+6X 24-21 ngâba 前一部6に使用 
+7XA 55-34 aqba 前7、後1・2・一部3・5・6に使用 
+7XB 55-52 aqbà 前7、後大部分3・5・6に使用 
+7XC 55-55 aqbaq 前7、後7・8に使用 
+7XD 55-412 aqpǎ 前7、後個別の5に使用 
+8XA 23-52 ngaqba 前8、後大部分1・2・3・5・6に使用 
+8XB 23-55 ngaqbaq 前8、後大部分7・8に使用 
+8XD 23-412 ngaqpǎ 前8、後個別の5に使用 
+8XC 23-44 geqba 前は8調の「箇」等の特定の字のみに使用
+
+声調符号標記法 
+1X 55-21 aba 標記なし 
+2X 22-44 ngaba 標記なし 
+3X 52-21 àba 第一音節の主母音に下降調符号を標記 
+5X 41-34 ǎba 第一音節の主母音に降昇調符号を標記 
+6X 24-21 ngâba 第一音節の主母音に昇降調符号を標記 
+7XA 55-34 aqba 標記なし 
+7XB 55-52 aqbà 第二音節の主母音に下降調符号を標記 
+7XC 55-55 aqbaq 標記なし 
+7XD 55-412 aqpǎ 第二音節の主母音に降昇調符号を標記 
+8XA 23-52 ngaqba 標記なし 
+8XB 23-55 ngaqbaq 標記なし 
+8XD 23-412 ngaqpǎ 第二音節の主母音に降昇調符号を標記 
+8XC 23-44 geqba 標記なし
+
+ローマ字表記の例文 
+‘Wengheqchiaon’ inyi keq senyunbu ciyu lâupha Zaonheghegho yû tsonpha Soutseughegho, sendiau yû piědiau ciyu tsonpha Soutseughegho bîn cieyon tsonpha Zaonheghegho piěthi, jiûthi zyin ciyu Zaonhegho, Soutseugho bîn kenciu yunsyu ciǎute zyin, ieusie zeqtshiu baqdoq. Donzen těyu sianciauyu Wugniu jitha faonye, Sou, Wûgniu gondon keq tshǎonsin ze thiqzyutheq, bîn ì poqbù Wugniu keq tsyǜlieu doqin tshiǰde tsyu.
+
+声調簡略標記法³ 
+1X 55-21 ‘aba 音節の前に小アポストロフィを標記 
+2X 22-44 ngaba 標記なし 
+3X 52-21 aba 標記なし 
+5X 41-34 aba 標記なし 
+6X 24-21 ngaba 標記なし 
+7XA 55-34 aqba 標記なし 
+7XB 55-52 aqba 標記なし 
+7XC 55-55 aqbaq 標記なし 
+7XD 55-412 aqpa 標記なし 
+8XA 23-52 ngaqba 標記なし 
+8XB 23-55 ngaqbaq 標記なし 
+8XD 23-412 ngaqpa 標記なし 
+8XC 23-44 geqba 標記なし 
+声母m、n、lが陰声調と結合するときは、‘m、‘n、‘lと標記する。例：美好（me3hau3-5x）は‘mehau、拉la1は‘la。er6はer、er1は‘erとする。
+
+「呉越共通語」の音系の声韻部は老派上海語と中派蘇州語に基づき、声調と変調は中派蘇州語に基づいて中派上海語の変体にも対応し、個々の字音は上海語・蘇州語に基づいて韻書により校正され、白読が優先される。同時に、呉越語の他の方言と比べて蘇州語・上海語のみに見られる共通の革新はすべて除去され、北部呉越語の主流的な読みに置き換えられる⁴。 
+
+注： 
+1.具体的にはpu、phu、bu、mu、fu、vu、uは[uᵝ]（[wu]は/uᵝ/と読む）と発音し、それ以外の場合は[əuᵝ]と発音する。[əuᵝ]と発音する場合は、ouと綴ることもできる。 
+2.具体的にはciq、chiq、jiq、shiq、iq/yiq、gniqは[ieʔ]と発音し、それ以外の場合は[iɪʔ]と発音する。 
+3.この方式は上海式変調を完璧かつ正確に標記できるが、蘇州式変調の一部の場合（3x/5x、2x/6xなど）は区別できない。このような場合は文脈から調類を判断する必要がある。この方式本来の目的は、長文の呉越語ローマ字文において呉越語の入力と表記をより迅速かつ簡便にすることにある。 
+4.具体的にはau[ɔ]、iau[iɔ]、eu[ɤ]、ieu[iɤ]は上海語に従い、iは[iᶽ]、iuは[y]、ieは[i]でiqに近い韻（話者により発音の感じ方が異なる）、その他の声韻調は蘇州語に従う。上海語と蘇州語で字音が異なる場合は呉越語の主流方言を参考にして取捨を決める（例：「流」は蘇州音leu2ではなくlieu2と読む——すなわち蘇州語でeuに合流した上海語のieu韻字はすべてieuとする、「歲」は上海音soe5ではなくse5と読む——すなわち呉越語の主流が類e韻であり蘇州語のeに従う）。蘇州語または上海語のみに特有の音声的特徴は呉越語の主流的な読みに置き換える。語彙は南北呉越語を包含し、幅広い方言的語彙を許容する。文法は北部呉越語を基盤としながら南呉越語を大幅に参考にして伝統的な呉越語の文法を復元し、官話の影響を軽減するなどしている。
+</div>
+</div>
+</div>
+<div class="phon-overlay" id="phonOverlayWu" onclick="if(event.target===this)closePhonologyWu()">
+<div class="phon-panel">
+<button class="phon-close" onclick="closePhonologyWu()">&times;</button>
+<h2>蘇滬混合腔 — 音韻體系</h2>
+<div style="white-space:pre-wrap;font-family:'Times New Roman','Noto Serif',serif;line-height:1.8;">
+蘇滬混合腔是吳語以中派蘇州話與老派上海話箇兩種接近个吳語方言爲基礎，兼考北部吳語諸方言音韻特徵个混合腔口。蘇滬混合腔个音系與字音經過仔審音與語音規範哉。蘇滬混合腔屬於吳語自然方言个規範化變體。
+
+聲母27隻
+p[p] ph[pʰ] b[b] m[m] f[f] v[v]
+t[t] th[tʰ] d[d] n[n] gn[ɲ] l[l]
+k[k] kh[kʰ] g[ɡ] ng[ŋ] h[h] gh[ɦ]
+ts[ts] tsh[tsʰ] s[s] z[z]
+ci[tɕ] chi[tɕʰ] ji[dʑ] shi[ɕ]
+零聲母
+
+韻母48隻
+a[ɑ] ua[uɑ] ia[iɑ]
+o[o̝] io[io̝]
+y[ɿ] yu[ʮ]
+i[iᶽ] u[uᵝ~əuᵝ]¹ iu[y]
+ie[i] e[e̞] ue[ue̞]
+au[ɔ] iau[iɔ]
+eu[ɤɯ] ieu[iɤɯ]
+oe[ø] uoe[uø] ioe[iø]
+an[ã] uan[uã] ian[iã]
+aon[ɑ̃] uaon[uɑ̃] iaon[iɑ̃]
+on[oŋ] ion[ioŋ]
+en[ən] uen[uən] in[iɲ] iun[yɲ]
+aeq[aʔ] uaeq[uaʔ] iaeq[iaʔ] iuaeq[yaʔ]
+aq[ɑʔ] iaq[iɑʔ]
+eq[əʔ] ueq[uəʔ] iq[iɪʔ~ieʔ]² iuq[yeʔ]
+oq[oʔ] ioq[ioʔ]
+er[əl] n[n̩] m[m̩] ng[ŋ̩]
+
+聲調
+陰平1 
+ā 44
+陽平2
+ngá 223
+陰上3
+à 51
+陰去5
+ǎ 523
+陽上去6
+ngâ 231
+陰入7
+aq 43
+陽入8 
+ngaq 23
+
+變調規則及調類（以下爲蘇式變調，亦相容滬式變調）
+調類名數字表前字調，備註「前」表適用前字範圍，「後」表適用後字範圍
+1X 55-21 aba
+前1部分5少部分3用
+2X 22-44 ngaba
+前2部分6用
+3X 52-21 àba
+前僅3調「九」等特定字用
+5X 41-34 ǎba
+前部分5大部分3用
+6X 24-21 ngâba
+前部分6用
+7XA 55-34 aqba
+前7後12部分356用
+7XB 55-52 aqbà
+前7後大部分356用
+7XC 55-55 aqbaq
+前7後78用
+7XD 55-412 aqpǎ
+前7後个別5用
+8XA 23-52 ngaqba
+前8後大部分12356用
+8XB 23-55 ngaqbaq
+前8後大部分78用
+8XD 23-412 ngaqpǎ
+前8後个別5用
+8XC 23-44 geqba
+前僅8調「箇」等特定字用
+
+聲調符號標記法
+1X 55-21 aba 弗標
+2X 22-44 ngaba 弗標
+3X 52-21 àba 第一隻音節主母音標降調
+5X 41-34 ǎba 第一隻音節主母音標降升調
+6X 24-21 ngâba 第一隻音節主母音標升降調
+7XA 55-34 aqba 弗標
+7XB 55-52 aqbà 第二隻音節主母音標降調
+7XC 55-55 aqbaq 弗標
+7XD 55-412 aqpǎ 第二隻音節主母音標降升調
+8XA 23-52 ngaqba 弗標
+8XB 23-55 ngaqbaq 弗標
+8XD 23-412 ngaqpǎ 第二隻音節主母音標降升調
+8XC 23-44 geqba 弗標
+拼音文示例
+‘Wengheqchiaon’ inyi keq senyunbu ciyu lâupha Zaonheghegho yû tsonpha Soutseughegho, sendiau yû piědiau ciyu tsonpha Soutseughegho bîn cieyon tsonpha Zaonheghegho piěthi, jiûthi zyin ciyu Zaonhegho, Soutseugho bîn kenciu yunsyu ciǎute zyin, ieusie zeqtshiu baqdoq. Donzen těyu sianciauyu Wugniu jitha faonye, Sou, Wûgniu gondon keq tshǎonsin ze thiqzyutheq, bîn ì poqbù Wugniu keq tsyǜlieu doqin tshiǰde tsyu.
+
+聲調簡化標記法³
+1X 55-21 'aba 音節前標小撇
+2X 22-44 ngaba 弗標
+3X 52-21 aba 弗標
+5X 41-34 aba 弗標
+6X 24-21 ngaba 弗標
+7XA 55-34 aqba 弗標
+7XB 55-52 aqba 弗標
+7XC 55-55 aqbaq 弗標
+7XD 55-412 aqpa 弗標
+8XA 23-52 ngaqba 弗標
+8XB 23-55 ngaqbaq 弗標
+8XD 23-412 ngaqpa 弗標
+8XC 23-44 geqba 弗標
+當聲母m n l搭配陰聲調辰，記作'm 'n 'l。如：美好（me3hau3-5x）爲'mehau；拉la1爲'la。er6爲er，er1爲'er。
+
+「混合腔」音系个聲韻部基於老派上海閒話與中派蘇州閒話，聲調與變調基於中派蘇州閒話並相容中派上海閒話變體，具體字音基於上海話、蘇州話並根據韻書校對字音，優先擇取白讀。同辰相較於吳語其他方言，蘇、滬語共同个創新儕剔除脫，並以北部吳語个主流讀音取代之⁴。
+注釋：
+1.具體爲pu、phu、bu、mu、fu、vu、u[wu讀/uᵝ]，其餘情況讀[əuᵝ]。讀[əuᵝ]个辰光好拼寫成功ou。
+2.具體爲ciq、chiq、jiq、shiq、iq/yiq、gniq讀[ieʔ]，其餘情況讀[iɪʔ]。
+3.該方案好完美、精確介標記滬式變調，但蘇式變調部分情況（如3x/5x、2x/6x）區分弗了。箇種情況見著末要自家判斷調類。該方案个本意是用於大段个吳語拼音文、喊吳語文輸入搭書寫更加便當快速。
+4.具體爲au[ɔ]、iau[iɔ]、eu[ɤ]、ieu[iɤ]從滬、i讀[iᶽ]、iu讀[y]、ie讀[i]與iq近韻（弗同人口音有別感受亦不同），其餘聲韻調從蘇，滬蘇弗同字音參考吳語主流方言判斷取捨（如「流」讀如lieu2而非蘇音leu2即蘇音中併入eu之滬音ieu韻字皆爲ieu，如「歲」讀如se5而非滬音soe5即吳語主流爲類e韻從蘇讀e），部分蘇滬特色音改從吳語主流；辭彙包容南北吳並容許大量方言詞彙；語法在北吳基礎上向參考南吳大幅還原傳統吳語語法、減少官話影響等。
+</div>
+</div>
+</div>
+
+
 </body>
 </html>
