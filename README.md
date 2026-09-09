@@ -15,3 +15,7 @@
 新增英語、日語界面。
 
 界面裏向新增蘇滬混合腔音系介紹。
+
+9.9.2026更新：
+
+在線網址上線。鏈接https://siqyin.github.io/wugniu_zyinzozin/。
