@@ -18,4 +18,4 @@
 
 9.9.2026更新：
 
-在線網址上線。鏈接https://siqyin.github.io/wugniu_zyinzozin/。
+在線網址上線。鏈接https://siqyin.github.io/wugniu_zyinzozin/ 。
