@@ -504,7 +504,7 @@ function doSearch() {
             var reading = entry[0];
             var note = entry[1];
             html += '<div class="reading-item">';
-            html += '<div class="reading-ipa">' + escapeHtml(reading).replace(/(男|女):/g, '<span class="gender-hanzi">$1</span>:') + '</div>';
+            html += '<div class="reading-ipa">' + (currentLang === 'en' ? escapeHtml(reading).replace(/男:/g, 'Male:').replace(/女:/g, 'Female:') : escapeHtml(reading).replace(/(男|女):/g, '<span class="gender-hanzi">$1</span>:')) + '</div>';
             if (note) html += '<div class="reading-note">' + escapeHtml(note) + '</div>';
             html += '</div>';
           }
