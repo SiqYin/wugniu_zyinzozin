@@ -441,7 +441,7 @@ function doSearch() {
   resultsDiv.innerHTML = '';
   
   if (!input) {
-    showError(currentLang === 'en' ? 'Please enter at least one character.' : currentLang === 'ja' ? '少なくとも1文字を入力してください。' : '請輸入至少一個漢字。');
+    showError(currentLang === 'en' ? 'Please enter at least one character.' : currentLang === 'ja' ? '少なくとも1文字を入力してください。' : '請輸入至少一隻漢字。');
     return;
   }
   
@@ -560,7 +560,7 @@ function doPinyinLookup() {
   
   var input = document.getElementById('pinyinInput').value.trim().toLowerCase();
   if (!input) {
-    errorBox.innerHTML = '<div class="error-msg">請輸入拼音。</div>';
+    errorBox.innerHTML = '<div class="error-msg">' + (currentLang === 'en' ? 'Please enter a romanization.' : currentLang === 'ja' ? 'ローマ字を入力してください。' : '請輸入拼音。') + '</div>';
     return;
   }
   
