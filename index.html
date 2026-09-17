@@ -300,8 +300,6 @@ footer a:hover { text-decoration: underline; }
 }
 .lang-menu-item:hover { background: #eef3f9; }
 .lang-menu-item.active { font-weight: 600; background: #d6e8f7; }
-.footer-note { font-size: 0.82em; color: #8aa0b5; text-align: center; margin-bottom: 8px; line-height: 1.5; }
-
 /* Phonology panel */
 .phon-overlay {
   display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -376,7 +374,8 @@ footer a:hover { text-decoration: underline; }
 </div>
 <footer>
 <div class="footer-inner">
-<p class="footer-note" id="footerNote"><a href="#" onclick="showPhonologyWu(); return false;">請撳箇搭以瞭解蘇滬混合腔</a></p>
+<p id="hitCounter" style="display:none;"></p>
+<p id="footerNote"><a href="#" onclick="showPhonologyWu(); return false;">請撳箇搭以瞭解蘇滬混合腔</a></p>
 <p id="footerData">數據來源：蘇滬混合腔（<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>）、<a href="#" onclick="showSourceInfo('qingmo'); return false;">清末蘇州話</a>、<a href="#" onclick="showSourceInfo('shanghai'); return false;">上海話</a>、<a href="#" onclick="showSourceInfo('suzhou'); return false;">蘇州話</a>、<a href="#" onclick="showSourceInfo('pingtan'); return false;">蘇州評彈音韻</a></p>
 <p id="footerInput" style="text-align:center;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">吳語蘇滬混合腔輸入法請撳此鏈接</a></p>
 <p style="text-align:center;font-family:'Times New Roman',serif;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Wugniu 'Souwu wengheqchiaon 'syuzeqfaeq tshin chin tshy lietsiq.</a></p>
@@ -435,6 +434,7 @@ function getChars(input) {
 }
 
 function doSearch() {
+  countQuery('hanzi');
   clearError();
   const input = document.getElementById('charInput').value.trim();
   const resultsDiv = document.getElementById('results');
@@ -553,6 +553,7 @@ const OU_TO_U_MAP = {
 };
 
 function doPinyinLookup() {
+  countQuery('pinyin');
   var errorBox = document.getElementById('pinyinErrorBox');
   var resultsDiv = document.getElementById('pinyinResults');
   errorBox.innerHTML = '';
@@ -678,6 +679,7 @@ var i18n = {
     footer_data: 'Data source: common language (<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>), <a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">Late Qing Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">Shanghainese</a>, <a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">pingtan phonology</a>',
     footer_input: 'Wu romanization IME (click to download)',
     footer_note: '<strong>Note:</strong> "common language" here refers to a hybrid accent blending Suzhounese and Shanghainese (<a href="#" onclick="showPhonology(); return false;">click to learn more</a>).',
+    counter_text: 'This page has been looked up {n} times in total — {h} by characters and {p} by romanization.',
     '\u8607\u6eec\u6df7\u5408\u8154': 'common language',
     '\u6e05\u672b\u8607\u5dde\u8a71': 'Late Qing Suzhounese',
     '\u4e0a\u6d77\u8a71': 'Shanghainese',
@@ -698,6 +700,7 @@ var i18n = {
     footer_data: '\u30c7\u30fc\u30bf\u51fa\u5178\uff1a\u5171\u901a\u8a9e\uff08<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>\uff09\u3001<a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">\u4e0a\u6d77\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">\u8607\u5dde\u8a55\u5f3e\u97f3\u97fb</a>',
     footer_input: '\u5449\u8d8a\u8a9e\u30ed\u30fc\u30de\u5b57\u5165\u529b\uff08\u30ea\u30f3\u30af\u5148\u3067\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\uff09',
     footer_note: '<strong>\u6ce8\uff1a</strong> \u3053\u3053\u3067\u8a00\u3046\u300c\u5171\u901a\u8a9e\u300d\u3068\u306f\u3001\u8607\u5dde\u8a9e\u3068\u4e0a\u6d77\u8a9e\u306e\u6df7\u5408\u30a2\u30af\u30bb\u30f3\u30c8\u3092\u6307\u3057\u307e\u3059\u3002 (<a href="#" onclick="showPhonologyJa(); return false;">\u30af\u30ea\u30c3\u30af\u3057\u3066\u8a73\u7d30\u3092\u898b\u308b</a>)',
+    counter_text: '\u3053\u306e\u30da\u30fc\u30b8\u306f\u7d2f\u8a08{n}\u56de\u691c\u7d22\u3055\u308c\u307e\u3057\u305f\uff08\u6f22\u5b57{h}\u56de\u3001\u30ed\u30fc\u30de\u5b57{p}\u56de\uff09\u3002',
     '\u8607\u6eec\u6df7\u5408\u8154': '\u5171\u901a\u8a9e',
     '\u6e05\u672b\u8607\u5dde\u8a71': '\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e',
     '\u4e0a\u6d77\u8a71': '\u4e0a\u6d77\u8a9e',
@@ -796,6 +799,7 @@ function setLang(lang) {
     }
   
   }
+  if (typeof renderHitCounter === 'function') renderHitCounter();
 }
 
 function showPhonology() {
@@ -1211,5 +1215,76 @@ ngaq 23
 </div>
 
 
+<script>
+// ============ 在線查詢計數 ============
+(function () {
+  var API = 'https://countapi.mileshilliard.com/api/v1';
+  var KEY = { hanzi: 'siqyin-wugniu-zyinzozin-hanzi', pinyin: 'siqyin-wugniu-zyinzozin-pinyin' };
+  var SEED = { hanzi: 955, pinyin: 380 };
+  var counts = null;
+
+  // 只有正式網址上嘅查詢才計數；本地開檔、其他網址一律不計
+  function countingEnabled() {
+    return location.protocol === 'https:' &&
+           location.hostname === 'siqyin.github.io' &&
+           location.pathname.indexOf('/wugniu_zyinzozin') === 0;
+  }
+  function read(key) {
+    return fetch(API + '/get/' + key, { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var v = parseInt(d && d.value, 10);
+        if (!isFinite(v)) throw new Error('empty');
+        return v;
+      });
+  }
+  function write(key, value) {
+    return fetch(API + '/set/' + key + '?value=' + value, { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return parseInt(d && d.value, 10); });
+  }
+  function bump(key) {
+    return fetch(API + '/hit/' + key, { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return parseInt(d && d.value, 10); });
+  }
+  // 計數器未建立、或數據被清空至低於起始值時，補回起始值
+  function ensure(key, seed) {
+    return read(key).then(function (v) {
+      return (isFinite(v) && v >= seed) ? v : write(key, seed);
+    }, function () {
+      return write(key, seed);
+    });
+  }
+  function render() {
+    var el = document.getElementById('hitCounter');
+    if (!el || !counts) return;
+    var tpl = t('counter_text') || '箇隻網葉以畀人查詢{n}轉，漢字{h}轉，拼音{p}轉';
+    el.textContent = tpl
+      .replace('{n}', counts.hanzi + counts.pinyin)
+      .replace('{h}', counts.hanzi)
+      .replace('{p}', counts.pinyin);
+    el.style.display = '';
+  }
+  function load() {
+    return Promise.all([ensure(KEY.hanzi, SEED.hanzi), ensure(KEY.pinyin, SEED.pinyin)])
+      .then(function (v) { counts = { hanzi: v[0], pinyin: v[1] }; render(); });
+  }
+
+  // 讀取與顯示：任何環境都做，便於本地核對數字
+  window.renderHitCounter = render;
+  // 計數：只在正式網址上做
+  window.countQuery = function (kind) {
+    if (!countingEnabled()) return;
+    bump(KEY[kind]).then(function (v) {
+      if (!isFinite(v)) return;
+      if (counts) { counts[kind] = v; render(); return; }
+      return load();
+    }).catch(function () {});
+  };
+
+  load().catch(function () {});
+})();
+</script>
 </body>
 </html>
