@@ -434,7 +434,6 @@ function getChars(input) {
 }
 
 function doSearch() {
-  countQuery('hanzi');
   clearError();
   const input = document.getElementById('charInput').value.trim();
   const resultsDiv = document.getElementById('results');
@@ -445,6 +444,7 @@ function doSearch() {
     return;
   }
   
+  countQuery('hanzi'); // 空输入不计数；其他失败情形（超长、无法识别）仍计数
   const chars = [...input];
   if (chars.length > 8) {
     showError(currentLang === 'en' ? 'Maximum 8 characters at a time.' : currentLang === 'ja' ? '最大8文字まで同時検索できます。' : '最多同時查詢8個漢字。');
@@ -553,7 +553,6 @@ const OU_TO_U_MAP = {
 };
 
 function doPinyinLookup() {
-  countQuery('pinyin');
   var errorBox = document.getElementById('pinyinErrorBox');
   var resultsDiv = document.getElementById('pinyinResults');
   errorBox.innerHTML = '';
@@ -565,6 +564,7 @@ function doPinyinLookup() {
     return;
   }
   
+  countQuery('pinyin'); // 空输入不计数
   // 检查是否带声调数字
   var hasTone = /[1-9]$/.test(input);
   var queryPinyin = input;
