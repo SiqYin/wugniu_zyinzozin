@@ -1259,7 +1259,7 @@ ngaq 23
   function render() {
     var el = document.getElementById('hitCounter');
     if (!el || !counts) return;
-    var tpl = t('counter_text') || '箇隻網葉以畀人查詢{n}轉，漢字{h}轉，拼音{p}轉（僅在線）';
+    var tpl = t('counter_text') || '箇隻網葉已畀人查詢{n}轉，漢字{h}轉，拼音{p}轉（僅在線）';
     el.textContent = tpl
       .replace('{n}', counts.hanzi + counts.pinyin)
       .replace('{h}', counts.hanzi)
