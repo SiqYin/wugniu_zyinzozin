@@ -329,6 +329,93 @@ footer a:hover { text-decoration: underline; }
 .phon-panel th { background: #e8f0f8; }
 .phon-panel .example { background: #f0f5fb; padding: 12px 16px; border-radius: 8px; margin: 10px 0; font-style: italic; border-left: 3px solid #2980b9; }
 </style>
+<script>
+/* 首訪語言自動判斷：手選 > 瀏覽器語言（中文/日文零請求即可判定）> IP 歸屬地 > 英文兜底。
+   參考雪螢小驛 SYSite 的做法，但那站是多頁 + 語言子目錄，靠 location.replace 跳轉；
+   本站是單頁 + setLang()，所以改為直接切換語言 —— 不產生任何跳轉，也就沒有跳轉類的 404 風險。 */
+(function () {
+  var KEY = 'wugniu-lang';
+  var REGIONS = { wu: ['CN', 'HK', 'MO', 'TW'], ja: ['JP'] };
+  var GEO = 'https://api.country.is/';
+  var GEO_ALT = 'https://www.cloudflare.com/cdn-cgi/trace';
+  var LANGS = { wu: 1, en: 1, ja: 1 };
+  var setter = null, pending = null, manual = false, done = false;
+
+  function saved() { try { var v = localStorage.getItem(KEY); return LANGS[v] ? v : null; } catch (e) { return null; } }
+  function toLang(c) {
+    c = String(c || '').toUpperCase();
+    for (var k in REGIONS) { if (REGIONS[k].indexOf(c) >= 0) return k; }
+    return 'en';
+  }
+  function apply(l) {
+    if (!l || !LANGS[l]) return;
+    if (!setter) { pending = l; return; }
+    if (done) return;
+    done = true; setter(l);
+  }
+  function fixed() { return done || !!pending; }
+
+  /* 測試開關：?lang=wu|en|ja 強制指定；?lang=auto 清掉手選後重新判斷 */
+  var forced = null;
+  try {
+    var q = /[?&]lang=([a-z]+)/i.exec(location.search);
+    if (q) {
+      forced = q[1].toLowerCase();
+      if (forced === 'auto') { try { localStorage.removeItem(KEY); } catch (e) {} forced = null; }
+    }
+  } catch (e) {}
+  if (forced && LANGS[forced]) { manual = true; apply(forced); }
+
+  /* 本地開啟、本地預覽不自動判斷，免得離線檔案被網路環境帶著跑 */
+  var H = location.hostname;
+  var online = location.protocol !== 'file:' && H && H !== 'localhost' && H !== '127.0.0.1' && H !== '::1';
+  /* 爬蟲一律維持頁面預設（吳語），免得搜尋引擎收錄到英文版 */
+  var isBot = /bot|crawler|spider|slurp|yandex|baiduspider|googlebot|bingbot/i.test(navigator.userAgent || '');
+
+  if (!fixed() && !manual && online && !isBot) {
+    var pick = saved();
+    if (pick) { manual = true; apply(pick); }
+    if (!fixed()) {
+      var ls = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < ls.length && !fixed(); i++) {
+        var l = String(ls[i] || '').toLowerCase();
+        if (/^zh(-|$)/.test(l)) apply('wu');
+        else if (/^ja(-|$)/.test(l)) apply('ja');
+      }
+    }
+    if (!fixed()) {
+      var giveUp = function () { if (!manual) apply('en'); };
+      var alt = function () {
+        try {
+          var y = new XMLHttpRequest();
+          y.open('GET', GEO_ALT, true); y.timeout = 1200;
+          y.onload = function () {
+            if (manual) return;
+            var mm = /(?:^|\n)loc=([A-Za-z]{2})/.exec(y.responseText || '');
+            apply(mm ? toLang(mm[1]) : 'en');
+          };
+          y.onerror = y.ontimeout = giveUp;
+          y.send();
+        } catch (e) { giveUp(); }
+      };
+      try {
+        var x = new XMLHttpRequest();
+        x.open('GET', GEO, true); x.timeout = 1200;
+        x.onload = function () {
+          if (manual) return;
+          try { apply(toLang(JSON.parse(x.responseText).country)); } catch (e) { alt(); }
+        };
+        x.onerror = x.ontimeout = alt;
+        x.send();
+      } catch (e) { alt(); }
+    }
+  }
+  window.__wugniuLang = {
+    ready: function (fn) { setter = fn; if (pending) { var pp = pending; pending = null; apply(pp); } },
+    pick: function (l) { manual = true; done = true; try { localStorage.setItem(KEY, l); } catch (e) {} }
+  };
+})();
+</script>
 </head>
 <body>
 <div class="top-section">
@@ -336,9 +423,9 @@ footer a:hover { text-decoration: underline; }
   <span class="lang-label" id="langLabel">Language</span>
   <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">吳語</button>
   <div class="lang-menu" id="langMenu">
-    <button class="lang-menu-item active" onclick="setLang('wu')">吳語</button>
-    <button class="lang-menu-item" onclick="setLang('en')">English</button>
-    <button class="lang-menu-item" onclick="setLang('ja')">日本語</button>
+    <button class="lang-menu-item active" onclick="pickLang('wu')">吳語</button>
+    <button class="lang-menu-item" onclick="pickLang('en')">English</button>
+    <button class="lang-menu-item" onclick="pickLang('ja')">日本語</button>
   </div>
 </div>
 <div class="container">
@@ -878,6 +965,14 @@ function closeSourceInfo() {
   document.getElementById('srcOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+/* 手動選語言：記住選擇，之後不再自動切換 */
+function pickLang(l) {
+  if (window.__wugniuLang && window.__wugniuLang.pick) window.__wugniuLang.pick(l);
+  setLang(l);
+}
+/* 把「設定語言」的能力交給頁首的判斷腳本，由它決定要不要自動切換 */
+if (window.__wugniuLang) window.__wugniuLang.ready(setLang);
 </script>
 <div class="phon-overlay" id="phonOverlay" onclick="if(event.target===this)closePhonology()">
 <div class="phon-panel">
