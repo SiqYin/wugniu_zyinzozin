@@ -1,0 +1,1 @@
+index_static.html在静态网站发布在github时被挂载为index

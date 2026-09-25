@@ -1,5 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Deploy the standalone HTML page and its JSON data to GitHub Pages.
+name: Deploy static site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -18,7 +18,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -31,13 +31,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare static site
+        shell: bash
+        run: |
+          mkdir -p _site/data
+          cp templates/index_static.html _site/index.html
+          cp data/*.json _site/data/
+          sed -i "s#new URL('../data/' + fileName, window.location.href)#new URL('data/' + fileName, window.location.href)#" _site/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
