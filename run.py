@@ -25,7 +25,7 @@ def create_app() -> Flask:
 
     @app.get("/")
     def index():
-        return send_from_directory(BASE_DIRECTORY, "index.html")
+        return send_from_directory(BASE_DIRECTORY, "templates/index.html")
 
     @app.post("/api/search")
     def search_characters():
