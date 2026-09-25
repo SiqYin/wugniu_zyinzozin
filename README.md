@@ -31,3 +31,6 @@
 9.17.2026更新：
 
 在線查詢次數記錄功能添加哉。
+
+9.25.2026：
+修复读音重复显示的问题。https://ruaplayerowo.github.io/wugniu_zyinzozin/
