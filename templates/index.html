@@ -1255,7 +1255,7 @@ ngaq 23
     return read(key).then(function (v) {
       return (isFinite(v) && v >= seed) ? v : write(key, seed);
     }, function () {
-      return write(key, seed);
+      return seed; /* 讀取失敗只本地顯示起始值，不回寫，避免覆蓋在線計數 */
     });
   }
   function render() {
