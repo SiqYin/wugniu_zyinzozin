@@ -286,6 +286,8 @@ footer a:hover { text-decoration: underline; }
   font-family: inherit;
 }
 .lang-btn:hover { background: #1a6da2; }
+  .lang-btn .lang-caret { margin-left: 7px; font-size: 0.78em; display: inline-block; transition: transform .15s ease; }
+  .lang-btn.open .lang-caret { transform: rotate(180deg); }
 .lang-menu {
   display: none; position: absolute; top: 100%; right: 0; margin-top: 4px;
   background: #fff; border: 1px solid #ccc; border-radius: 6px;
@@ -420,8 +422,7 @@ footer a:hover { text-decoration: underline; }
 <body>
 <div class="top-section">
 <div class="lang-switcher" id="langSwitcher">
-  <span class="lang-label" id="langLabel">Language</span>
-  <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()">吳語</button>
+  <button class="lang-btn" id="langBtn" onclick="toggleLangMenu()"><span id="langBtnLabel">吳語</span><span class="lang-caret" aria-hidden="true">▾</span></button>
   <div class="lang-menu" id="langMenu">
     <button class="lang-menu-item active" onclick="pickLang('wu')">吳語</button>
     <button class="lang-menu-item" onclick="pickLang('en')">English</button>
@@ -928,16 +929,18 @@ function t(key) {
   return (i18n[currentLang] && i18n[currentLang][key]) || null;
 }
 function toggleLangMenu() {
-  document.getElementById('langMenu').classList.toggle('open');
+  var mm = document.getElementById('langMenu');
+  var open = mm.classList.toggle('open');
+  document.getElementById('langBtn').classList.toggle('open', open);
 }
 document.addEventListener('click', function(e) {
   var sw = document.getElementById('langSwitcher');
-  if (sw && !sw.contains(e.target)) document.getElementById('langMenu').classList.remove('open');
+  if (sw && !sw.contains(e.target)) document.getElementById('langMenu').classList.remove('open'); document.getElementById('langBtn').classList.remove('open');
 });
 function setLang(lang) {
   currentLang = lang;
-  document.getElementById('langMenu').classList.remove('open');
-  document.getElementById('langBtn').textContent = lang === 'wu' ? '\u5433\u8a9e' : lang === 'en' ? 'English' : '\u65e5\u672c\u8a9e';
+  document.getElementById('langMenu').classList.remove('open'); document.getElementById('langBtn').classList.remove('open');
+  document.getElementById('langBtnLabel').textContent = lang === 'wu' ? '\u5433\u8a9e' : lang === 'en' ? 'English' : '\u65e5\u672c\u8a9e';
   // Font switching per language
   var uiFont = lang === 'en'
     ? '"Times New Roman", "Noto Serif", serif'
