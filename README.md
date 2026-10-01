@@ -35,5 +35,11 @@
 9.23.2026更新：
 
 根據訪問IP自動判斷界面言語功能添加哉。現在來自中國大陸、香港、澳門、臺灣个IP界面默認爲吳文，來自日本个IP界面默認爲日文，來自其他地區个IP界面默認爲英文。
-9.25.2026：
-修复读音重复显示的问题。https://ruaplayerowo.github.io/wugniu_zyinzozin/
+
+9.25.2026更新：
+
+讀音重複顯示个問題修復脱哉。箇隻改動來自ruaplayerowo先生，其項目在上https://ruaplayerowo.github.io/wugniu_zyinzozin/ 。
+
+10.1.2026更新：
+
+ruaplayerowo先生个Pull Request已經合併到本項目哉。
