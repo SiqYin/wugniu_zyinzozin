@@ -221,7 +221,8 @@ footer a:hover { text-decoration: underline; }
   text-align: center;
   margin: 0 0 18px;
 }
-.lyric-rhyme-btn {
+/* 同組的兩個按鈕：歌詞押韻查詢（短）＋蘇滬混合腔韻圖查詢（長條通欄） */
+.lyric-rhyme-entry .lyric-rhyme-btn {
   display: inline-block;
   padding: 10px 22px;
   font-size: 1em;
@@ -234,7 +235,23 @@ footer a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
-.lyric-rhyme-btn:hover { background: #2980b9; border-color: #2980b9; color: #fff; }
+.lyric-rhyme-entry .lyric-rhyme-btn:hover { background: #2980b9; border-color: #2980b9; color: #fff; }
+.yuntu-entry { margin: -8px 0 18px; }
+.lyric-rhyme-entry .yuntu-btn {
+  display: block;
+  padding: 12px 22px;
+  font-size: 1em;
+  font-family: inherit;
+  background: #fff;
+  color: #1a5276;
+  border: 2px solid #a3c1d9;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.lyric-rhyme-entry .yuntu-btn:hover { background: #2980b9; border-color: #2980b9; color: #fff; }
 .pinyin-lookup-section {
   margin-bottom: 18px;
   text-align: center;
@@ -477,6 +494,9 @@ footer a:hover { text-decoration: underline; }
 </div>
 <div class="lyric-rhyme-entry">
   <a class="lyric-rhyme-btn" id="lyricRhymeBtn" href="https://siqyin.github.io/wugniu_yundu/?song=1" target="_blank" rel="noopener">歌詞押韻查詢</a>
+  <div class="yuntu-entry">
+    <a class="yuntu-btn" id="yuntuBtn" href="https://siqyin.github.io/wugniu_yundu/" target="_blank" rel="noopener">蘇滬混合腔韻圖查詢</a>
+  </div>
 </div>
 <div id="errorBox"></div>
 <div class="results" id="results"></div>
@@ -488,7 +508,6 @@ footer a:hover { text-decoration: underline; }
 <p id="footerNote"><a href="#" onclick="showPhonologyWu(); return false;">請撳箇搭以瞭解蘇滬混合腔</a></p>
 <p id="footerData">數據來源：蘇滬混合腔（<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>）、<a href="#" onclick="showSourceInfo('qingmo'); return false;">清末蘇州話</a>、<a href="#" onclick="showSourceInfo('shanghai'); return false;">上海話</a>、<a href="#" onclick="showSourceInfo('suzhou'); return false;">蘇州話</a>、<a href="#" onclick="showSourceInfo('pingtan'); return false;">蘇州評彈音韻</a></p>
 <p id="footerInput" style="text-align:center;"><a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">吳語蘇滬混合腔輸入法請撳此鏈接</a></p>
-<p id="footerYuntu" style="text-align:center;"><a href="https://siqyin.github.io/wugniu_yundu/" target="_blank">蘇滬混合腔韻圖請撳此鏈接</a></p>
 </div>
 </footer>
 <div class="tricolor-bar"></div>
@@ -917,7 +936,7 @@ var i18n = {
     lyric_rhyme: 'Lyric Rhyme Lookup',
     footer_data: 'Data source: common language (<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>), <a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">Late Qing Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">Shanghainese</a>, <a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">pingtan phonology</a>',
     footer_input: 'Wu romanization IME (click to download)',
-    footer_yuntu: 'Wu Common Language Rhyme Chart (click to visit)',
+    yuntu_lookup: 'Wu Common Language Rhyme Chart Lookup',
     footer_note: '<strong>Note:</strong> "common language" here refers to a hybrid accent blending Suzhounese and Shanghainese (<a href="#" onclick="showPhonology(); return false;">click to learn more</a>).',
     counter_text: 'This page has been looked up {n} times in total — {h} by characters and {p} by romanization (online only).',
     '\u8607\u6eec\u6df7\u5408\u8154': 'common language',
@@ -940,7 +959,7 @@ var i18n = {
     lyric_rhyme: '\u6b4c\u8a5e\u62bc\u97fb\u691c\u7d22',
     footer_data: '\u30c7\u30fc\u30bf\u51fa\u5178\uff1a\u5171\u901a\u8a9e\uff08<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>\uff09\u3001<a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">\u4e0a\u6d77\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">\u8607\u5dde\u8a55\u5f3e\u97f3\u97fb</a>',
     footer_input: '\u5449\u8d8a\u8a9e\u30ed\u30fc\u30de\u5b57\u5165\u529b\uff08\u30ea\u30f3\u30af\u5148\u3067\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\uff09',
-    footer_yuntu: '\u5171\u901a\u8a9e\u97fb\u56f3\uff08\u30af\u30ea\u30c3\u30af\u3067\u3054\u89a7\u304f\u3060\u3055\u3044\uff09',
+    yuntu_lookup: '\u5171\u901a\u8a9e\u97fb\u56f3\u691c\u7d22',
     footer_note: '<strong>\u6ce8\uff1a</strong> \u3053\u3053\u3067\u8a00\u3046\u300c\u5171\u901a\u8a9e\u300d\u3068\u306f\u3001\u8607\u5dde\u8a9e\u3068\u4e0a\u6d77\u8a9e\u306e\u6df7\u5408\u30a2\u30af\u30bb\u30f3\u30c8\u3092\u6307\u3057\u307e\u3059\u3002 (<a href="#" onclick="showPhonologyJa(); return false;">\u30af\u30ea\u30c3\u30af\u3057\u3066\u8a73\u7d30\u3092\u898b\u308b</a>)',
     counter_text: '\u3053\u306e\u30da\u30fc\u30b8\u306f\u7d2f\u8a08{n}\u56de\u691c\u7d22\u3055\u308c\u307e\u3057\u305f\uff08\u6f22\u5b57{h}\u56de\u3001\u30ed\u30fc\u30de\u5b57{p}\u56de\uff09\uff08\u30aa\u30f3\u30e9\u30a4\u30f3\u306e\u307f\uff09\u3002',
     '\u8607\u6eec\u6df7\u5408\u8154': '\u5171\u901a\u8a9e',
@@ -997,6 +1016,10 @@ function setLang(lang) {
   if (lrb && !lrb.dataset.wu) lrb.dataset.wu = lrb.textContent.trim();
   if (lrb) lrb.textContent = t('lyric_rhyme') || lrb.dataset.wu;
   if (lrb) lrb.href = 'https://siqyin.github.io/wugniu_yundu/?song=1&lang=' + currentLang;
+  var yb = document.getElementById('yuntuBtn');
+  if (yb && !yb.dataset.wu) yb.dataset.wu = yb.textContent.trim();
+  if (yb) yb.textContent = t('yuntu_lookup') || yb.dataset.wu;
+  if (yb) yb.href = 'https://siqyin.github.io/wugniu_yundu/?lang=' + currentLang;
   var ci = document.getElementById('charInput');
   if (!ci.dataset.wu) ci.dataset.wu = ci.placeholder;
   ci.placeholder = (currentLang === 'en' ? 'Enter characters (max 8)' : currentLang === 'ja' ? '\u6f22\u5b57\u3092\u5165\u529b\uff08\u6700\u59278\u6587\u5b57\uff09' : ci.dataset.wu);
@@ -1032,11 +1055,6 @@ function setLang(lang) {
     } else {
       fi.innerHTML = fi.dataset.wu;
     }
-  }
-  var fy = document.getElementById('footerYuntu');
-  if (fy && !fy.dataset.wu) fy.dataset.wu = fy.textContent.trim();
-  if (fy) {
-    fy.innerHTML = '<a href="https://siqyin.github.io/wugniu_yundu/?lang=' + currentLang + '" target="_blank">' + (t('footer_yuntu') || fy.dataset.wu) + '</a>';
   }
   var noteEl = document.getElementById('footerNote');
   if (lang === 'wu') {
