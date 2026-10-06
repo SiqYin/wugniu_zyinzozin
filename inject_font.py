@@ -59,9 +59,19 @@ def inject(path):
     s = open(path, encoding="utf-8").read()
     orig = s
 
-    # 1) 拆掉先前注入過的區塊（讓腳本可重複執行）
-    s = re.sub(r"@font-face\{font-family:\"LXGW WenKai\"[^\n]*\}\n?", "", s)
-    s = re.sub(r":root\{\n--wk:\"LXGW WenKai\"[^\n]*\n", "", s)
+        # 1) 拆掉先前注入過的區塊（讓腳本可重複執行）
+    #    ⚠️ 舊版只刪 `:root{` 與 `--wk:` 那一行，剩下 --ui/--ipa/--mono 三行留在原處，
+    #    累積成**遊離在 :root 之外**的聲明垃圾，會讓 CSS 解析器把下一條規則
+    #    （`* { box-sizing: border-box }`）一起吞掉——那條重置就從來沒生效過。
+    #    現在一次刪整個 :root 區塊，外加任何漏在外面的孤立變數行。
+    s = re.sub(r"@font-face\{font-family:\"LXGW WenKai\";[^\n]*\}\n?", "", s)
+    s = re.sub(r":root\{\n--wk:\"LXGW WenKai\"[^\n]*\n--ui:[^\n]*\n--ipa:[^\n]*\n--mono:[^\n]*\}\n?",
+               "", s)
+    # 清掉漏在 :root 外的孤立行（變數主體或殘留的右大括號）
+    s = re.sub(r"^--(?:ui|ipa|mono|wk):\"LXGW WenKai\".*\n", "", s, flags=re.M)
+    s = re.sub(r"^[ \t]*\}\n(?=[ \t]*\n?--)", "", s, flags=re.M)
+    # 收尾：連續多個空行壓成兩個（注入點原本就有空行）
+    s = re.sub(r"\n{3,}", "\n\n", s)
 
     # 2) 字體棧換成變數
     for a, b in STACK_MAP:

@@ -19,15 +19,6 @@
 --mono:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han","SFMono-Regular",Consolas,"Courier New",monospace}
 
 
---ui:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han",system-ui,-apple-system,"Segoe UI","Microsoft JhengHei","Microsoft YaHei",sans-serif;
---ipa:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han",var(--ipa);
---mono:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han","SFMono-Regular",Consolas,"Courier New",monospace}
-
-
---ui:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han",system-ui,-apple-system,"Segoe UI","Microsoft JhengHei","Microsoft YaHei",sans-serif;
---ipa:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han",var(--ipa);
---mono:"LXGW WenKai","SimSun-ExtB","MingLiU-ExtB","MiSans L3","I.Ming","HanaMinB","BabelStone Han","SFMono-Regular",Consolas,"Courier New",monospace}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
   height: 100%;
@@ -261,7 +252,16 @@ footer a:hover { text-decoration: underline; }
   margin: 20px 0 18px;
 }
 .lyric-rhyme-entry .yuntu-btn {
+  /* 原本是 display:block 通欄（容器內容區約 920px），遠超過文案需要。
+     改成寬度跟著文案走：width:fit-content + margin:auto 居中，
+     min-width 保證它看起來仍是「長條」（三語文案寬度不同：
+     漢語約 144px、英文約 335px、日語約 112px，加左右 22px padding 與 2px 邊框）。
+     max-width:100% 避免窄螢幕溢出。 */
   display: block;
+  width: fit-content;
+  min-width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 12px 22px;
   font-size: 1em;
   font-family: inherit;
@@ -323,6 +323,8 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   .container { padding: 12px; }
   h1 { font-size: 1.5em; }
+  /* 窄螢幕下 min-width:300px 可能超過內容區，改回跟著容器寬 */
+  .lyric-rhyme-entry .yuntu-btn { min-width: 0; width: 100%; }
   #charInput, #pinyinInput { width: 100%; max-width: 100%; font-size: 1.1em; }
   .search-box { flex-direction: column; align-items: stretch; }
   #searchBtn, #pinyinSearchBtn { width: 100%; }
@@ -535,7 +537,6 @@ footer a:hover { text-decoration: underline; }
 </footer>
 <div class="tricolor-bar"></div>
 <script>
-
 
 const DBS = [
   { code: 'suhu',     name: '蘇滬混合腔', type: 'pinyin' },
@@ -1296,7 +1297,6 @@ ngaq 23
 <div class="phon-overlay" id="srcOverlay" onclick="if(event.target===this)closeSourceInfo()">
 <div class="phon-panel" id="srcPanel"></div>
 </div>
-
 
 <script>
 // ============ 在線查詢計數 ============
