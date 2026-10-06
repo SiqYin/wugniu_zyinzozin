@@ -236,7 +236,11 @@ footer a:hover { text-decoration: underline; }
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .lyric-rhyme-entry .lyric-rhyme-btn:hover { background: #2980b9; border-color: #2980b9; color: #fff; }
-.yuntu-entry { margin: -8px 0 18px; }
+.yuntu-entry {
+  /* 原為 −8px（負值），兩個按鈕貼在一起；拉到 20px 才分得開，
+     再留 18px 到下一區塊。 */
+  margin: 20px 0 18px;
+}
 .lyric-rhyme-entry .yuntu-btn {
   display: block;
   padding: 12px 22px;
