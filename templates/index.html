@@ -216,6 +216,25 @@ footer a:hover { text-decoration: underline; }
   height: 16px;
   cursor: pointer;
 }
+/* 跳到韻圖站的「歌詞押韻查詢」浮層（外鏈，新標籤頁打開） */
+.lyric-rhyme-entry {
+  text-align: center;
+  margin: 0 0 18px;
+}
+.lyric-rhyme-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-family: inherit;
+  background: #fff;
+  color: #1a5276;
+  border: 2px solid #a3c1d9;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.lyric-rhyme-btn:hover { background: #2980b9; border-color: #2980b9; color: #fff; }
 .pinyin-lookup-section {
   margin-bottom: 18px;
   text-align: center;
@@ -456,6 +475,9 @@ footer a:hover { text-decoration: underline; }
   <label><input type="checkbox" id="chk_suzhou" checked> 蘇州話</label>
   <label><input type="checkbox" id="chk_pingtan" checked> 蘇州評彈音</label>
 </div>
+<div class="lyric-rhyme-entry">
+  <a class="lyric-rhyme-btn" id="lyricRhymeBtn" href="https://siqyin.github.io/wugniu_yundu/?song=1" target="_blank" rel="noopener">歌詞押韻查詢</a>
+</div>
 <div id="errorBox"></div>
 <div class="results" id="results"></div>
 </div>
@@ -671,6 +693,7 @@ var i18n = {
     cannot_identify: 'Unable to recognize the entered characters.',
     pinyin_lookup: 'Romanization Lookup',
     pinyin_placeholder: 'Enter romanization',
+    lyric_rhyme: 'Lyric Rhyme Lookup',
     footer_data: 'Data source: common language (<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>), <a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">Late Qing Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">Shanghainese</a>, <a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">Suzhounese</a>, <a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">pingtan phonology</a>',
     footer_input: 'Wu romanization IME (click to download)',
     footer_yuntu: 'Wu Common Language Rhyme Chart (click to visit)',
@@ -693,6 +716,7 @@ var i18n = {
     cannot_identify: '\u5165\u529b\u3055\u308c\u305f\u6587\u5b57\u3092\u8b58\u5225\u3067\u304d\u307e\u305b\u3093\u3002',
     pinyin_lookup: '\u30ed\u30fc\u30de\u5b57\u691c\u7d22',
     pinyin_placeholder: '\u30ed\u30fc\u30de\u5b57\u3092\u5165\u529b',
+    lyric_rhyme: '\u6b4c\u8a5e\u62bc\u97fb\u691c\u7d22',
     footer_data: '\u30c7\u30fc\u30bf\u51fa\u5178\uff1a\u5171\u901a\u8a9e\uff08<a href="https://github.com/SiqYin/wugniu_suwu" target="_blank">Rime wugniu_suwu</a>\uff09\u3001<a href="#" onclick="showSourceInfo(\'qingmo\'); return false;">\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'shanghai\'); return false;">\u4e0a\u6d77\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'suzhou\'); return false;">\u8607\u5dde\u8a9e</a>\u3001<a href="#" onclick="showSourceInfo(\'pingtan\'); return false;">\u8607\u5dde\u8a55\u5f3e\u97f3\u97fb</a>',
     footer_input: '\u5449\u8d8a\u8a9e\u30ed\u30fc\u30de\u5b57\u5165\u529b\uff08\u30ea\u30f3\u30af\u5148\u3067\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\uff09',
     footer_yuntu: '\u5171\u901a\u8a9e\u97fb\u56f3\uff08\u30af\u30ea\u30c3\u30af\u3067\u3054\u89a7\u304f\u3060\u3055\u3044\uff09',
@@ -748,6 +772,9 @@ function setLang(lang) {
   var pltBtn = document.getElementById('pinyinLookupToggle');
   if (pltBtn && !pltBtn.dataset.wu) pltBtn.dataset.wu = pltBtn.textContent;
   if (pltBtn) pltBtn.textContent = t('pinyin_lookup') || pltBtn.dataset.wu;
+  var lrb = document.getElementById('lyricRhymeBtn');
+  if (lrb && !lrb.dataset.wu) lrb.dataset.wu = lrb.textContent.trim();
+  if (lrb) lrb.textContent = t('lyric_rhyme') || lrb.dataset.wu;
   var ci = document.getElementById('charInput');
   if (!ci.dataset.wu) ci.dataset.wu = ci.placeholder;
   ci.placeholder = (currentLang === 'en' ? 'Enter characters (max 8)' : currentLang === 'ja' ? '\u6f22\u5b57\u3092\u5165\u529b\uff08\u6700\u59278\u6587\u5b57\uff09' : ci.dataset.wu);
