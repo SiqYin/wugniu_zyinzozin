@@ -47,3 +47,13 @@ ruaplayerowo先生个Pull Request已經合併到本項目哉。
 10.6.2026更新：
 
 韻圖網葉鏈接搭歌詞押韻查詢功能添加哉。
+
+界面字體改用霞鶩文楷（LXGW WenKai），做法搭韻圖網葉一致：自托管子集分兩級——
+`fonts/zy-ui.woff2`（0.11 MB，介面字集，首屏就下載）搭
+`fonts/zy-dict.woff2`（1.96 MB，字典字集，第一次查詢才下載）。
+兩片嘅 `unicode-range` 由各自 cmap 實測碼位壓縮而成、互不重疊，
+所以霞鶩文楷本身冇嘅 107 個擴展 B 區生僻字會直接交畀系統字型，
+唔會白白觸發大檔案。漢語／英語／日文三種界面都已套上。
+
+改介面文案之後要重跑：`python measure_firstpaint.py` → `python make_font.py`
+→ `python inject_font.py`。

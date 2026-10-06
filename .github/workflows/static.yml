@@ -37,6 +37,9 @@ jobs:
           mkdir -p _site/data
           cp templates/index_static.html _site/index.html
           cp data/*.json _site/data/
+          # 霞鶩文楷自托管子集（見 make_font.py）：介面片 + 字典片
+          mkdir -p _site/fonts
+          cp fonts/*.woff2 fonts/OFL.txt _site/fonts/
           sed -i "s#new URL('../data/' + fileName, window.location.href)#new URL('data/' + fileName, window.location.href)#" _site/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
