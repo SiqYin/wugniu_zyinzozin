@@ -66,6 +66,7 @@ class SearchService:
     def __init__(self, data_directory: str | Path) -> None:
         self.data_directory = Path(data_directory).resolve()
         self.variant_file = self.data_directory / "S2T.json"
+        self.position_file = self.data_directory / "YUNTU_POS.json"
         self.reading_files = {
             code: self.data_directory / str(details["file"])
             for code, details in DIALECTS.items()
@@ -81,6 +82,29 @@ class SearchService:
                 self._load_json_records(path), path
             )
             for code, path in self.reading_files.items()
+        }
+        self.positions = self._load_positions()
+
+    def _load_positions(self) -> dict[str, str]:
+        """韻圖位置表（音節 → 位置），由韻圖站 build_data.py 生成。
+        這張表是選用的：沒有它就只是不顯示位置，不影響查字。"""
+        if not self.position_file.is_file():
+            return {}
+        try:
+            with self.position_file.open(encoding="utf-8") as source:
+                data = json.load(source)
+        except json.JSONDecodeError as error:
+            raise ValueError(
+                f"Invalid JSON in {self.position_file}: {error}"
+            ) from error
+        if not isinstance(data, dict):
+            raise ValueError(
+                f"JSON root in {self.position_file} must be an object"
+            )
+        return {
+            str(key): str(value)
+            for key, value in data.items()
+            if isinstance(key, str) and isinstance(value, str)
         }
 
     def _check_files(self) -> None:
@@ -357,3 +381,7 @@ class SearchService:
                 characters.append(character)
 
         return {"query": normalized, "groups": list(grouped.values())}
+
+    def yuntu_positions(self) -> dict[str, str]:
+        """韻圖站「漢字韻圖位置查詢」的位置表，供頁面在音標後面標位置。"""
+        return self.positions

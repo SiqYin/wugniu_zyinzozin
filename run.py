@@ -52,6 +52,13 @@ def create_app() -> Flask:
         except ValueError as error:
             return jsonify({"error": str(error)}), 400
 
+    @app.post("/api/yuntu_pos")
+    def yuntu_pos():
+        try:
+            return jsonify(service.yuntu_positions())
+        except ValueError as error:
+            return jsonify({"error": str(error)}), 400
+
     return app
 
 

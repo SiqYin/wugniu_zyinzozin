@@ -1,1 +1,13 @@
-__pycache__
+__pycache__/
+*.pyc
+
+# 字型構建快取（本地重建用，不進版控）
+font_cache.json
+
+# 臨時驗證腳本與產物
+__*.js
+__*.sh
+__*.html
+__*.png
+__*.txt
+__site/

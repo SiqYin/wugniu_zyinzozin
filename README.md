@@ -57,3 +57,29 @@ ruaplayerowo先生个Pull Request已經合併到本項目哉。
 
 改介面文案之後要重跑：`python measure_firstpaint.py` → `python make_font.py`
 → `python inject_font.py`。
+
+10.7.2026更新：
+
+蘇滬混合腔嗰欄每個讀音个音標後面加咗韻圖位置標籤（用戶 2026-10-07 定）。
+位置字串是「聲母（或清零／濁零）＋韻目＋呼＋聲調名」，例如
+`san1 [sã⁴⁴] 心打開陰平`、`yuq8 [yeʔ²] 濁零月撮陽入`。
+標籤可以點，點下去跳到韻圖網葉嗰個字嘅「漢字韻圖位置查詢」結果，
+並把嗰條標成黃底。
+
+位置表 `data/YUNTU_POS.json`（1155 條，≈ 30 KB）由韻圖項目嘅
+`build_data.py` 產生、複製過來，**唔係另外維護嘅對照表**：
+`{"san1": "心打開陰平", ...}`。頁面第一次查字（勾咗蘇滬混合腔）先抓，
+抓唔到就只係唔顯示位置，唔影響查字。
+
+位置字串三語一律不譯——聲母名、韻目、呼、聲調名都係韻圖本身嘅專有名。
+零聲母分清濁：陰調（1 3 5 7）清零，陽調（2 6 8）濁零。
+
+## 兩份模板要同步
+
+`templates/index_static.html`（GitHub Pages 實際部署嗰份，Actions 複製成 `_site/index.html`）
+搭 `templates/index.html`（Flask 版，本機 `run.py` 用）**版式必須一致**，
+所以改任何介面或查詢邏輯都要兩份都改。
+
+兩份唯一嘅結構差别：static 版自己 `fetch('../data/' + fileName)` 讀資料檔，
+Flask 版改走 `postJson('/api/...')`。其餘（CSS、渲染函式、i18n）逐字相同。
+改完記得跑 `python inject_font.py`，佢兩份都會注入。
