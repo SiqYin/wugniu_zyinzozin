@@ -53,3 +53,7 @@ ruaplayerowo先生个Pull Request已經合併到本項目哉。
 網葉現在霞鶩文楷字體内置哉。
 
 搭韻圖網葉个聯動標籤做脱哉。韻圖網葉在上https://siqyin.github.io/wugniu_yundu/ 。
+
+10.11.2026更新：
+
+音標錯標問題解決脱哉。
