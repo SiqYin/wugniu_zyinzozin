@@ -20,6 +20,10 @@ S2T.json contains records shaped as:
 
 T2S is intentionally ignored because the application only expands simplified
 characters to traditional forms.
+
+安全约定（默认）：输出目录里已有的 JSON 是唯一权威来源。本脚本默认只做「补进去」——
+来源 html 里没有、JSON 里已经有的条目一律原样保留并追加在末尾；同名的条目以 JSON 为准。
+id 按最终顺序重排为 1..N。确实要按 html 全量重建时，显式加 --overwrite。
 """
 
 from __future__ import annotations
@@ -127,6 +131,44 @@ def make_records(
     return records
 
 
+def record_key(record: dict[str, Any], constant_name: str) -> Any:
+    """同一个来源文件里，用来判断「是不是同一条」的字段。"""
+    return record.get("s") if constant_name == "S2T" else record.get("character")
+
+
+def load_existing(output_path: Path) -> list[dict[str, Any]]:
+    """读回既有的 JSON。文件不存在就当空的；存在却读不动则直接报错，不覆盖。"""
+    if not output_path.exists():
+        return []
+    try:
+        existing = json.loads(output_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise ValueError(f"{output_path} 读不动，为避免覆盖已中止：{error}") from error
+    if not isinstance(existing, list):
+        raise ValueError(f"{output_path} 不是记录数组，为避免覆盖已中止")
+    return [record for record in existing if isinstance(record, dict)]
+
+
+def merge_with_existing(
+    generated: list[dict[str, Any]],
+    existing: list[dict[str, Any]],
+    constant_name: str,
+) -> tuple[list[dict[str, Any]], int]:
+    """既有 JSON 为准：同名以既有为准，既有独有的原样追加在末尾。"""
+    if not existing:
+        return generated, 0
+    existing_keys = {record_key(record, constant_name) for record in existing}
+    added = [
+        record
+        for record in generated
+        if record_key(record, constant_name) not in existing_keys
+    ]
+    merged = list(existing) + added
+    for index, record in enumerate(merged, start=1):
+        record["id"] = index
+    return merged, len(existing)
+
+
 def remove_if_present(path: Path) -> None:
     try:
         path.unlink()
@@ -156,6 +198,11 @@ def parse_arguments(arguments: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("input", nargs="?", default="index1.html")
     parser.add_argument("output_directory", nargs="?", default="data")
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="按输入文件全量重建，覆盖既有 JSON（默认只补不覆盖）",
+    )
     return parser.parse_args(arguments)
 
 
@@ -177,12 +224,20 @@ def main(arguments: list[str] | None = None) -> int:
     for constant_name, file_name in OUTPUT_SOURCES:
         try:
             data = load_constant(html, constant_name)
-            records = make_records(data, constant_name)
+            generated = make_records(data, constant_name)
             output_path = output_directory / file_name
+            if options.overwrite:
+                records = generated
+                note = "，--overwrite 全量重建"
+            else:
+                records, kept = merge_with_existing(
+                    generated, load_existing(output_path), constant_name
+                )
+                note = "，保留既有 %d 条" % kept
             write_json(output_path, records)
             print(
                 f"{constant_name:<12} -> "
-                f"{output_path} ({len(records)} character records)"
+                f"{output_path} ({len(records)} character records{note})"
             )
         except (OSError, ValueError) as error:
             print(f"get_data: {error}", file=sys.stderr)
