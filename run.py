@@ -14,7 +14,7 @@ BASE_DIRECTORY = Path(__file__).resolve().parent
 
 
 def create_app() -> Flask:
-    app = Flask(__name__, static_folder=None)
+    app = Flask(__name__, static_folder=str(BASE_DIRECTORY / "fonts"),static_url_path="/fonts",)
     service = SearchService(BASE_DIRECTORY / "data")
 
     @app.after_request

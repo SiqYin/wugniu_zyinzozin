@@ -719,7 +719,7 @@ function yuntuPosTip() {
 
 function escapeHtml(s) {
   const div = document.createElement('div');
-  div.appendChild(document.createTextNode(text));
+  div.appendChild(document.createTextNode(String(s)));
   return div.innerHTML;
 }
 
