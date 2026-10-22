@@ -31,7 +31,7 @@ from fontTools import subset
 from fontTools.ttLib import TTFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = r"D:\Wu\NetDisk Download\lxgw-wenkai-v1.522\lxgw-wenkai-v1.522\LXGWWenKai-Regular.ttf"
+SRC = r"D:\Wu\NetDisk Download\lxgw-wenkai-v1.530\lxgw-wenkai-v1.530\LXGWWenKai-Regular.ttf"
 DB = os.path.join(HERE, "data", "DB_suhu.json")
 OUT = os.path.join(HERE, "fonts")
 
@@ -42,8 +42,8 @@ BASE_ARGS = [
 ]
 
 FAMILY = "LXGW WenKai"
-# 與韻圖站同一個字型版本（對應源字體檔名 lxgw-wenkai-v1.522），用來破 CDN 快取
-FONT_V = "1522b"
+# 與韻圖站同一個字型版本（對應源字體檔名 lxgw-wenkai-v1.530），用來破 CDN 快取
+FONT_V = "1530b"
 
 
 # ---------------------------------------------------------------- 工具
