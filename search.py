@@ -67,6 +67,7 @@ class SearchService:
         self.data_directory = Path(data_directory).resolve()
         self.variant_file = self.data_directory / "S2T.json"
         self.position_file = self.data_directory / "YUNTU_POS.json"
+        self.dictionary_file = self.data_directory / "siqyin_dict.json"
         self.reading_files = {
             code: self.data_directory / str(details["file"])
             for code, details in DIALECTS.items()
@@ -83,6 +84,9 @@ class SearchService:
             )
             for code, path in self.reading_files.items()
         }
+        self.dictionary_records = self._load_dictionary_records(
+            self.dictionary_file
+        )
         self.positions = self._load_positions()
 
     def _load_positions(self) -> dict[str, str]:
@@ -108,7 +112,11 @@ class SearchService:
         }
 
     def _check_files(self) -> None:
-        required = [self.variant_file, *self.reading_files.values()]
+        required = [
+            self.variant_file,
+            self.dictionary_file,
+            *self.reading_files.values(),
+        ]
         missing = [str(path) for path in required if not path.is_file()]
         if missing:
             raise FileNotFoundError(
@@ -204,8 +212,93 @@ class SearchService:
 
         return index
 
+    @classmethod
+    def _load_dictionary_records(
+        cls, path: Path
+    ) -> list[dict[str, Any]]:
+        records = cls._load_json_records(path)
+        seen_ids: set[int] = set()
+
+        for position, record in enumerate(records, start=1):
+            cls._check_record_id(record, path, position, seen_ids)
+            terms = record.get("terms")
+            readings = record.get("readings")
+            tone = record.get("tone")
+            if (
+                not isinstance(terms, list)
+                or not terms
+                or not all(isinstance(value, str) for value in terms)
+                or not isinstance(readings, list)
+                or not all(isinstance(value, str) for value in readings)
+                or not isinstance(tone, list)
+                or not all(isinstance(value, str) for value in tone)
+                or not isinstance(record.get("definition"), str)
+                or not isinstance(record.get("raw"), str)
+            ):
+                raise ValueError(
+                    f"Record {position} in {path} is not a valid dictionary record"
+                )
+
+        return records
+
     def _traditional_targets(self, source_character: str) -> list[str]:
         return self.variants.get(source_character, [])
+
+    def _dictionary_term_matches(self, term: str, query: str) -> bool:
+        if len(term) != len(query):
+            return False
+        return all(
+            source == target
+            or target in self._traditional_targets(source)
+            for source, target in zip(query, term)
+        )
+
+    def _search_dictionary(self, query: str) -> list[dict[str, object]]:
+        matches = [
+            record
+            for record in self.dictionary_records
+            if any(
+                self._dictionary_term_matches(term, query)
+                for term in record["terms"]
+            )
+        ]
+        matches.sort(
+            key=lambda record: (
+                0 if query in record["terms"] else 1,
+                record["id"],
+            )
+        )
+
+        grouped: dict[
+            tuple[tuple[str, ...], tuple[str, ...], tuple[str, ...]],
+            dict[str, object],
+        ] = {}
+        for record in matches:
+            key = (
+                tuple(record["terms"]),
+                tuple(record["readings"]),
+                tuple(record["tone"]),
+            )
+            result = grouped.get(key)
+            if result is None:
+                result = {
+                    "id": record["id"],
+                    "terms": record["terms"],
+                    "readings": record["readings"],
+                    "tone": record["tone"],
+                    "definitions": [],
+                }
+                grouped[key] = result
+            definition = record["definition"]
+            definitions = result["definitions"]
+            if (
+                definition
+                and isinstance(definitions, list)
+                and definition not in definitions
+            ):
+                definitions.append(definition)
+
+        return list(grouped.values())
 
     def _expand_characters(self, text: str) -> list[dict[str, str]]:
         results: list[dict[str, str]] = []
@@ -311,7 +404,10 @@ class SearchService:
         return [code for code in DIALECTS if code in requested_set]
 
     def search_characters(
-        self, raw_text: str, requested_dialects: Iterable[str] | None = None
+        self,
+        raw_text: str,
+        requested_dialects: Iterable[str] | None = None,
+        include_dictionary: bool = False,
     ) -> dict[str, object]:
         text = raw_text.strip()
         if not text:
@@ -328,7 +424,13 @@ class SearchService:
                 for code in selected
             }
 
-        return {"characters": characters, "dialects": selected}
+        return {
+            "characters": characters,
+            "dialects": selected,
+            "dictionary": (
+                self._search_dictionary(text) if include_dictionary else []
+            ),
+        }
 
     @staticmethod
     def normalize_pinyin(raw_pinyin: str) -> tuple[str, str, bool]:

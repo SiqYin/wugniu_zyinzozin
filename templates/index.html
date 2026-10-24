@@ -112,6 +112,11 @@ button { -webkit-appearance: none; appearance: none; }
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(41,128,185,0.08);
 }
+.dictionary-card {
+  background: #e5eef7;
+  border-color: #b6cddd;
+}
+.char-card.dictionary-card > h2 { font-size: 1.35em; }
 .char-card h2 {
   font-size: 2.2em;
   color: #1a5276;
@@ -227,13 +232,24 @@ footer a { color: #2980b9; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 .dialect-filter {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 18px;
   padding: 8px 12px;
   background: #e8f0f8;
   border-radius: 8px;
+}
+.dialect-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: center;
+  width: 100%;
+}
+.dictionary-filter-row {
+  padding-top: 8px;
+  border-top: 1px solid #c8dae8;
 }
 .dialect-filter label {
   display: flex;
@@ -536,11 +552,16 @@ footer a:hover { text-decoration: underline; }
   </div>
 </div>
 <div class="dialect-filter">
-  <label><input type="checkbox" id="chk_suhu" checked> 蘇滬混合腔</label>
-  <label><input type="checkbox" id="chk_qingmo" checked> 清末蘇州話</label>
-  <label><input type="checkbox" id="chk_shanghai" checked> 上海話</label>
-  <label><input type="checkbox" id="chk_suzhou" checked> 蘇州話</label>
-  <label><input type="checkbox" id="chk_pingtan" checked> 蘇州評彈音</label>
+  <div class="dialect-filter-row">
+    <label><input type="checkbox" id="chk_suhu" checked> 蘇滬混合腔</label>
+    <label><input type="checkbox" id="chk_qingmo" checked> 清末蘇州話</label>
+    <label><input type="checkbox" id="chk_shanghai" checked> 上海話</label>
+    <label><input type="checkbox" id="chk_suzhou" checked> 蘇州話</label>
+    <label><input type="checkbox" id="chk_pingtan" checked> 蘇州評彈音</label>
+  </div>
+  <div class="dialect-filter-row dictionary-filter-row">
+    <label><input type="checkbox" id="chk_siqyin" checked> 雪螢吳語常用詞彙（蘇州閒話）</label>
+  </div>
 </div>
 <div class="lyric-rhyme-entry">
   <a class="lyric-rhyme-btn" id="lyricRhymeBtn" href="https://siqyin.github.io/wugniu_yundu/?song=1" target="_blank" rel="noopener">歌詞押韻查詢</a>
@@ -599,6 +620,45 @@ function selectedDialectCodes() {
   return selected;
 }
 
+function dictionaryDisplayName() {
+  const name = '雪螢吳語常用詞彙（蘇州閒話）';
+  return (typeof t === 'function' && t(name)) || name;
+}
+
+function renderDictionaryResults(records) {
+  let html = '';
+  const displayName = dictionaryDisplayName();
+
+  html += '<div class="char-card dictionary-card">';
+  html += '<h2><span class="char-main">' + escapeHtml(displayName) + '</span></h2>';
+
+  if (records.length === 0) {
+    html += '<div class="dialect-section">';
+    html += '<p class="no-result">' + (currentLang === 'en' ? 'Not in database' : currentLang === 'ja' ? '未収録' : '未收錄') + '</p>';
+    html += '</div></div>';
+    return html;
+  }
+
+  for (const record of records) {
+    html += '<div class="dialect-section"><h3>' + escapeHtml(record.terms.join('／')) + '</h3>';
+    html += '<div class="reading-item">';
+    if (record.readings.length > 0 || record.tone.length > 0) {
+      html += '<div class="reading-ipa">' + escapeHtml(record.readings.join(' / '));
+      if (record.tone.length > 0) {
+        html += ' <span class="reading-ipa-val">（' + escapeHtml(record.tone.join(' / ')) + '）</span>';
+      }
+      html += '</div>';
+    }
+    const definitions = record.definitions || (record.definition ? [record.definition] : []);
+    for (const definition of definitions) {
+      html += '<div class="reading-note">' + escapeHtml(definition).replace(/\n/g, '<br>') + '</div>';
+    }
+    html += '</div></div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 async function doSearch() {
   clearError();
   const input = document.getElementById('charInput').value.trim();
@@ -617,8 +677,13 @@ async function doSearch() {
   }
 
   const selected = selectedDialectCodes();
+  const dictionaryEnabled = document.getElementById('chk_siqyin').checked;
   try {
-    const response = await postJson('/api/search', { text: input, dialects: selected });
+    const response = await postJson('/api/search', {
+      text: input,
+      dialects: selected,
+      dictionary: dictionaryEnabled
+    });
     const characters = response.characters || [];
     if (characters.length === 0) {
       showError(currentLang === 'en' ? 'Unable to recognize the entered characters.' : currentLang === 'ja' ? '入力された文字を識別できません。' : '無法識別輸入的漢字。');
@@ -629,7 +694,7 @@ async function doSearch() {
        否則第一次查字會整欄都不顯示位置。抓不到就當沒有位置，不報錯。 */
     if (selected.indexOf('suhu') !== -1) await loadYuntuPos();
 
-    let html = '';
+    let html = dictionaryEnabled ? renderDictionaryResults(response.dictionary || []) : '';
     for (const item of characters) {
       const ch = item.character;
       const altLabel = item.source === 'converted' ? '（簡體「' + item.from + '」對應）' : '';
@@ -818,7 +883,8 @@ var i18n = {
     '\u6e05\u672b\u8607\u5dde\u8a71': 'Late Qing Suzhounese',
     '\u4e0a\u6d77\u8a71': 'Shanghainese',
     '\u8607\u5dde\u8a71': 'Suzhounese',
-    '\u8607\u5dde\u8a55\u5f48\u97f3': 'pingtan pronunciation'
+    '\u8607\u5dde\u8a55\u5f48\u97f3': 'pingtan pronunciation',
+    '\u96ea\u87a2\u5433\u8a9e\u5e38\u7528\u8a5e\u5f59\uff08\u8607\u5dde\u9592\u8a71\uff09': 'Siqyin Common Wu Vocabulary (Suzhounese)'
   },
   ja: {
     title: '\u5449\u8d8a\u8a9e\u3000\u5b57\u97f3\u691c\u7d22',
@@ -841,7 +907,8 @@ var i18n = {
     '\u6e05\u672b\u8607\u5dde\u8a71': '\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e',
     '\u4e0a\u6d77\u8a71': '\u4e0a\u6d77\u8a9e',
     '\u8607\u5dde\u8a71': '\u8607\u5dde\u8a9e',
-    '\u8607\u5dde\u8a55\u5f48\u97f3': '\u8607\u5dde\u8a55\u5f3e\u97f3'
+    '\u8607\u5dde\u8a55\u5f48\u97f3': '\u8607\u5dde\u8a55\u5f3e\u97f3',
+    '\u96ea\u87a2\u5433\u8a9e\u5e38\u7528\u8a5e\u5f59\uff08\u8607\u5dde\u9592\u8a71\uff09': '\u96ea\u86cd\u5449\u8d8a\u8a9e\u5e38\u7528\u8a9e\u5f59\uff08\u8607\u5dde\u8a9e\uff09'
   }
 };
 function t(key) {

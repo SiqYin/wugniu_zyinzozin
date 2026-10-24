@@ -13,4 +13,4 @@ __*.txt
 __site/
 
 data/siqyin_dict
-convert_siqyin_dict.py
+changes.md
