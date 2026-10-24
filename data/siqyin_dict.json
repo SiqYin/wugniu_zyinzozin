@@ -1,0 +1,6521 @@
+[
+  {
+    "id": 1,
+    "terms": [
+      "啘",
+      "啊"
+    ],
+    "readings": [
+      "ua5",
+      "ueq7",
+      "aeq7"
+    ],
+    "tone": [],
+    "definition": "了/的/啊（句尾語氣詞）",
+    "raw": "啘/啊 ua5/ueq7/aeq7:了/的/啊（句尾語氣詞）"
+  },
+  {
+    "id": 2,
+    "terms": [
+      "阿"
+    ],
+    "readings": [
+      "aeq7"
+    ],
+    "tone": [],
+    "definition": "發問詞，用在句中謂語之前構成問句，相當於句末的「嗎」或句中的肯定反覆形式eg.倷麵阿歡喜喫个？",
+    "raw": "阿aeq7:發問詞，用在句中謂語之前構成問句，相當於句末的「嗎」或句中的肯定反覆形式eg.倷麵阿歡喜喫个？"
+  },
+  {
+    "id": 3,
+    "terms": [
+      "𬁭"
+    ],
+    "readings": [
+      "an1"
+    ],
+    "tone": [],
+    "definition": "發問詞，用在句中謂語之前構成問句，相當於句末的「了嗎」",
+    "raw": "𬁭（「阿曾」合字）an1:發問詞，用在句中謂語之前構成問句，相當於句末的「了嗎」"
+  },
+  {
+    "id": 4,
+    "terms": [
+      "吤",
+      "佳",
+      "嗄"
+    ],
+    "readings": [
+      "cia1"
+    ],
+    "tone": [],
+    "definition": "啊（用於疑問句、反問句尾表追究，加強語氣）",
+    "raw": "吤（佳/嗄）cia1:啊（用於疑問句、反問句尾表追究，加強語氣）"
+  },
+  {
+    "id": 5,
+    "terms": [
+      "个吤"
+    ],
+    "readings": [
+      "keq7cia1"
+    ],
+    "tone": [],
+    "definition": "啊（用於感嘆句尾表強烈語氣）",
+    "raw": "个吤keq7cia1：啊（用於感嘆句尾表強烈語氣）"
+  },
+  {
+    "id": 6,
+    "terms": [
+      "搭"
+    ],
+    "readings": [
+      "taeq7"
+    ],
+    "tone": [],
+    "definition": "和，跟，與；向",
+    "raw": "搭taeq7:和，跟，與；向"
+  },
+  {
+    "id": 7,
+    "terms": [
+      "搭"
+    ],
+    "readings": [
+      "taeq7"
+    ],
+    "tone": [],
+    "definition": "給，爲，替（用於「搭nv」結構，引出對象）eg.搭大家讀一讀（給大家讀一下）",
+    "raw": "搭taeq7:給，爲，替（用於「搭nv」結構，引出對象）eg.搭大家讀一讀（給大家讀一下）"
+  },
+  {
+    "id": 8,
+    "terms": [
+      "搭我"
+    ],
+    "readings": [
+      "taeq7ngou6"
+    ],
+    "tone": [],
+    "definition": "給我（強調語氣）",
+    "raw": "搭我taeq7ngou6:給我（強調語氣）"
+  },
+  {
+    "id": 9,
+    "terms": [
+      "亦"
+    ],
+    "readings": [
+      "yiq8"
+    ],
+    "tone": [],
+    "definition": "又；也，都",
+    "raw": "亦yiq8:又；也，都"
+  },
+  {
+    "id": 10,
+    "terms": [
+      "好"
+    ],
+    "readings": [
+      "hau3"
+    ],
+    "tone": [],
+    "definition": "能，可以",
+    "raw": "好hau3:能，可以"
+  },
+  {
+    "id": 11,
+    "terms": [
+      "儕",
+      "全",
+      "才"
+    ],
+    "readings": [
+      "ze2"
+    ],
+    "tone": [],
+    "definition": "都dōu",
+    "raw": "儕/全（才）ze2:都dōu"
+  },
+  {
+    "id": 12,
+    "terms": [
+      "還"
+    ],
+    "readings": [
+      "we2",
+      "ghe2"
+    ],
+    "tone": [],
+    "definition": "兩種音都用，we2用得很多",
+    "raw": "還we2/ghe2:兩種音都用，we2用得很多"
+  },
+  {
+    "id": 13,
+    "terms": [
+      "也",
+      "匣"
+    ],
+    "readings": [
+      "ghaeq8"
+    ],
+    "tone": [],
+    "definition": "也",
+    "raw": "也（匣）ghaeq8:也"
+  },
+  {
+    "id": 14,
+    "terms": [
+      "原"
+    ],
+    "readings": [
+      "gnioe1"
+    ],
+    "tone": [],
+    "definition": "仍",
+    "raw": "原gnioe1:仍"
+  },
+  {
+    "id": 15,
+    "terms": [
+      "原歸"
+    ],
+    "readings": [
+      "gnioe1kue1"
+    ],
+    "tone": [],
+    "definition": "仍然",
+    "raw": "原歸gnioe1kue1:仍然"
+  },
+  {
+    "id": 16,
+    "terms": [
+      "原說"
+    ],
+    "readings": [
+      "gnioe1seq7"
+    ],
+    "tone": [],
+    "definition": "義近「難怪」",
+    "raw": "原說gnioe1seq7:義近「難怪」"
+  },
+  {
+    "id": 17,
+    "terms": [
+      "原舊"
+    ],
+    "readings": [
+      "gnioe1jieu6"
+    ],
+    "tone": [],
+    "definition": "仍舊；舊時的(可做定語)",
+    "raw": "原舊gnioe1jieu6:仍舊；舊時的(可做定語)"
+  },
+  {
+    "id": 18,
+    "terms": [
+      "本生"
+    ],
+    "readings": [
+      "pen3san1"
+    ],
+    "tone": [
+      "5x"
+    ],
+    "definition": "本來，原本",
+    "raw": "本生pen3san1(5x):本來，原本"
+  },
+  {
+    "id": 19,
+    "terms": [
+      "嘦得"
+    ],
+    "readings": [
+      "ciau5teq7"
+    ],
+    "tone": [],
+    "definition": "只要",
+    "raw": "嘦得ciau5teq7:只要"
+  },
+  {
+    "id": 20,
+    "terms": [
+      "一淘",
+      "一道",
+      "一搭"
+    ],
+    "readings": [
+      "iq7dau6",
+      "iq7taeq7"
+    ],
+    "tone": [
+      "8xa"
+    ],
+    "definition": "一起",
+    "raw": "一淘/一道/一搭iq7dau6(8xa)/iq7taeq7:一起"
+  },
+  {
+    "id": 21,
+    "terms": [
+      "定見"
+    ],
+    "readings": [
+      "din6cie5"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "一定",
+    "raw": "定見din6cie5(2X):一定"
+  },
+  {
+    "id": 22,
+    "terms": [
+      "準定"
+    ],
+    "readings": [
+      "tsen3din6"
+    ],
+    "tone": [
+      "5x"
+    ],
+    "definition": "一定",
+    "raw": "準定tsen3din6(5x):一定"
+  },
+  {
+    "id": 23,
+    "terms": [
+      "一徑"
+    ],
+    "readings": [
+      "iq7cin5"
+    ],
+    "tone": [],
+    "definition": "一直(時間上)；總是，經常",
+    "raw": "一徑iq7cin5:一直(時間上)；總是，經常"
+  },
+  {
+    "id": 24,
+    "terms": [
+      "一直"
+    ],
+    "readings": [
+      "iq7zeq8"
+    ],
+    "tone": [],
+    "definition": "一直",
+    "raw": "一直iq7zeq8:一直"
+  },
+  {
+    "id": 25,
+    "terms": [
+      "唉",
+      "哀",
+      "該"
+    ],
+    "readings": [
+      "e1",
+      "ke1"
+    ],
+    "tone": [],
+    "definition": "這",
+    "raw": "唉（哀）/該e1/ke1:這"
+  },
+  {
+    "id": 26,
+    "terms": [
+      "彎",
+      "歸"
+    ],
+    "readings": [
+      "ue1",
+      "kue1"
+    ],
+    "tone": [],
+    "definition": "那",
+    "raw": "彎/歸ue1/kue1：那"
+  },
+  {
+    "id": 27,
+    "terms": [
+      "箇",
+      "搿"
+    ],
+    "readings": [
+      "geq8"
+    ],
+    "tone": [],
+    "definition": "這，那（不明確表示東西遠近）",
+    "raw": "箇/搿geq8:這，那（不明確表示東西遠近）"
+  },
+  {
+    "id": 28,
+    "terms": [
+      "-點"
+    ],
+    "readings": [
+      "tie3"
+    ],
+    "tone": [],
+    "definition": "-些",
+    "raw": "-點tie3:-些"
+  },
+  {
+    "id": 29,
+    "terms": [
+      "-星"
+    ],
+    "readings": [
+      "sin1"
+    ],
+    "tone": [],
+    "definition": "-些（較舊）",
+    "raw": "-星sin1:-些（較舊）"
+  },
+  {
+    "id": 30,
+    "terms": [
+      "滴",
+      "滴滴"
+    ],
+    "readings": [
+      "tiq7"
+    ],
+    "tone": [],
+    "definition": "點（數量少），點兒eg.箇滴滴路（這點兒路）（另「滴」普通話意吳語中用「沰」替換，見下）",
+    "raw": "滴/滴滴tiq7:點（數量少），點兒eg.箇滴滴路（這點兒路）（另「滴」普通話意吳語中用「沰」替換，見下）"
+  },
+  {
+    "id": 31,
+    "terms": [
+      "末",
+      "麽",
+      "物"
+    ],
+    "readings": [
+      "meq8"
+    ],
+    "tone": [],
+    "definition": "語氣詞，亦是許多虛詞的成詞成份",
+    "raw": "末/麽/物meq8:語氣詞，亦是許多虛詞的成詞成份"
+  },
+  {
+    "id": 32,
+    "terms": [
+      "-末",
+      "麽",
+      "物"
+    ],
+    "readings": [
+      "meq8"
+    ],
+    "tone": [],
+    "definition": "-的話，要是-。",
+    "raw": "-末/麽/物meq8:-的話，要是-。"
+  },
+  {
+    "id": 33,
+    "terms": [
+      "箇末"
+    ],
+    "readings": [
+      "geq8meq8"
+    ],
+    "tone": [],
+    "definition": "那麼",
+    "raw": "箇末geq8meq8:那麼"
+  },
+  {
+    "id": 34,
+    "terms": [
+      "耐末"
+    ],
+    "readings": [
+      "ne6meq8"
+    ],
+    "tone": [
+      "2X,「末」輕聲"
+    ],
+    "definition": "語氣助詞，相當於「那麼」",
+    "raw": "耐末ne6meq8(2X,「末」輕聲):語氣助詞，相當於「那麼」"
+  },
+  {
+    "id": 35,
+    "terms": [
+      "結末"
+    ],
+    "readings": [
+      "ciq7meq8"
+    ],
+    "tone": [
+      "不變調"
+    ],
+    "definition": "末了，最後（「結果末」的縮略）",
+    "raw": "結末ciq7meq8(不變調):末了，最後（「結果末」的縮略）"
+  },
+  {
+    "id": 36,
+    "terms": [
+      "-場",
+      "-樣"
+    ],
+    "readings": [
+      "zan2"
+    ],
+    "tone": [],
+    "definition": "-樣",
+    "raw": "-場［樣］zan2:-樣"
+  },
+  {
+    "id": 37,
+    "terms": [
+      "唉場",
+      "哀場",
+      "該場"
+    ],
+    "readings": [
+      "e1zan2",
+      "ke1zan2"
+    ],
+    "tone": [],
+    "definition": "這樣",
+    "raw": "唉（哀）場/該場e1zan2/ke1zan2:這樣"
+  },
+  {
+    "id": 38,
+    "terms": [
+      "彎場",
+      "歸場"
+    ],
+    "readings": [
+      "ue1zan2",
+      "kue1zan2"
+    ],
+    "tone": [],
+    "definition": "那樣",
+    "raw": "彎場/歸場ue1zan2/kue1zan2:那樣"
+  },
+  {
+    "id": 39,
+    "terms": [
+      "實梗",
+      "尚",
+      "箇場"
+    ],
+    "readings": [
+      "zeq8kan3",
+      "zan6",
+      "geq8zan2",
+      "gan6"
+    ],
+    "tone": [],
+    "definition": "這樣，那樣",
+    "raw": "實梗/尚/箇場/gan6:zeq8kan3/zan6/geq8zan2/gan6:這樣，那樣"
+  },
+  {
+    "id": 40,
+    "terms": [
+      "樣子"
+    ],
+    "readings": [
+      "yan6tsy3"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "「ⅹ个樣子」某（名詞）的樣子",
+    "raw": "樣子yan6tsy3(2X):「ⅹ个樣子」某（名詞）的樣子"
+  },
+  {
+    "id": 41,
+    "terms": [
+      "腔調"
+    ],
+    "readings": [
+      "chian1diau6"
+    ],
+    "tone": [],
+    "definition": "樣子",
+    "raw": "腔調chian1diau6:樣子"
+  },
+  {
+    "id": 42,
+    "terms": [
+      "-嗒",
+      "-搭"
+    ],
+    "readings": [
+      "taeq7"
+    ],
+    "tone": [],
+    "definition": "-裏，-塊兒（指示、疑問、人稱代詞後接表地點）",
+    "raw": "-嗒（搭）taeq7:-裏，-塊兒（指示、疑問、人稱代詞後接表地點）"
+  },
+  {
+    "id": 43,
+    "terms": [
+      "-面"
+    ],
+    "readings": [
+      "mie6"
+    ],
+    "tone": [],
+    "definition": "-邊（指示、疑問代詞後接表方位、立場）",
+    "raw": "-面mie6：-邊（指示、疑問代詞後接表方位、立場）"
+  },
+  {
+    "id": 44,
+    "terms": [
+      "-面點"
+    ],
+    "readings": [
+      "mie6tie3"
+    ],
+    "tone": [],
+    "definition": "-邊（指示、疑問代詞後接表方位、立場）",
+    "raw": "-面點mie6tie3：-邊（指示、疑問代詞後接表方位、立場）"
+  },
+  {
+    "id": 45,
+    "terms": [
+      "哪"
+    ],
+    "readings": [
+      "lo6",
+      "no6"
+    ],
+    "tone": [],
+    "definition": "哪（「哪」字nl可混用，下同）(上海話以「何裏」代「哪」)",
+    "raw": "哪lo6/no6:哪（「哪」字nl可混用，下同）(上海話以「何裏」代「哪」)"
+  },
+  {
+    "id": 46,
+    "terms": [
+      "哪个"
+    ],
+    "readings": [
+      "lo6keq7"
+    ],
+    "tone": [],
+    "definition": "哪個",
+    "raw": "哪个lo6keq7:哪個"
+  },
+  {
+    "id": 47,
+    "terms": [
+      "哪嗒"
+    ],
+    "readings": [
+      "lo6taeq7"
+    ],
+    "tone": [],
+    "definition": "哪裏",
+    "raw": "哪嗒 lo6taeq7：哪裏"
+  },
+  {
+    "id": 48,
+    "terms": [
+      "哪面"
+    ],
+    "readings": [
+      "lo6mie6"
+    ],
+    "tone": [],
+    "definition": "哪兒",
+    "raw": "哪面lo6mie6:哪兒"
+  },
+  {
+    "id": 49,
+    "terms": [
+      "向"
+    ],
+    "readings": [
+      "shian5"
+    ],
+    "tone": [],
+    "definition": "名詞後綴eg.裏向；屋裏向；心裏向",
+    "raw": "向shian5:名詞後綴eg.裏向；屋裏向；心裏向"
+  },
+  {
+    "id": 50,
+    "terms": [
+      "越…越…"
+    ],
+    "readings": [
+      "yuq8…yuq8…"
+    ],
+    "tone": [],
+    "definition": "越…越…",
+    "raw": "越…越…yuq8…yuq8…:越…越…"
+  },
+  {
+    "id": 51,
+    "terms": [
+      "啥"
+    ],
+    "readings": [
+      "sa5"
+    ],
+    "tone": [],
+    "definition": "什麼",
+    "raw": "啥sa5：什麼"
+  },
+  {
+    "id": 52,
+    "terms": [
+      "啥个"
+    ],
+    "readings": [
+      "sa5keq7"
+    ],
+    "tone": [],
+    "definition": "什麼東西",
+    "raw": "啥个sa5keq7:什麼東西"
+  },
+  {
+    "id": 53,
+    "terms": [
+      "啥人",
+      "倽人"
+    ],
+    "readings": [
+      "sa5gnin2"
+    ],
+    "tone": [],
+    "definition": "誰人",
+    "raw": "啥人/倽人sa5gnin2:誰人"
+  },
+  {
+    "id": 54,
+    "terms": [
+      "啥物",
+      "啥物事"
+    ],
+    "readings": [
+      "sa5meq8zy6"
+    ],
+    "tone": [],
+    "definition": "什麼東西",
+    "raw": "啥物/啥物事sa5meq8zy6:什麼東西"
+  },
+  {
+    "id": 55,
+    "terms": [
+      "啥事體"
+    ],
+    "readings": [
+      "sa5zy6thi3"
+    ],
+    "tone": [],
+    "definition": "什麼事",
+    "raw": "啥事體sa5zy6thi3:什麼事"
+  },
+  {
+    "id": 56,
+    "terms": [
+      "啥體"
+    ],
+    "readings": [
+      "sa5thi3"
+    ],
+    "tone": [],
+    "definition": "什麼事；爲什麼",
+    "raw": "啥體sa5thi3:什麼事；爲什麼"
+  },
+  {
+    "id": 57,
+    "terms": [
+      "啥咾"
+    ],
+    "readings": [
+      "sa5lau6"
+    ],
+    "tone": [],
+    "definition": "爲什麼",
+    "raw": "啥咾sa5lau6:爲什麼"
+  },
+  {
+    "id": 58,
+    "terms": [
+      "如何",
+      "吶哼",
+      "捺亨"
+    ],
+    "readings": [
+      "naeq8han1",
+      "nan6"
+    ],
+    "tone": [
+      "8XA"
+    ],
+    "definition": "怎麼；怎麼樣",
+    "raw": "如何/吶哼（捺亨）naeq8han1/nan6(8XA):怎麼；怎麼樣"
+  },
+  {
+    "id": 59,
+    "terms": [
+      "做"
+    ],
+    "readings": [
+      "tsou3"
+    ],
+    "tone": [],
+    "definition": "做",
+    "raw": "做tsou3:做"
+  },
+  {
+    "id": 60,
+    "terms": [
+      "作啥"
+    ],
+    "readings": [
+      "tsoq7sa5"
+    ],
+    "tone": [],
+    "definition": "做什麼；爲什麼",
+    "raw": "作啥tsoq7sa5:做什麼；爲什麼"
+  },
+  {
+    "id": 61,
+    "terms": [
+      "箇叻",
+      "實叻",
+      "搿勒",
+      "實勒"
+    ],
+    "readings": [
+      "geq8leq8",
+      "zeq8leq8"
+    ],
+    "tone": [],
+    "definition": "所以",
+    "raw": "箇叻/實叻（搿勒/實勒）geq8leq8/zeq8leq8：所以"
+  },
+  {
+    "id": 62,
+    "terms": [
+      "假使"
+    ],
+    "readings": [
+      "ka3sy3",
+      "cia3sy3"
+    ],
+    "tone": [],
+    "definition": "如果",
+    "raw": "假使ka3sy3/cia3sy3:如果"
+  },
+  {
+    "id": 63,
+    "terms": [
+      "但不過"
+    ],
+    "readings": [
+      "de6piq7kou5"
+    ],
+    "tone": [
+      "223-5-52"
+    ],
+    "definition": "但是",
+    "raw": "但不過de6piq7kou5(223-5-52):但是"
+  },
+  {
+    "id": 64,
+    "terms": [
+      "不過"
+    ],
+    "readings": [
+      "piq7kou5"
+    ],
+    "tone": [
+      "7XA"
+    ],
+    "definition": "但是",
+    "raw": "不過piq7kou5(7XA):但是"
+  },
+  {
+    "id": 65,
+    "terms": [
+      "當仔"
+    ],
+    "readings": [
+      "taon1tsy3"
+    ],
+    "tone": [],
+    "definition": "以爲",
+    "raw": "當仔taon1tsy3：以爲"
+  },
+  {
+    "id": 66,
+    "terms": [
+      "-是"
+    ],
+    "readings": [
+      "zy6"
+    ],
+    "tone": [],
+    "definition": "-的話",
+    "raw": "-是zy6：-的話"
+  },
+  {
+    "id": 67,
+    "terms": [
+      "是"
+    ],
+    "readings": [
+      "zy6"
+    ],
+    "tone": [
+      "輕"
+    ],
+    "definition": "是；就",
+    "raw": "是zy6(輕):是；就"
+  },
+  {
+    "id": 68,
+    "terms": [
+      "仔",
+      "吇"
+    ],
+    "readings": [
+      "tsy3"
+    ],
+    "tone": [],
+    "definition": "了（動詞後接，表完成）；着（用在表示方式的動賓短語中）eg.騎吇馬（用在表存在、出現、消失的句式中，後接有數量含義的詞彙）eg.門口立仔弗少人/俚殺脫仔三隻雞（表動作或狀態的持續）",
+    "raw": "仔/吇tsy3:了（動詞後接，表完成）；着（用在表示方式的動賓短語中）eg.騎吇馬（用在表存在、出現、消失的句式中，後接有數量含義的詞彙）eg.門口立仔弗少人/俚殺脫仔三隻雞（表動作或狀態的持續）"
+  },
+  {
+    "id": 69,
+    "terms": [
+      "牢"
+    ],
+    "readings": [
+      "lau2"
+    ],
+    "tone": [],
+    "definition": "着，住（動詞後接，表持續；表單句帶語氣的結束）eg.倷看牢（你看着啊）",
+    "raw": "牢lau2:着，住（動詞後接，表持續；表單句帶語氣的結束）eg.倷看牢（你看着啊）"
+  },
+  {
+    "id": 70,
+    "terms": [
+      "咾",
+      "佬"
+    ],
+    "readings": [
+      "lau6"
+    ],
+    "tone": [],
+    "definition": "了？（僅用於疑問句末表疑問）",
+    "raw": "咾（佬）lau6:了？（僅用於疑問句末表疑問）"
+  },
+  {
+    "id": 71,
+    "terms": [
+      "歇"
+    ],
+    "readings": [
+      "shiq7"
+    ],
+    "tone": [],
+    "definition": "-時候；-會兒，-陣兒（表時間的後綴）",
+    "raw": "歇shiq7:-時候；-會兒，-陣兒（表時間的後綴）"
+  },
+  {
+    "id": 72,
+    "terms": [
+      "-歇"
+    ],
+    "readings": [],
+    "tone": [],
+    "definition": "-過 eg.朆見歇（沒見過）",
+    "raw": "-歇:-過 eg.朆見歇（沒見過）"
+  },
+  {
+    "id": 73,
+    "terms": [
+      "軒"
+    ],
+    "readings": [
+      "shie1"
+    ],
+    "tone": [],
+    "definition": "同「歇」，舊用",
+    "raw": "軒shie1:同「歇」，舊用"
+  },
+  {
+    "id": 74,
+    "terms": [
+      "-瑲",
+      "-槍"
+    ],
+    "readings": [
+      "tshian1"
+    ],
+    "tone": [],
+    "definition": "-陣子eg.箇瑲（這陣子）",
+    "raw": "-瑲（槍）tshian1:-陣子eg.箇瑲（這陣子）"
+  },
+  {
+    "id": 75,
+    "terms": [
+      "晏歇"
+    ],
+    "readings": [
+      "e5shiq7"
+    ],
+    "tone": [],
+    "definition": "待會兒",
+    "raw": "晏歇e5shiq7:待會兒"
+  },
+  {
+    "id": 76,
+    "terms": [
+      "故歇"
+    ],
+    "readings": [
+      "kou5shiq7"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "這會兒，現在(「故」是「箇」的古形)",
+    "raw": "故歇kou5shiq7(1x):這會兒，現在(「故」是「箇」的古形)"
+  },
+  {
+    "id": 77,
+    "terms": [
+      "喇",
+      "在",
+      "辣"
+    ],
+    "readings": [
+      "laeq8"
+    ],
+    "tone": [],
+    "definition": "在，後必有處所方位詞",
+    "raw": "喇/在（辣）laeq8:在，後必有處所方位詞"
+  },
+  {
+    "id": 78,
+    "terms": [
+      "在許",
+      "叻嗨",
+      "勒海"
+    ],
+    "readings": [
+      "leq8he3"
+    ],
+    "tone": [],
+    "definition": "在那裏，在那兒（稍遠）；着呢（表持續）；正在",
+    "raw": "在許/叻嗨（勒海）leq8he3:在那裏，在那兒（稍遠）；着呢（表持續）；正在"
+  },
+  {
+    "id": 79,
+    "terms": [
+      "在上",
+      "在哴",
+      "叻哴",
+      "勒浪"
+    ],
+    "readings": [
+      "leq8laon6"
+    ],
+    "tone": [],
+    "definition": "在這裏，在這兒（稍近）；正在",
+    "raw": "在上/在哴/叻哴（勒浪）leq8laon6:在這裏，在這兒（稍近）；正在"
+  },
+  {
+    "id": 80,
+    "terms": [
+      "在裏",
+      "叻裏",
+      "勒裏"
+    ],
+    "readings": [
+      "leq8li6"
+    ],
+    "tone": [],
+    "definition": "在這裏，可煞句或單獨成句，亦可前接動詞作處所補語；正在",
+    "raw": "在裏/叻裏（勒裏）leq8li6:在這裏，可煞句或單獨成句，亦可前接動詞作處所補語；正在"
+  },
+  {
+    "id": 81,
+    "terms": [
+      "在",
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "在（「喇」的弱化形式）",
+    "raw": "在/叻（勒）leq8:在（「喇」的弱化形式）"
+  },
+  {
+    "id": 82,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "用在句末，表說話時的情況eg.𬁭（「阿曾」合字）睏醒叻？（睡醒了嗎？）",
+    "raw": "叻（勒）leq8:用在句末，表說話時的情況eg.𬁭（「阿曾」合字）睏醒叻？（睡醒了嗎？）"
+  },
+  {
+    "id": 83,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "用在兩動詞相連且前動詞帶表完成的「仔」時，接於「仔」後表示前動詞完成後後動詞開始 eg.喫仔叻去（吃完了去）",
+    "raw": "叻（勒）leq8:用在兩動詞相連且前動詞帶表完成的「仔」時，接於「仔」後表示前動詞完成後後動詞開始 eg.喫仔叻去（吃完了去）"
+  },
+  {
+    "id": 84,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "用在並列名詞後表列舉eg.燒吇弗少菜，魚叻，肉叻，樣樣儕有",
+    "raw": "叻（勒）leq8:用在並列名詞後表列舉eg.燒吇弗少菜，魚叻，肉叻，樣樣儕有"
+  },
+  {
+    "id": 85,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "和eg.魚叻肉",
+    "raw": "叻（勒）leq8:和eg.魚叻肉"
+  },
+  {
+    "id": 86,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "用在重疊的單音節動詞間，表緩慢反覆狀態eg.五星紅旗飄叻飄",
+    "raw": "叻（勒）leq8:用在重疊的單音節動詞間，表緩慢反覆狀態eg.五星紅旗飄叻飄"
+  },
+  {
+    "id": 87,
+    "terms": [
+      "叻",
+      "勒"
+    ],
+    "readings": [
+      "leq8"
+    ],
+    "tone": [],
+    "definition": "呢",
+    "raw": "叻（勒）leq8:呢"
+  },
+  {
+    "id": 88,
+    "terms": [
+      "㖏"
+    ],
+    "readings": [
+      "gnian",
+      "gniaeq8"
+    ],
+    "tone": [],
+    "definition": "嘛，呢，吧，nya",
+    "raw": "㖏gnian/gniaeq8：嘛，呢，吧，nya"
+  },
+  {
+    "id": 89,
+    "terms": [
+      "咾"
+    ],
+    "readings": [
+      "lau"
+    ],
+    "tone": [],
+    "definition": "用在一對複句的前一分句末，表原因，可近似譯爲「因爲」，類似日語から或のでeg.昨日夜裏落雨咾，我朆去",
+    "raw": "咾lau:用在一對複句的前一分句末，表原因，可近似譯爲「因爲」，類似日語から或のでeg.昨日夜裏落雨咾，我朆去"
+  },
+  {
+    "id": 90,
+    "terms": [
+      "得叻",
+      "得勒"
+    ],
+    "readings": [
+      "teq7leq8"
+    ],
+    "tone": [],
+    "definition": "助詞，引出結果或程度補語，真……啊",
+    "raw": "得叻（得勒）teq7leq8:助詞，引出結果或程度補語，真……啊"
+  },
+  {
+    "id": 91,
+    "terms": [
+      "-得來"
+    ],
+    "readings": [
+      "teq7le2"
+    ],
+    "tone": [],
+    "definition": "-得很eg.酸得來（酸得很）",
+    "raw": "-得來teq7le2:-得很eg.酸得來（酸得很）"
+  },
+  {
+    "id": 92,
+    "terms": [
+      "上",
+      "哴",
+      "浪"
+    ],
+    "readings": [
+      "laon6"
+    ],
+    "tone": [],
+    "definition": "-上（表方位，前接名詞）",
+    "raw": "上/哴（浪）laon6:-上（表方位，前接名詞）"
+  },
+  {
+    "id": 93,
+    "terms": [
+      "上"
+    ],
+    "readings": [
+      "zaon6"
+    ],
+    "tone": [],
+    "definition": "-上（前接動詞）",
+    "raw": "上zaon6:-上（前接動詞）"
+  },
+  {
+    "id": 94,
+    "terms": [
+      "喫",
+      "吃"
+    ],
+    "readings": [
+      "chiq7"
+    ],
+    "tone": [],
+    "definition": "吃（「喫」是正字，「吃」是對「口吃jí」中「吃」的誤用）",
+    "raw": "喫（吃）chiq7:吃（「喫」是正字，「吃」是對「口吃jí」中「吃」的誤用）"
+  },
+  {
+    "id": 95,
+    "terms": [
+      "呼"
+    ],
+    "readings": [
+      "hou1"
+    ],
+    "tone": [],
+    "definition": "喝",
+    "raw": "呼hou1:喝"
+  },
+  {
+    "id": 96,
+    "terms": [
+      "呷"
+    ],
+    "readings": [
+      "haeq7"
+    ],
+    "tone": [],
+    "definition": "喝，用於具體的動作eg.呷茶",
+    "raw": "呷haeq7:喝，用於具體的動作eg.呷茶"
+  },
+  {
+    "id": 97,
+    "terms": [
+      "敲"
+    ],
+    "readings": [
+      "khau1"
+    ],
+    "tone": [],
+    "definition": "打，輕拍（多用，用於程度不很重的場合）",
+    "raw": "敲khau1:打，輕拍（多用，用於程度不很重的場合）"
+  },
+  {
+    "id": 98,
+    "terms": [
+      "哈",
+      "夯"
+    ],
+    "readings": [
+      "ha1"
+    ],
+    "tone": [],
+    "definition": "打（用於程度較重的場合。詞源不明）eg.夯人",
+    "raw": "哈/夯ha1:打（用於程度較重的場合。詞源不明）eg.夯人"
+  },
+  {
+    "id": 99,
+    "terms": [
+      "颬"
+    ],
+    "readings": [
+      "ha1"
+    ],
+    "tone": [],
+    "definition": "口中哈氣；撓癢癢(玩笑意）eg.颬倷",
+    "raw": "颬ha1:口中哈氣；撓癢癢(玩笑意）eg.颬倷"
+  },
+  {
+    "id": 100,
+    "terms": [
+      "立"
+    ],
+    "readings": [
+      "liq8"
+    ],
+    "tone": [],
+    "definition": "站",
+    "raw": "立liq8:站"
+  },
+  {
+    "id": 101,
+    "terms": [
+      "个",
+      "個",
+      "葛"
+    ],
+    "readings": [
+      "keq7"
+    ],
+    "tone": [],
+    "definition": "的（表所屬）",
+    "raw": "个（個/葛）keq7:的（表所屬）"
+  },
+  {
+    "id": 102,
+    "terms": [
+      "个",
+      "個",
+      "葛"
+    ],
+    "readings": [
+      "keq7"
+    ],
+    "tone": [],
+    "definition": "的（用於句尾表語氣，使用頻率遠高於普通話的「的」）",
+    "raw": "个（個/葛）keq7:的（用於句尾表語氣，使用頻率遠高於普通話的「的」）"
+  },
+  {
+    "id": 103,
+    "terms": [
+      "个",
+      "個",
+      "葛"
+    ],
+    "readings": [
+      "keq7"
+    ],
+    "tone": [],
+    "definition": "地de",
+    "raw": "个（個/葛）keq7:地de"
+  },
+  {
+    "id": 104,
+    "terms": [
+      "介"
+    ],
+    "readings": [
+      "ka1"
+    ],
+    "tone": [],
+    "definition": "地",
+    "raw": "介ka1:地"
+  },
+  {
+    "id": 105,
+    "terms": [
+      "個"
+    ],
+    "readings": [
+      "keq7"
+    ],
+    "tone": [],
+    "definition": "個，量詞eg.箇個、唉個\n(註：當 箇个 等指示詞單用表示某種事態、狀況时，寫爲 个 而非 個。如 儂要箇个/渠阿要歸个etc.)",
+    "raw": "個keq7:個，量詞eg.箇個、唉個\n(註：當 箇个 等指示詞單用表示某種事態、狀況时，寫爲 个 而非 個。如 儂要箇个/渠阿要歸个etc.)"
+  },
+  {
+    "id": 106,
+    "terms": [
+      "得"
+    ],
+    "readings": [
+      "teq7"
+    ],
+    "tone": [],
+    "definition": "得de；「嘦得」「會得」等詞後綴；兩動詞中連接eg.跑得去看；有得淴浴个",
+    "raw": "得teq7：得de；「嘦得」「會得」等詞後綴；兩動詞中連接eg.跑得去看；有得淴浴个"
+  },
+  {
+    "id": 107,
+    "terms": [
+      "阿來三"
+    ],
+    "readings": [
+      "aeq7le2se1"
+    ],
+    "tone": [
+      "5 22-33"
+    ],
+    "definition": "行嗎",
+    "raw": "阿來三aeq7le2se1(5 22-33):行嗎"
+  },
+  {
+    "id": 108,
+    "terms": [
+      "弗來三"
+    ],
+    "readings": [
+      "feq7le2se1"
+    ],
+    "tone": [
+      "5-23-21"
+    ],
+    "definition": "不行",
+    "raw": "弗來三feq7le2se1(5-23-21):不行"
+  },
+  {
+    "id": 109,
+    "terms": [
+      "共總"
+    ],
+    "readings": [
+      "gon6tson3"
+    ],
+    "tone": [],
+    "definition": "總共；根本",
+    "raw": "共總gon6tson3:總共；根本"
+  },
+  {
+    "id": 110,
+    "terms": [
+      "總歸",
+      "終歸"
+    ],
+    "readings": [
+      "tson3kue1",
+      "tson1kue1"
+    ],
+    "tone": [],
+    "definition": "總是",
+    "raw": "總歸/終歸tson3kue1/tson1kue1:總是"
+  },
+  {
+    "id": 111,
+    "terms": [
+      "蠻"
+    ],
+    "readings": [
+      "me1"
+    ],
+    "tone": [],
+    "definition": "很，挺",
+    "raw": "蠻me1:很，挺"
+  },
+  {
+    "id": 112,
+    "terms": [
+      "窮"
+    ],
+    "readings": [
+      "jion2"
+    ],
+    "tone": [],
+    "definition": "很（多後接形容詞等，eg.窮新）",
+    "raw": "窮jion2:很（多後接形容詞等，eg.窮新）"
+  },
+  {
+    "id": 113,
+    "terms": [
+      "賽過"
+    ],
+    "readings": [
+      "se5kou5"
+    ],
+    "tone": [],
+    "definition": "就像",
+    "raw": "賽過se5kou5:就像"
+  },
+  {
+    "id": 114,
+    "terms": [
+      "阿末"
+    ],
+    "readings": [
+      "aeq7meq8"
+    ],
+    "tone": [],
+    "definition": "最後",
+    "raw": "阿末aeq7meq8：最後"
+  },
+  {
+    "id": 115,
+    "terms": [
+      "-會"
+    ],
+    "readings": [
+      "we6"
+    ],
+    "tone": [],
+    "definition": "-見eg.明朝會（明天見）",
+    "raw": "-會we6:-見eg.明朝會（明天見）"
+  },
+  {
+    "id": 116,
+    "terms": [
+      "轉"
+    ],
+    "readings": [
+      "tsoe3"
+    ],
+    "tone": [],
+    "definition": "次，回",
+    "raw": "轉tsoe3:次，回"
+  },
+  {
+    "id": 117,
+    "terms": [
+      "轉去"
+    ],
+    "readings": [
+      "tsoe3chi5"
+    ],
+    "tone": [],
+    "definition": "回去",
+    "raw": "轉去tsoe3chi5:回去"
+  },
+  {
+    "id": 118,
+    "terms": [
+      "埭"
+    ],
+    "readings": [
+      "da6"
+    ],
+    "tone": [],
+    "definition": "趟eg.去吇一埭（去了一趟）",
+    "raw": "埭da6:趟eg.去吇一埭（去了一趟）"
+  },
+  {
+    "id": 119,
+    "terms": [
+      "着",
+      "嘖",
+      "則"
+    ],
+    "readings": [
+      "tseq7"
+    ],
+    "tone": [],
+    "definition": "了（「哉」的弱化形式）",
+    "raw": "着/嘖（則）tseq7:了（「哉」的弱化形式）"
+  },
+  {
+    "id": 120,
+    "terms": [
+      "罷"
+    ],
+    "readings": [
+      "ba"
+    ],
+    "tone": [],
+    "definition": "吧（本音bo6，「罷哉」讀ba6）",
+    "raw": "罷ba:吧（本音bo6，「罷哉」讀ba6）"
+  },
+  {
+    "id": 121,
+    "terms": [
+      "哉"
+    ],
+    "readings": [
+      "tse1"
+    ],
+    "tone": [],
+    "definition": "了",
+    "raw": "哉tse1：了"
+  },
+  {
+    "id": 122,
+    "terms": [
+      "罷哉"
+    ],
+    "readings": [
+      "ba6tse1"
+    ],
+    "tone": [],
+    "definition": "罷了；算了",
+    "raw": "罷哉ba6tse1:罷了；算了"
+  },
+  {
+    "id": 123,
+    "terms": [
+      "我",
+      "吾"
+    ],
+    "readings": [
+      "ngou6"
+    ],
+    "tone": [],
+    "definition": "我",
+    "raw": "我/吾ngou6:我"
+  },
+  {
+    "id": 124,
+    "terms": [
+      "奴"
+    ],
+    "readings": [
+      "nou6"
+    ],
+    "tone": [],
+    "definition": "我（明清時期女子自稱，今蘇州郊區中老年仍使用，不分性別）",
+    "raw": "奴nou6:我（明清時期女子自稱，今蘇州郊區中老年仍使用，不分性別）"
+  },
+  {
+    "id": 125,
+    "terms": [
+      "倷",
+      "儂"
+    ],
+    "readings": [
+      "ne6"
+    ],
+    "tone": [],
+    "definition": "你",
+    "raw": "倷[儂]ne6:你"
+  },
+  {
+    "id": 126,
+    "terms": [
+      "㑚"
+    ],
+    "readings": [
+      "na6"
+    ],
+    "tone": [],
+    "definition": "上海話中表「你們/你的」，蘇州話不用",
+    "raw": "㑚na6:上海話中表「你們/你的」，蘇州話不用"
+  },
+  {
+    "id": 127,
+    "terms": [
+      "俚",
+      "渠"
+    ],
+    "readings": [
+      "li1"
+    ],
+    "tone": [],
+    "definition": "他（不分性別）",
+    "raw": "俚[渠]li1:他（不分性別）"
+  },
+  {
+    "id": 128,
+    "terms": [
+      "伲"
+    ],
+    "readings": [
+      "gni6"
+    ],
+    "tone": [],
+    "definition": "我們，咱們；我的（接人）",
+    "raw": "伲gni6：我們，咱們；我的（接人）"
+  },
+  {
+    "id": 129,
+    "terms": [
+      "吾伲"
+    ],
+    "readings": [
+      "ngou6gni6"
+    ],
+    "tone": [],
+    "definition": "我們；我的（接人）",
+    "raw": "吾伲ngou6gni6：我們；我的（接人）"
+  },
+  {
+    "id": 130,
+    "terms": [
+      "-篤",
+      "-屬"
+    ],
+    "readings": [
+      "toq7"
+    ],
+    "tone": [],
+    "definition": "-們eg.吾篤；-家（口）eg.小王篤\n（吳語主流爲–拉la1，用法與–篤同）",
+    "raw": "-篤[屬]toq7:-們eg.吾篤；-家（口）eg.小王篤\n（吳語主流爲–拉la1，用法與–篤同）"
+  },
+  {
+    "id": 131,
+    "terms": [
+      "爾屬",
+      "唔篤",
+      "俉篤"
+    ],
+    "readings": [
+      "n6toq7"
+    ],
+    "tone": [],
+    "definition": "你們；你的（接人）",
+    "raw": "爾屬/唔篤6/俉篤n6toq7:你們；你的（接人）"
+  },
+  {
+    "id": 132,
+    "terms": [
+      "爾儂",
+      "唔篤",
+      "唔倷"
+    ],
+    "readings": [
+      "n1toq7",
+      "n1ne6"
+    ],
+    "tone": [],
+    "definition": "他們",
+    "raw": "爾儂/唔篤1/唔倷n1toq7/n1ne6:他們"
+  },
+  {
+    "id": 133,
+    "terms": [
+      "渠屬",
+      "俚篤"
+    ],
+    "readings": [
+      "li1toq7"
+    ],
+    "tone": [],
+    "definition": "他們，他的（接人）",
+    "raw": "渠屬/俚篤li1toq7:他們，他的（接人）"
+  },
+  {
+    "id": 134,
+    "terms": [
+      "喊"
+    ],
+    "readings": [
+      "he5"
+    ],
+    "tone": [],
+    "definition": "讓",
+    "raw": "喊he5：讓"
+  },
+  {
+    "id": 135,
+    "terms": [
+      "讓"
+    ],
+    "readings": [
+      "gnian6"
+    ],
+    "tone": [],
+    "definition": "讓",
+    "raw": "讓gnian6:讓"
+  },
+  {
+    "id": 136,
+    "terms": [
+      "望"
+    ],
+    "readings": [
+      "maon6"
+    ],
+    "tone": [],
+    "definition": "往（後接方位等）",
+    "raw": "望maon6:往（後接方位等）"
+  },
+  {
+    "id": 137,
+    "terms": [
+      "-脱"
+    ],
+    "readings": [
+      "theq7"
+    ],
+    "tone": [],
+    "definition": "掉，住(用在動詞後，表示完成、結束、消失，用得比「掉」廣)",
+    "raw": "-脱theq7:掉，住(用在動詞後，表示完成、結束、消失，用得比「掉」廣)"
+  },
+  {
+    "id": 138,
+    "terms": [
+      "畀",
+      "撥",
+      "把"
+    ],
+    "readings": [
+      "peq7"
+    ],
+    "tone": [],
+    "definition": "給(可單用，可接於動詞後形成「v畀n1n2」結構eg.講畀俚事體，送畀俚禮物，買畀俚筆；「給nv」結構吳語多爲「搭nv」)；被（多爲「畀nv」結構，後面必須接施動者eg.畀俚罵)；讓，使，允許",
+    "raw": "畀（撥）[把]peq7：給(可單用，可接於動詞後形成「v畀n1n2」結構eg.講畀俚事體，送畀俚禮物，買畀俚筆；「給nv」結構吳語多爲「搭nv」)；被（多爲「畀nv」結構，後面必須接施動者eg.畀俚罵)；讓，使，允許"
+  },
+  {
+    "id": 139,
+    "terms": [
+      "畀叻",
+      "撥勒"
+    ],
+    "readings": [
+      "peq7leq8"
+    ],
+    "tone": [],
+    "definition": "給；被",
+    "raw": "畀叻（撥勒）peq7leq8：給；被"
+  },
+  {
+    "id": 140,
+    "terms": [
+      "弗"
+    ],
+    "readings": [
+      "feq7"
+    ],
+    "tone": [],
+    "definition": "不（上海講「勿」veq8）",
+    "raw": "弗feq7:不（上海講「勿」veq8）"
+  },
+  {
+    "id": 141,
+    "terms": [
+      "朆"
+    ],
+    "readings": [
+      "fen1"
+    ],
+    "tone": [],
+    "definition": "未曾，沒有（否定過去的行動，（過去）沒有；還沒有，從過去到說話前未做過）",
+    "raw": "朆fen1:未曾，沒有（否定過去的行動，（過去）沒有；還沒有，從過去到說話前未做過）"
+  },
+  {
+    "id": 142,
+    "terms": [
+      "嘸不",
+      "無不"
+    ],
+    "readings": [
+      "m2peq7"
+    ],
+    "tone": [],
+    "definition": "沒有",
+    "raw": "嘸不（無不）[無不]m2peq7:沒有"
+  },
+  {
+    "id": 143,
+    "terms": [
+      "嘸",
+      "無"
+    ],
+    "readings": [
+      "m2"
+    ],
+    "tone": [],
+    "definition": "沒",
+    "raw": "嘸[無]m2:沒"
+  },
+  {
+    "id": 144,
+    "terms": [
+      "嘸啥"
+    ],
+    "readings": [
+      "m2sa5"
+    ],
+    "tone": [],
+    "definition": "沒什麼",
+    "raw": "嘸啥m2sa5:沒什麼"
+  },
+  {
+    "id": 145,
+    "terms": [
+      "覅"
+    ],
+    "readings": [
+      "fiau5"
+    ],
+    "tone": [],
+    "definition": "別（「覅」是「弗要」的合音，「別」音源自「不要」的合音）",
+    "raw": "覅fiau5:別（「覅」是「弗要」的合音，「別」音源自「不要」的合音）"
+  },
+  {
+    "id": 146,
+    "terms": [
+      "覅得"
+    ],
+    "readings": [
+      "fiau5teq7"
+    ],
+    "tone": [],
+    "definition": "不須，不用",
+    "raw": "覅得fiau5teq7:不須，不用"
+  },
+  {
+    "id": 147,
+    "terms": [
+      "會"
+    ],
+    "readings": [
+      "ue5"
+    ],
+    "tone": [],
+    "definition": "會",
+    "raw": "會ue5:會"
+  },
+  {
+    "id": 148,
+    "terms": [
+      "會"
+    ],
+    "readings": [
+      "we6"
+    ],
+    "tone": [],
+    "definition": "會議，廟會；會鈔（付錢，多在餐廳澡堂等）；會官司（打官司）",
+    "raw": "會we6:會議，廟會；會鈔（付錢，多在餐廳澡堂等）；會官司（打官司）"
+  },
+  {
+    "id": 149,
+    "terms": [
+      "會得"
+    ],
+    "readings": [
+      "we6teq7",
+      "ue5teq7"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "會",
+    "raw": "會得we6teq7(2X)/ue5teq7:會"
+  },
+  {
+    "id": 150,
+    "terms": [
+      "好得"
+    ],
+    "readings": [
+      "hau3teq7"
+    ],
+    "tone": [],
+    "definition": "幸虧",
+    "raw": "好得hau3teq7:幸虧"
+  },
+  {
+    "id": 151,
+    "terms": [
+      "且得"
+    ],
+    "readings": [
+      "tshia3teq7"
+    ],
+    "tone": [],
+    "definition": "暫且",
+    "raw": "且得tshia3teq7:暫且"
+  },
+  {
+    "id": 152,
+    "terms": [
+      "着"
+    ],
+    "readings": [
+      "tsaq7"
+    ],
+    "tone": [],
+    "definition": "穿，著zhuó",
+    "raw": "着tsaq7:穿，著zhuó"
+  },
+  {
+    "id": 153,
+    "terms": [
+      "着"
+    ],
+    "readings": [
+      "zaq8"
+    ],
+    "tone": [],
+    "definition": "最（只用在某些方位詞前，可重疊）",
+    "raw": "着zaq8：最（只用在某些方位詞前，可重疊）"
+  },
+  {
+    "id": 154,
+    "terms": [
+      "着"
+    ],
+    "readings": [
+      "zaq8"
+    ],
+    "tone": [],
+    "definition": "着zháo，到",
+    "raw": "着zaq8:着zháo，到"
+  },
+  {
+    "id": 155,
+    "terms": [
+      "-着"
+    ],
+    "readings": [
+      "zaq8"
+    ],
+    "tone": [],
+    "definition": "-得de（普通話中可用「着zhe」代「得」的「-得」複合詞，吳語中多以「-着」代之）",
+    "raw": "-着zaq8：-得de（普通話中可用「着zhe」代「得」的「-得」複合詞，吳語中多以「-着」代之）"
+  },
+  {
+    "id": 156,
+    "terms": [
+      "覺着"
+    ],
+    "readings": [
+      "koq7zaq8"
+    ],
+    "tone": [],
+    "definition": "覺得",
+    "raw": "覺着koq7zaq8：覺得"
+  },
+  {
+    "id": 157,
+    "terms": [
+      "頂"
+    ],
+    "readings": [
+      "tin3"
+    ],
+    "tone": [],
+    "definition": "最",
+    "raw": "頂tin3:最"
+  },
+  {
+    "id": 158,
+    "terms": [
+      "-到"
+    ],
+    "readings": [
+      "tau5"
+    ],
+    "tone": [],
+    "definition": "-到（動詞後接）",
+    "raw": "-到tau5:-到（動詞後接）"
+  },
+  {
+    "id": 159,
+    "terms": [
+      "-起"
+    ],
+    "readings": [
+      "chi3"
+    ],
+    "tone": [],
+    "definition": "-到（動詞後接）",
+    "raw": "-起chi3:-到（動詞後接）"
+  },
+  {
+    "id": 160,
+    "terms": [
+      "儘"
+    ],
+    "readings": [
+      "tsin3"
+    ],
+    "tone": [],
+    "definition": "任 eg.儘渠喫（任他吃）",
+    "raw": "儘tsin3:任 eg.儘渠喫（任他吃）"
+  },
+  {
+    "id": 161,
+    "terms": [
+      "幾許",
+      "幾化"
+    ],
+    "readings": [
+      "ci3ho"
+    ],
+    "tone": [
+      "3X"
+    ],
+    "definition": "多少（問價格與大小、高低、重量等）,多麼",
+    "raw": "幾許/幾化ci3ho(3X):多少（問價格與大小、高低、重量等）,多麼"
+  },
+  {
+    "id": 162,
+    "terms": [
+      "幾時"
+    ],
+    "readings": [
+      "ci3zyu2"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "什麼時候\n（普：等多久-吳：等到幾時）",
+    "raw": "幾時ci3zyu2(1X)什麼時候\n（普：等多久-吳：等到幾時）"
+  },
+  {
+    "id": 163,
+    "terms": [
+      "幾鈿",
+      "啥價鈿",
+      "幾銅鈿"
+    ],
+    "readings": [
+      "ci3die6",
+      "sa5ka5die6",
+      "ci3don2die6"
+    ],
+    "tone": [],
+    "definition": "多少錢",
+    "raw": "幾鈿/啥價鈿/幾銅鈿ci3die6/sa5ka5die6/ci3don2die6：多少錢"
+  },
+  {
+    "id": 164,
+    "terms": [
+      "價鈿"
+    ],
+    "readings": [
+      "ka5die6"
+    ],
+    "tone": [
+      "1變"
+    ],
+    "definition": "價格",
+    "raw": "價鈿ka5die6(1變):價格"
+  },
+  {
+    "id": 165,
+    "terms": [
+      "多"
+    ],
+    "readings": [
+      "ta1"
+    ],
+    "tone": [],
+    "definition": "好幾eg.要多角鈿得來（要好幾毛錢呢）",
+    "raw": "多ta1:好幾eg.要多角鈿得來（要好幾毛錢呢）"
+  },
+  {
+    "id": 166,
+    "terms": [
+      "多許",
+      "多化"
+    ],
+    "readings": [
+      "ta1ho"
+    ],
+    "tone": [],
+    "definition": "好多eg.要多許銅鈿（要好多錢）",
+    "raw": "多許/多化ta1ho:好多eg.要多許銅鈿（要好多錢）"
+  },
+  {
+    "id": 167,
+    "terms": [
+      "多"
+    ],
+    "readings": [
+      "tou1"
+    ],
+    "tone": [],
+    "definition": "與「少」相對",
+    "raw": "多tou1:與「少」相對"
+  },
+  {
+    "id": 168,
+    "terms": [
+      "-煞"
+    ],
+    "readings": [
+      "saeq7"
+    ],
+    "tone": [],
+    "definition": "太-",
+    "raw": "-煞saeq7:太-"
+  },
+  {
+    "id": 169,
+    "terms": [
+      "-殺"
+    ],
+    "readings": [
+      "saeq7"
+    ],
+    "tone": [],
+    "definition": "-死(誇張的形容程度之高、情況之嚴重等)eg.嚇殺人香（嚇死人香/碧螺春）",
+    "raw": "-殺saeq7:-死(誇張的形容程度之高、情況之嚴重等)eg.嚇殺人香（嚇死人香/碧螺春）"
+  },
+  {
+    "id": 170,
+    "terms": [
+      "忒"
+    ],
+    "readings": [
+      "theq7"
+    ],
+    "tone": [],
+    "definition": "太",
+    "raw": "忒theq7:太"
+  },
+  {
+    "id": 171,
+    "terms": [
+      "-交"
+    ],
+    "readings": [
+      "ciau1"
+    ],
+    "tone": [],
+    "definition": "後綴，構成「AA交」的詞，AA本身不能直接成詞，而「AA交」多爲副詞，少數爲形容詞eg.慢慢交走；重重交敲khau俚一頓；小小交个書房（與上海等地「-叫」同詞，吳語中寫「叫」居多）",
+    "raw": "-交ciau1:後綴，構成「AA交」的詞，AA本身不能直接成詞，而「AA交」多爲副詞，少數爲形容詞eg.慢慢交走；重重交敲khau俚一頓；小小交个書房（與上海等地「-叫」同詞，吳語中寫「叫」居多）"
+  },
+  {
+    "id": 172,
+    "terms": [
+      "場化",
+      "場許"
+    ],
+    "readings": [
+      "zan2ho5"
+    ],
+    "tone": [],
+    "definition": "地方",
+    "raw": "場化/場許zan2ho5:地方"
+  },
+  {
+    "id": 173,
+    "terms": [
+      "上頭"
+    ],
+    "readings": [
+      "zaon6deu2"
+    ],
+    "tone": [],
+    "definition": "上面",
+    "raw": "上頭zaon6deu2:上面"
+  },
+  {
+    "id": 174,
+    "terms": [
+      "下頭"
+    ],
+    "readings": [
+      "gho6deu2"
+    ],
+    "tone": [],
+    "definition": "下面",
+    "raw": "下頭gho6deu2:下面"
+  },
+  {
+    "id": 175,
+    "terms": [
+      "橫多裏"
+    ],
+    "readings": [
+      "wan2tou1li6"
+    ],
+    "tone": [],
+    "definition": "橫的方向",
+    "raw": "橫多裏wan2tou1li6:橫的方向"
+  },
+  {
+    "id": 176,
+    "terms": [
+      "當中"
+    ],
+    "readings": [
+      "taon1tson1"
+    ],
+    "tone": [],
+    "definition": "中間",
+    "raw": "當中taon1tson1:中間"
+  },
+  {
+    "id": 177,
+    "terms": [
+      "前頭"
+    ],
+    "readings": [
+      "zie2deu2"
+    ],
+    "tone": [],
+    "definition": "前面",
+    "raw": "前頭zie2deu2:前面"
+  },
+  {
+    "id": 178,
+    "terms": [
+      "後頭"
+    ],
+    "readings": [
+      "gheu6deu2"
+    ],
+    "tone": [],
+    "definition": "後面",
+    "raw": "後頭gheu6deu2:後面"
+  },
+  {
+    "id": 179,
+    "terms": [
+      "對過"
+    ],
+    "readings": [
+      "te5kou5"
+    ],
+    "tone": [],
+    "definition": "對面",
+    "raw": "對過te5kou5:對面"
+  },
+  {
+    "id": 180,
+    "terms": [
+      "門前"
+    ],
+    "readings": [
+      "men2zie2"
+    ],
+    "tone": [],
+    "definition": "面前",
+    "raw": "門前men2zie2:面前"
+  },
+  {
+    "id": 181,
+    "terms": [
+      "外頭"
+    ],
+    "readings": [
+      "nga6deu2"
+    ],
+    "tone": [],
+    "definition": "外面",
+    "raw": "外頭nga6deu2:外面"
+  },
+  {
+    "id": 182,
+    "terms": [
+      "先起頭"
+    ],
+    "readings": [
+      "sie1chi3deu2"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "剛開始",
+    "raw": "先起頭sie1chi3deu2(1x):剛開始"
+  },
+  {
+    "id": 183,
+    "terms": [
+      "後首來"
+    ],
+    "readings": [
+      "gheu6seu3le2"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "後來",
+    "raw": "後首來gheu6seu3le2(2x):後來"
+  },
+  {
+    "id": 184,
+    "terms": [
+      "邊哴"
+    ],
+    "readings": [
+      "pie1laon6"
+    ],
+    "tone": [],
+    "definition": "邊上，旁邊兒",
+    "raw": "邊哴pie1laon6:邊上，旁邊兒"
+  },
+  {
+    "id": 185,
+    "terms": [
+      "左",
+      "濟"
+    ],
+    "readings": [
+      "tsi3"
+    ],
+    "tone": [],
+    "definition": "濟手/左手",
+    "raw": "左/濟tsi3:濟手/左手"
+  },
+  {
+    "id": 186,
+    "terms": [
+      "順"
+    ],
+    "readings": [
+      "zen6"
+    ],
+    "tone": [],
+    "definition": "右eg.順手（右手）順面（右邊）",
+    "raw": "順zen6:右eg.順手（右手）順面（右邊）"
+  },
+  {
+    "id": 187,
+    "terms": [
+      "笡"
+    ],
+    "readings": [
+      "tshia5"
+    ],
+    "tone": [],
+    "definition": "斜",
+    "raw": "笡tshia5:斜"
+  },
+  {
+    "id": 188,
+    "terms": [
+      "稝"
+    ],
+    "readings": [
+      "man6"
+    ],
+    "tone": [],
+    "definition": "密eg.王先生生活好，針腳幾許稝在許（王先生手藝好，針線縫得多密啊）",
+    "raw": "稝man6:密eg.王先生生活好，針腳幾許稝在許（王先生手藝好，針線縫得多密啊）"
+  },
+  {
+    "id": 189,
+    "terms": [
+      "屋"
+    ],
+    "readings": [
+      "ueq7"
+    ],
+    "tone": [],
+    "definition": "家",
+    "raw": "屋ueq7:家"
+  },
+  {
+    "id": 190,
+    "terms": [
+      "鱟",
+      "雩"
+    ],
+    "readings": [
+      "heu5"
+    ],
+    "tone": [],
+    "definition": "虹eg.一條鱟",
+    "raw": "鱟/雩heu5:虹eg.一條鱟"
+  },
+  {
+    "id": 191,
+    "terms": [
+      "霍顯",
+      "霍閃"
+    ],
+    "readings": [
+      "hoq7shie3"
+    ],
+    "tone": [],
+    "definition": "閃電",
+    "raw": "霍顯(霍閃)hoq7shie3:閃電"
+  },
+  {
+    "id": 192,
+    "terms": [
+      "窠"
+    ],
+    "readings": [
+      "khou1"
+    ],
+    "tone": [],
+    "definition": "巢，窩",
+    "raw": "窠khou1:巢，窩"
+  },
+  {
+    "id": 193,
+    "terms": [
+      "落"
+    ],
+    "readings": [
+      "loq8"
+    ],
+    "tone": [],
+    "definition": "下eg.落雨；落載",
+    "raw": "落loq8:下eg.落雨；落載"
+  },
+  {
+    "id": 194,
+    "terms": [
+      "物事"
+    ],
+    "readings": [
+      "meq8zy6"
+    ],
+    "tone": [],
+    "definition": "東西",
+    "raw": "物事meq8zy6:東西"
+  },
+  {
+    "id": 195,
+    "terms": [
+      "事體"
+    ],
+    "readings": [
+      "zy6thi3"
+    ],
+    "tone": [],
+    "definition": "事情",
+    "raw": "事體zy6thi3:事情"
+  },
+  {
+    "id": 196,
+    "terms": [
+      "家私",
+      "傢俬"
+    ],
+    "readings": [
+      "ka1sy1"
+    ],
+    "tone": [],
+    "definition": "小家具，家中小物",
+    "raw": "家私/傢俬ka1sy1:小家具，家中小物"
+  },
+  {
+    "id": 197,
+    "terms": [
+      "日"
+    ],
+    "readings": [
+      "gniq8"
+    ],
+    "tone": [],
+    "definition": "白天",
+    "raw": "日gniq8:白天"
+  },
+  {
+    "id": 198,
+    "terms": [
+      "日裏",
+      "日裏向"
+    ],
+    "readings": [
+      "gniq8li6shian5"
+    ],
+    "tone": [],
+    "definition": "白天",
+    "raw": "日裏/日裏向gniq8li6shian5:白天"
+  },
+  {
+    "id": 199,
+    "terms": [
+      "夜裏",
+      "夜裏向"
+    ],
+    "readings": [
+      "ia5li6shian5"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "晚上",
+    "raw": "夜裏/夜裏向ia5li6shian5(1x):晚上"
+  },
+  {
+    "id": 200,
+    "terms": [
+      "日逐"
+    ],
+    "readings": [
+      "gniq8zoq8"
+    ],
+    "tone": [],
+    "definition": "每日。也可用「逐日」。",
+    "raw": "日逐gniq8zoq8:每日。也可用「逐日」。"
+  },
+  {
+    "id": 201,
+    "terms": [
+      "逐-"
+    ],
+    "readings": [
+      "zoq8"
+    ],
+    "tone": [],
+    "definition": "每-",
+    "raw": "逐-zoq8:每-"
+  },
+  {
+    "id": 202,
+    "terms": [
+      "-日"
+    ],
+    "readings": [
+      "gniq8"
+    ],
+    "tone": [],
+    "definition": "-天",
+    "raw": "-日gniq8:-天"
+  },
+  {
+    "id": 203,
+    "terms": [
+      "今朝"
+    ],
+    "readings": [
+      "cin1tsau1"
+    ],
+    "tone": [],
+    "definition": "今天",
+    "raw": "今朝cin1tsau1:今天"
+  },
+  {
+    "id": 204,
+    "terms": [
+      "真朝"
+    ],
+    "readings": [
+      "tsen1tsau1"
+    ],
+    "tone": [],
+    "definition": "今天",
+    "raw": "真朝tsen1tsau1:今天"
+  },
+  {
+    "id": 205,
+    "terms": [
+      "明朝"
+    ],
+    "readings": [
+      "men2tsau1"
+    ],
+    "tone": [],
+    "definition": "明天",
+    "raw": "明朝men2tsau1:明天"
+  },
+  {
+    "id": 206,
+    "terms": [
+      "舊年"
+    ],
+    "readings": [
+      "jieu6gnie2"
+    ],
+    "tone": [],
+    "definition": "去年",
+    "raw": "舊年jieu6gnie2:去年"
+  },
+  {
+    "id": 207,
+    "terms": [
+      "開年"
+    ],
+    "readings": [
+      "khe1gnie2"
+    ],
+    "tone": [],
+    "definition": "明年，吳語也說明年",
+    "raw": "開年khe1gnie2:明年，吳語也說明年"
+  },
+  {
+    "id": 208,
+    "terms": [
+      "銅鈿",
+      "鈿"
+    ],
+    "readings": [
+      "don2die2",
+      "die2"
+    ],
+    "tone": [],
+    "definition": "錢",
+    "raw": "銅鈿/鈿don2die2/die2:錢"
+  },
+  {
+    "id": 209,
+    "terms": [
+      "篤坦"
+    ],
+    "readings": [
+      "toq7the3"
+    ],
+    "tone": [],
+    "definition": "從容",
+    "raw": "篤坦toq7the3:從容"
+  },
+  {
+    "id": 210,
+    "terms": [
+      "齊巧"
+    ],
+    "readings": [
+      "zi2chiau3"
+    ],
+    "tone": [],
+    "definition": "正巧",
+    "raw": "齊巧zi2chiau3:正巧"
+  },
+  {
+    "id": 211,
+    "terms": [
+      "硬勁"
+    ],
+    "readings": [
+      "ngan6cin5"
+    ],
+    "tone": [],
+    "definition": "硬是",
+    "raw": "硬勁ngan6cin5:硬是"
+  },
+  {
+    "id": 212,
+    "terms": [
+      "寫意"
+    ],
+    "readings": [
+      "sia3i5"
+    ],
+    "tone": [
+      "3X"
+    ],
+    "definition": "愜意",
+    "raw": "寫意sia3i5(3X):愜意"
+  },
+  {
+    "id": 213,
+    "terms": [
+      "適意"
+    ],
+    "readings": [
+      "seq7i5"
+    ],
+    "tone": [],
+    "definition": "（環境導致的）舒適",
+    "raw": "適意seq7i5:（環境導致的）舒適"
+  },
+  {
+    "id": 214,
+    "terms": [
+      "爽氣"
+    ],
+    "readings": [
+      "saon3chi5"
+    ],
+    "tone": [
+      "5X"
+    ],
+    "definition": "爽快",
+    "raw": "爽氣saon3chi5(5X):爽快"
+  },
+  {
+    "id": 215,
+    "terms": [
+      "作興"
+    ],
+    "readings": [
+      "tsoq7shin1"
+    ],
+    "tone": [],
+    "definition": "也許，可能",
+    "raw": "作興tsoq7shin1:也許，可能"
+  },
+  {
+    "id": 216,
+    "terms": [
+      "歡喜"
+    ],
+    "readings": [
+      "huoe1shi3"
+    ],
+    "tone": [],
+    "definition": "喜歡",
+    "raw": "歡喜huoe1shi3:喜歡"
+  },
+  {
+    "id": 217,
+    "terms": [
+      "捩切"
+    ],
+    "readings": [
+      "liq8tshiq7"
+    ],
+    "tone": [],
+    "definition": "麻煩，囉嗦，挑剔",
+    "raw": "捩切liq8tshiq7:麻煩，囉嗦，挑剔"
+  },
+  {
+    "id": 218,
+    "terms": [
+      "倒楣"
+    ],
+    "readings": [
+      "tau3me2"
+    ],
+    "tone": [],
+    "definition": "倒霉。普通話中的該詞來自江南。",
+    "raw": "倒楣tau3me2:倒霉。普通話中的該詞來自江南。"
+  },
+  {
+    "id": 219,
+    "terms": [
+      "觸祭"
+    ],
+    "readings": [
+      "tshoq7tsi5"
+    ],
+    "tone": [],
+    "definition": "「喫」的貶稱，饞嘴",
+    "raw": "觸祭tshoq7tsi5:「喫」的貶稱，饞嘴"
+  },
+  {
+    "id": 220,
+    "terms": [
+      "促掐",
+      "促狹",
+      "甴曱"
+    ],
+    "readings": [
+      "tshoq7khaeq7"
+    ],
+    "tone": [],
+    "definition": "捉弄人，不給人方便",
+    "raw": "促掐/促狹/甴曱tshoq7khaeq7:捉弄人，不給人方便"
+  },
+  {
+    "id": 221,
+    "terms": [
+      "曉得"
+    ],
+    "readings": [
+      "shiau3teq7"
+    ],
+    "tone": [],
+    "definition": "知道",
+    "raw": "曉得shiau3teq7:知道"
+  },
+  {
+    "id": 222,
+    "terms": [
+      "高興"
+    ],
+    "readings": [
+      "kau1shin5"
+    ],
+    "tone": [],
+    "definition": "願意",
+    "raw": "高興kau1shin5:願意"
+  },
+  {
+    "id": 223,
+    "terms": [
+      "開心"
+    ],
+    "readings": [
+      "khe1sin1"
+    ],
+    "tone": [],
+    "definition": "高興，開心",
+    "raw": "開心khe1sin1:高興，開心"
+  },
+  {
+    "id": 224,
+    "terms": [
+      "窩心"
+    ],
+    "readings": [
+      "ou1sin1"
+    ],
+    "tone": [],
+    "definition": "開心，心裏舒服",
+    "raw": "窩心ou1sin1:開心，心裏舒服"
+  },
+  {
+    "id": 225,
+    "terms": [
+      "夾生"
+    ],
+    "readings": [
+      "kaeq7san1"
+    ],
+    "tone": [],
+    "definition": "語氣、態度無禮，使人不適",
+    "raw": "夾生kaeq7san1:語氣、態度無禮，使人不適"
+  },
+  {
+    "id": 226,
+    "terms": [
+      "嬁樣"
+    ],
+    "readings": [
+      "ten1yan6"
+    ],
+    "tone": [],
+    "definition": "俊美",
+    "raw": "嬁樣ten1yan6:俊美"
+  },
+  {
+    "id": 227,
+    "terms": [
+      "瀟灑"
+    ],
+    "readings": [
+      "siau1sa3"
+    ],
+    "tone": [],
+    "definition": "帥氣",
+    "raw": "瀟灑siau1sa3:帥氣"
+  },
+  {
+    "id": 228,
+    "terms": [
+      "尋開心"
+    ],
+    "readings": [
+      "zin2khe1"
+    ],
+    "tone": [],
+    "definition": "開玩笑；自娛自樂",
+    "raw": "尋開心zin2khe1:開玩笑；自娛自樂"
+  },
+  {
+    "id": 229,
+    "terms": [
+      "交關"
+    ],
+    "readings": [
+      "ciau1kue1"
+    ],
+    "tone": [],
+    "definition": "很多；很",
+    "raw": "交關ciau1kue1:很多；很"
+  },
+  {
+    "id": 230,
+    "terms": [
+      "邪氣"
+    ],
+    "readings": [
+      "zia2chi5"
+    ],
+    "tone": [],
+    "definition": "很",
+    "raw": "邪氣zia2chi5:很"
+  },
+  {
+    "id": 231,
+    "terms": [
+      "成功"
+    ],
+    "readings": [
+      "zen2kon1"
+    ],
+    "tone": [],
+    "definition": "成爲，成；成功eg.事體成功哉（事情成了）",
+    "raw": "成功zen2kon1:成爲，成；成功eg.事體成功哉（事情成了）"
+  },
+  {
+    "id": 232,
+    "terms": [
+      "孛相"
+    ],
+    "readings": [
+      "beq8sian5"
+    ],
+    "tone": [],
+    "definition": "玩",
+    "raw": "孛相beq8sian5:玩"
+  },
+  {
+    "id": 233,
+    "terms": [
+      "像煞"
+    ],
+    "readings": [
+      "zian6saeq7"
+    ],
+    "tone": [],
+    "definition": "好像",
+    "raw": "像煞zian6saeq7:好像"
+  },
+  {
+    "id": 234,
+    "terms": [
+      "一色"
+    ],
+    "readings": [
+      "iq7seq7"
+    ],
+    "tone": [],
+    "definition": "一樣",
+    "raw": "一色iq7seq7:一樣"
+  },
+  {
+    "id": 235,
+    "terms": [
+      "到底"
+    ],
+    "readings": [
+      "tau5ti3"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "究竟，到底",
+    "raw": "到底tau5ti3(1x):究竟，到底"
+  },
+  {
+    "id": 236,
+    "terms": [
+      "弗礙"
+    ],
+    "readings": [
+      "feq7nge6"
+    ],
+    "tone": [],
+    "definition": "不要緊，沒事兒，沒關係",
+    "raw": "弗礙feq7nge6:不要緊，沒事兒，沒關係"
+  },
+  {
+    "id": 237,
+    "terms": [
+      "覅緊"
+    ],
+    "readings": [
+      "fiau5cin3"
+    ],
+    "tone": [],
+    "definition": "不要緊",
+    "raw": "覅緊fiau5cin3:不要緊"
+  },
+  {
+    "id": 238,
+    "terms": [
+      "弗礙緊"
+    ],
+    "readings": [
+      "feq7nge6cin3"
+    ],
+    "tone": [],
+    "definition": "不要緊",
+    "raw": "弗礙緊feq7nge6cin3:不要緊"
+  },
+  {
+    "id": 239,
+    "terms": [
+      "要命"
+    ],
+    "readings": [
+      "iau5min6"
+    ],
+    "tone": [],
+    "definition": "費勁",
+    "raw": "要命iau5min6:費勁"
+  },
+  {
+    "id": 240,
+    "terms": [
+      "眼熱"
+    ],
+    "readings": [
+      "nge6gniq8"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "羨慕",
+    "raw": "眼熱nge6gniq8(2X):羨慕"
+  },
+  {
+    "id": 241,
+    "terms": [
+      "歇擱"
+    ],
+    "readings": [
+      "shiq7koq7"
+    ],
+    "tone": [],
+    "definition": "作罷，結束",
+    "raw": "歇擱shiq7koq7:作罷，結束"
+  },
+  {
+    "id": 242,
+    "terms": [
+      "着力"
+    ],
+    "readings": [
+      "zaq8liq8"
+    ],
+    "tone": [],
+    "definition": "拼命",
+    "raw": "着力zaq8liq8:拼命"
+  },
+  {
+    "id": 243,
+    "terms": [
+      "說鬼話"
+    ],
+    "readings": [
+      "seq7ciu3gho6"
+    ],
+    "tone": [
+      "7-3x"
+    ],
+    "definition": "撒謊",
+    "raw": "說鬼話seq7ciu3gho6(7-3x):撒謊"
+  },
+  {
+    "id": 244,
+    "terms": [
+      "許"
+    ],
+    "readings": [
+      "he3"
+    ],
+    "tone": [],
+    "definition": "許諾",
+    "raw": "許he3:許諾"
+  },
+  {
+    "id": 245,
+    "terms": [
+      "沰"
+    ],
+    "readings": [
+      "toq7"
+    ],
+    "tone": [],
+    "definition": "滴，落，淋eg.沰水（滴水）滴沰（滴答）",
+    "raw": "沰toq7:滴，落，淋eg.沰水（滴水）滴沰（滴答）"
+  },
+  {
+    "id": 246,
+    "terms": [
+      "潽"
+    ],
+    "readings": [
+      "phu1"
+    ],
+    "tone": [],
+    "definition": "滿溢eg.潽出來",
+    "raw": "潽phu1:滿溢eg.潽出來"
+  },
+  {
+    "id": 247,
+    "terms": [
+      "熱吹潽燙"
+    ],
+    "readings": [
+      "gniq8tshe1phu1thaon5"
+    ],
+    "tone": [],
+    "definition": "熱騰騰；形容極短時間前（纔發生）",
+    "raw": "熱吹潽燙gniq8tshe1phu1thaon5:熱騰騰；形容極短時間前（纔發生）"
+  },
+  {
+    "id": 248,
+    "terms": [
+      "囥"
+    ],
+    "readings": [
+      "khaon5"
+    ],
+    "tone": [],
+    "definition": "藏匿",
+    "raw": "囥khaon5：藏匿"
+  },
+  {
+    "id": 249,
+    "terms": [
+      "供"
+    ],
+    "readings": [
+      "cion5"
+    ],
+    "tone": [],
+    "definition": "白讀(文kon5)，不受歡迎地呆着eg.一日到夜供叻別人家屋裏；陳列着，擺放着，用於人時表訓斥命令義",
+    "raw": "供cion5:白讀(文kon5)，不受歡迎地呆着eg.一日到夜供叻別人家屋裏；陳列着，擺放着，用於人時表訓斥命令義"
+  },
+  {
+    "id": 250,
+    "terms": [
+      "瀴"
+    ],
+    "readings": [
+      "in5"
+    ],
+    "tone": [],
+    "definition": "涼",
+    "raw": "瀴in5:涼"
+  },
+  {
+    "id": 251,
+    "terms": [
+      "摥"
+    ],
+    "readings": [
+      "thaon5"
+    ],
+    "tone": [],
+    "definition": "推",
+    "raw": "摥thaon5:推"
+  },
+  {
+    "id": 252,
+    "terms": [
+      "懇"
+    ],
+    "readings": [
+      "khen1"
+    ],
+    "tone": [],
+    "definition": "尋找，含貶義（僮侗語成分）eg.倷覅瞎懇瞎懇抽屜裏向嘸不銅鈿在許",
+    "raw": "懇khen1:尋找，含貶義（僮侗語成分）eg.倷覅瞎懇瞎懇抽屜裏向嘸不銅鈿在許"
+  },
+  {
+    "id": 253,
+    "terms": [
+      "尋懇槍"
+    ],
+    "readings": [
+      "zin2khen1tshian1"
+    ],
+    "tone": [],
+    "definition": "找麻煩",
+    "raw": "尋懇槍zin2khen1tshian1:找麻煩"
+  },
+  {
+    "id": 254,
+    "terms": [
+      "㧸"
+    ],
+    "readings": [
+      "hen1"
+    ],
+    "tone": [],
+    "definition": "用手使薄片狀的東西裂開或離開附着處，相當於北京話的撕",
+    "raw": "㧸hen1:用手使薄片狀的東西裂開或離開附着處，相當於北京話的撕"
+  },
+  {
+    "id": 255,
+    "terms": [
+      "擤"
+    ],
+    "readings": [
+      "hen3"
+    ],
+    "tone": [],
+    "definition": "擤xǐng鼻涕",
+    "raw": "擤hen3:擤xǐng鼻涕"
+  },
+  {
+    "id": 256,
+    "terms": [
+      "撳"
+    ],
+    "readings": [
+      "chin5"
+    ],
+    "tone": [],
+    "definition": "按，摁",
+    "raw": "撳chin5:按，摁"
+  },
+  {
+    "id": 257,
+    "terms": [
+      "撐"
+    ],
+    "readings": [
+      "tshan1"
+    ],
+    "tone": [],
+    "definition": "打（傘），撐（船）",
+    "raw": "撐tshan1:打（傘），撐（船）"
+  },
+  {
+    "id": 258,
+    "terms": [
+      "厾"
+    ],
+    "readings": [
+      "toq7"
+    ],
+    "tone": [],
+    "definition": "摔，丟",
+    "raw": "厾toq7:摔，丟"
+  },
+  {
+    "id": 259,
+    "terms": [
+      "甩",
+      "揮"
+    ],
+    "readings": [
+      "hue5"
+    ],
+    "tone": [],
+    "definition": "扔，甩",
+    "raw": "甩/揮hue5:扔，甩"
+  },
+  {
+    "id": 260,
+    "terms": [
+      "掉"
+    ],
+    "readings": [
+      "deq8"
+    ],
+    "tone": [],
+    "definition": "掉(本音diau6)，失落eg.掉下來，掉脫哉",
+    "raw": "掉deq8:掉(本音diau6)，失落eg.掉下來，掉脫哉"
+  },
+  {
+    "id": 261,
+    "terms": [
+      "搨"
+    ],
+    "readings": [
+      "thaeq7"
+    ],
+    "tone": [],
+    "definition": "塗抹；擦",
+    "raw": "搨thaeq7:塗抹；擦"
+  },
+  {
+    "id": 262,
+    "terms": [
+      "撟"
+    ],
+    "readings": [
+      "jiau6"
+    ],
+    "tone": [],
+    "definition": "撬",
+    "raw": "撟jiau6:撬"
+  },
+  {
+    "id": 263,
+    "terms": [
+      "拓"
+    ],
+    "readings": [
+      "thaeq7"
+    ],
+    "tone": [],
+    "definition": "拓(tà)",
+    "raw": "拓thaeq7:拓(tà)"
+  },
+  {
+    "id": 264,
+    "terms": [
+      "抓"
+    ],
+    "readings": [
+      "tsa1"
+    ],
+    "tone": [],
+    "definition": "抓",
+    "raw": "抓tsa1:抓"
+  },
+  {
+    "id": 265,
+    "terms": [
+      "捉"
+    ],
+    "readings": [
+      "tsoq7"
+    ],
+    "tone": [],
+    "definition": "抓，捉",
+    "raw": "捉tsoq7:抓，捉"
+  },
+  {
+    "id": 266,
+    "terms": [
+      "撮"
+    ],
+    "readings": [
+      "tsheq7"
+    ],
+    "tone": [],
+    "definition": "抓（藥）eg:撮藥",
+    "raw": "撮tsheq7:抓（藥）eg:撮藥"
+  },
+  {
+    "id": 267,
+    "terms": [
+      "搲"
+    ],
+    "readings": [
+      "o1"
+    ],
+    "tone": [],
+    "definition": "手指成把狀抓取，挖eg.搲點西瓜；搲空（做無用事）",
+    "raw": "搲o1:手指成把狀抓取，挖eg.搲點西瓜；搲空（做無用事）"
+  },
+  {
+    "id": 268,
+    "terms": [
+      "捾"
+    ],
+    "readings": [
+      "uaeq7"
+    ],
+    "tone": [],
+    "definition": "掏，多指從袋子中掏eg.捾銅鈿(付錢，掏錢)",
+    "raw": "捾uaeq7:掏，多指從袋子中掏eg.捾銅鈿(付錢，掏錢)"
+  },
+  {
+    "id": 269,
+    "terms": [
+      "探"
+    ],
+    "readings": [
+      "thoe5"
+    ],
+    "tone": [],
+    "definition": "摘，指將身上的物品摘下",
+    "raw": "探thoe5:摘，指將身上的物品摘下"
+  },
+  {
+    "id": 270,
+    "terms": [
+      "摘"
+    ],
+    "readings": [
+      "tiq7"
+    ],
+    "tone": [],
+    "definition": "掐取eg.摘花",
+    "raw": "摘tiq7:掐取eg.摘花"
+  },
+  {
+    "id": 271,
+    "terms": [
+      "採"
+    ],
+    "readings": [
+      "tshe3"
+    ],
+    "tone": [],
+    "definition": "採摘果實",
+    "raw": "採tshe3:採摘果實"
+  },
+  {
+    "id": 272,
+    "terms": [
+      "搉"
+    ],
+    "readings": [
+      "khoq7"
+    ],
+    "tone": [],
+    "definition": "敲打，擊打",
+    "raw": "搉khoq7:敲打，擊打"
+  },
+  {
+    "id": 273,
+    "terms": [
+      "汏"
+    ],
+    "readings": [
+      "da6"
+    ],
+    "tone": [],
+    "definition": "洗",
+    "raw": "汏da6:洗"
+  },
+  {
+    "id": 274,
+    "terms": [
+      "咬"
+    ],
+    "readings": [
+      "ngau6"
+    ],
+    "tone": [],
+    "definition": "咬",
+    "raw": "咬ngau6:咬"
+  },
+  {
+    "id": 275,
+    "terms": [
+      "咬弗熱"
+    ],
+    "readings": [
+      "ngau6feq7gniq8"
+    ],
+    "tone": [],
+    "definition": "咬不動",
+    "raw": "咬弗熱ngau6feq7gniq8:咬不動"
+  },
+  {
+    "id": 276,
+    "terms": [
+      "咬卵"
+    ],
+    "readings": [
+      "ngau6loe6"
+    ],
+    "tone": [],
+    "definition": "隱事被人無意中說破而耿耿於懷遷怒於人",
+    "raw": "咬卵ngau6loe6:隱事被人無意中說破而耿耿於懷遷怒於人"
+  },
+  {
+    "id": 277,
+    "terms": [
+      "傍"
+    ],
+    "readings": [
+      "baon6"
+    ],
+    "tone": [],
+    "definition": "「傍」記音，表比較eg.傍傍看",
+    "raw": "傍baon6;「傍」記音，表比較eg.傍傍看"
+  },
+  {
+    "id": 278,
+    "terms": [
+      "熯"
+    ],
+    "readings": [
+      "hoe5"
+    ],
+    "tone": [],
+    "definition": "以文火烘物eg.熯肉月餅，熯酒釀餅",
+    "raw": "熯hoe5:以文火烘物eg.熯肉月餅，熯酒釀餅"
+  },
+  {
+    "id": 279,
+    "terms": [
+      "當"
+    ],
+    "readings": [
+      "taon1"
+    ],
+    "tone": [],
+    "definition": "使用eg.當筷（用筷子）",
+    "raw": "當taon1:使用eg.當筷（用筷子）"
+  },
+  {
+    "id": 280,
+    "terms": [
+      "捱"
+    ],
+    "readings": [
+      "nga2"
+    ],
+    "tone": [],
+    "definition": "拖延",
+    "raw": "捱nga2:拖延"
+  },
+  {
+    "id": 281,
+    "terms": [
+      "摶"
+    ],
+    "readings": [
+      "doe2"
+    ],
+    "tone": [],
+    "definition": "包裹；柔捏成團",
+    "raw": "摶doe2:包裹；柔捏成團"
+  },
+  {
+    "id": 282,
+    "terms": [
+      "揀"
+    ],
+    "readings": [
+      "ke3"
+    ],
+    "tone": [],
+    "definition": "挑，選eg.揀一揀瓜(挑一挑瓜)（也說「挑thiau1」）",
+    "raw": "揀ke3:挑，選eg.揀一揀瓜(挑一挑瓜)（也說「挑thiau1」）"
+  },
+  {
+    "id": 283,
+    "terms": [
+      "搛"
+    ],
+    "readings": [
+      "cie1"
+    ],
+    "tone": [],
+    "definition": "用筷子夾",
+    "raw": "搛cie1:用筷子夾"
+  },
+  {
+    "id": 284,
+    "terms": [
+      "拾"
+    ],
+    "readings": [
+      "ziq8"
+    ],
+    "tone": [],
+    "definition": "在地下撿",
+    "raw": "拾ziq8:在地下撿"
+  },
+  {
+    "id": 285,
+    "terms": [
+      "揩"
+    ],
+    "readings": [
+      "kha1"
+    ],
+    "tone": [],
+    "definition": "洗，擦洗，揩",
+    "raw": "揩kha1:洗，擦洗，揩"
+  },
+  {
+    "id": 286,
+    "terms": [
+      "拎"
+    ],
+    "readings": [
+      "lin1"
+    ],
+    "tone": [],
+    "definition": "提",
+    "raw": "拎lin1:提"
+  },
+  {
+    "id": 287,
+    "terms": [
+      "扚"
+    ],
+    "readings": [
+      "tiq7"
+    ],
+    "tone": [],
+    "definition": "敲eg.扚背(敲背)；用手指捏掐住或再往外拉eg.扚痧(用手指夾住脖子上的皮提拉以緩病痛)",
+    "raw": "扚tiq7:敲eg.扚背(敲背)；用手指捏掐住或再往外拉eg.扚痧(用手指夾住脖子上的皮提拉以緩病痛)"
+  },
+  {
+    "id": 288,
+    "terms": [
+      "賅"
+    ],
+    "readings": [
+      "ke1"
+    ],
+    "tone": [],
+    "definition": "v.擁有；a.富有",
+    "raw": "賅ke1:v.擁有；a.富有"
+  },
+  {
+    "id": 289,
+    "terms": [
+      "調"
+    ],
+    "readings": [
+      "diau6"
+    ],
+    "tone": [],
+    "definition": "換",
+    "raw": "調diau6:換"
+  },
+  {
+    "id": 290,
+    "terms": [
+      "軋"
+    ],
+    "readings": [
+      "gaeq8"
+    ],
+    "tone": [],
+    "definition": "擠 軋鬧猛：湊熱鬧",
+    "raw": "軋gaeq8:擠 軋鬧猛：湊熱鬧"
+  },
+  {
+    "id": 291,
+    "terms": [
+      "睏"
+    ],
+    "readings": [
+      "khuen5"
+    ],
+    "tone": [],
+    "definition": "睡",
+    "raw": "睏khuen5:睡"
+  },
+  {
+    "id": 292,
+    "terms": [
+      "跌"
+    ],
+    "readings": [
+      "tiq7"
+    ],
+    "tone": [],
+    "definition": "摔(倒）",
+    "raw": "跌tiq7:摔(倒）"
+  },
+  {
+    "id": 293,
+    "terms": [
+      "摜"
+    ],
+    "readings": [
+      "gue6"
+    ],
+    "tone": [],
+    "definition": "摔(跟頭)；扔",
+    "raw": "摜gue6:摔(跟頭)；扔"
+  },
+  {
+    "id": 294,
+    "terms": [
+      "囥"
+    ],
+    "readings": [
+      "khaon5"
+    ],
+    "tone": [],
+    "definition": "藏",
+    "raw": "囥khaon5:藏"
+  },
+  {
+    "id": 295,
+    "terms": [
+      "歇"
+    ],
+    "readings": [
+      "shiq7"
+    ],
+    "tone": [],
+    "definition": "休息eg.歇歇",
+    "raw": "歇shiq7:休息eg.歇歇"
+  },
+  {
+    "id": 296,
+    "terms": [
+      "弄"
+    ],
+    "readings": [
+      "lon6"
+    ],
+    "tone": [],
+    "definition": "搞eg.弄弗清爽(沒搞明白)",
+    "raw": "弄lon6:搞eg.弄弗清爽(沒搞明白)"
+  },
+  {
+    "id": 297,
+    "terms": [
+      "摜"
+    ],
+    "readings": [
+      "gue6"
+    ],
+    "tone": [],
+    "definition": "摑，打；用力摔，扔；撂，丟開；跌倒",
+    "raw": "摜gue6:摑，打；用力摔，扔；撂，丟開；跌倒"
+  },
+  {
+    "id": 298,
+    "terms": [
+      "斫"
+    ],
+    "readings": [
+      "tsoq7"
+    ],
+    "tone": [],
+    "definition": "砍",
+    "raw": "斫tsoq7:砍"
+  },
+  {
+    "id": 299,
+    "terms": [
+      "瞞"
+    ],
+    "readings": [
+      "moe1"
+    ],
+    "tone": [],
+    "definition": "瞞",
+    "raw": "瞞moe1:瞞"
+  },
+  {
+    "id": 300,
+    "terms": [
+      "煝"
+    ],
+    "readings": [
+      "me6"
+    ],
+    "tone": [],
+    "definition": "冒煙未燃；抽(煙)",
+    "raw": "煝me6:冒煙未燃；抽(煙)"
+  },
+  {
+    "id": 301,
+    "terms": [
+      "寣"
+    ],
+    "readings": [
+      "hueq5"
+    ],
+    "tone": [],
+    "definition": "覺eg.落寣(睡着)；睏一寣(睡一覺)；一寣覺起來(一覺起來)",
+    "raw": "寣hueq5:覺eg.落寣(睡着)；睏一寣(睡一覺)；一寣覺起來(一覺起來)"
+  },
+  {
+    "id": 302,
+    "terms": [
+      "打瞌充",
+      "𥅻"
+    ],
+    "readings": [
+      "tan3kheq7tshon5"
+    ],
+    "tone": [
+      "3-7xb"
+    ],
+    "definition": "打瞌睡",
+    "raw": "打瞌充(𥅻)tan3kheq7tshon5(3-7xb):打瞌睡"
+  },
+  {
+    "id": 303,
+    "terms": [
+      "打譁顯",
+      "打蝦獻",
+      "打呵獻"
+    ],
+    "readings": [
+      "tan3ho1shie"
+    ],
+    "tone": [
+      "3-1x"
+    ],
+    "definition": "打哈欠",
+    "raw": "打譁顯/打蝦獻/打呵獻tan3ho1shie(3-1x):打哈欠"
+  },
+  {
+    "id": 304,
+    "terms": [
+      "打噴嚏"
+    ],
+    "readings": [
+      "tan3phen1thi5"
+    ],
+    "tone": [
+      "3-1x"
+    ],
+    "definition": "打噴嚏（亦有「打嚏噴」)",
+    "raw": "打噴嚏tan3phen1thi5(3-1x):打噴嚏（亦有「打嚏噴」)"
+  },
+  {
+    "id": 305,
+    "terms": [
+      "罪過"
+    ],
+    "readings": [
+      "ze6kou5"
+    ],
+    "tone": [
+      "6X"
+    ],
+    "definition": "慘a.",
+    "raw": "罪過ze6kou5(6X):慘a."
+  },
+  {
+    "id": 306,
+    "terms": [
+      "沉殺"
+    ],
+    "readings": [
+      "zen2saeq7"
+    ],
+    "tone": [],
+    "definition": "淹死",
+    "raw": "沉殺zen2saeq7:淹死"
+  },
+  {
+    "id": 307,
+    "terms": [
+      "修娖"
+    ],
+    "readings": [
+      "seu1tsoq7"
+    ],
+    "tone": [],
+    "definition": "整理",
+    "raw": "修娖seu1tsoq7:整理"
+  },
+  {
+    "id": 308,
+    "terms": [
+      "發火"
+    ],
+    "readings": [
+      "faeq7hou3"
+    ],
+    "tone": [],
+    "definition": "生氣",
+    "raw": "發火faeq7hou3:生氣"
+  },
+  {
+    "id": 309,
+    "terms": [
+      "沉脫"
+    ],
+    "readings": [
+      "zen2theq7"
+    ],
+    "tone": [],
+    "definition": "浪費掉",
+    "raw": "沉脫zen2theq7:浪費掉"
+  },
+  {
+    "id": 310,
+    "terms": [
+      "嫌鄙"
+    ],
+    "readings": [
+      "ye2pi5"
+    ],
+    "tone": [],
+    "definition": "嫌",
+    "raw": "嫌鄙ye2pi5:嫌"
+  },
+  {
+    "id": 311,
+    "terms": [
+      "登"
+    ],
+    "readings": [
+      "ten1"
+    ],
+    "tone": [],
+    "definition": "待dāi.eg.登叻哴蘇州（待在蘇州）",
+    "raw": "登ten1:待dāi.eg.登叻哴蘇州（待在蘇州）"
+  },
+  {
+    "id": 312,
+    "terms": [
+      "上半日"
+    ],
+    "readings": [
+      "zaon6poe5gniq8"
+    ],
+    "tone": [],
+    "definition": "早上",
+    "raw": "上半日zaon6poe5gniq8:早上"
+  },
+  {
+    "id": 313,
+    "terms": [
+      "上晚晝"
+    ],
+    "readings": [
+      "zaon6me6tseu5"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "上午",
+    "raw": "上晚晝zaon6me6tseu5(2x):上午"
+  },
+  {
+    "id": 314,
+    "terms": [
+      "下晚晝"
+    ],
+    "readings": [
+      "gho6me6tseu5"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "下午",
+    "raw": "下晚晝gho6me6tseu5(2x):下午"
+  },
+  {
+    "id": 315,
+    "terms": [
+      "下半日"
+    ],
+    "readings": [
+      "gho6poe5gniq8"
+    ],
+    "tone": [],
+    "definition": "下午",
+    "raw": "下半日gho6poe5gniq8:下午"
+  },
+  {
+    "id": 316,
+    "terms": [
+      "一日天"
+    ],
+    "readings": [
+      "iq7gniq8thie1"
+    ],
+    "tone": [],
+    "definition": "一整天",
+    "raw": "一日天iq7gniq8thie1:一整天"
+  },
+  {
+    "id": 317,
+    "terms": [
+      "一夜天"
+    ],
+    "readings": [
+      "iq7ia5thie1"
+    ],
+    "tone": [],
+    "definition": "一整晚",
+    "raw": "一夜天iq7ia5thie1:一整晚"
+  },
+  {
+    "id": 318,
+    "terms": [
+      "日朝"
+    ],
+    "readings": [
+      "gniq8tsau1"
+    ],
+    "tone": [],
+    "definition": "每天",
+    "raw": "日朝gniq8tsau1:每天"
+  },
+  {
+    "id": 319,
+    "terms": [
+      "日裏"
+    ],
+    "readings": [
+      "gniq8li6"
+    ],
+    "tone": [],
+    "definition": "白天",
+    "raw": "日裏gniq8li6：白天"
+  },
+  {
+    "id": 320,
+    "terms": [
+      "日腳"
+    ],
+    "readings": [
+      "gniq8ciaq7"
+    ],
+    "tone": [],
+    "definition": "日子",
+    "raw": "日腳gniq8ciaq7:日子"
+  },
+  {
+    "id": 321,
+    "terms": [
+      "中飯"
+    ],
+    "readings": [
+      "tson1ve6"
+    ],
+    "tone": [],
+    "definition": "午飯",
+    "raw": "中飯tson1ve6:午飯"
+  },
+  {
+    "id": 322,
+    "terms": [
+      "夜飯"
+    ],
+    "readings": [
+      "ia5ve6"
+    ],
+    "tone": [],
+    "definition": "晚飯",
+    "raw": "夜飯ia5ve6:晚飯"
+  },
+  {
+    "id": 323,
+    "terms": [
+      "辰光"
+    ],
+    "readings": [
+      "zen2kuaon1"
+    ],
+    "tone": [],
+    "definition": "時間",
+    "raw": "辰光zen2kuaon1:時間"
+  },
+  {
+    "id": 324,
+    "terms": [
+      "有常時"
+    ],
+    "readings": [
+      "yeu6zan2zyu2"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "有時候",
+    "raw": "有常時yeu6zan2zyu2(6x):有時候"
+  },
+  {
+    "id": 325,
+    "terms": [
+      "赤佬"
+    ],
+    "readings": [
+      "tsheq7lau6"
+    ],
+    "tone": [],
+    "definition": "常用罵語，原指明代駐紮江南的著紅衣兵士，後指鬼、混帳",
+    "raw": "赤佬tsheq7lau6:常用罵語，原指明代駐紮江南的著紅衣兵士，後指鬼、混帳"
+  },
+  {
+    "id": 326,
+    "terms": [
+      "戇大"
+    ],
+    "readings": [
+      "gaon6dou6"
+    ],
+    "tone": [
+      "6X"
+    ],
+    "definition": "笨蛋",
+    "raw": "戇大gaon6dou6(6X):笨蛋"
+  },
+  {
+    "id": 327,
+    "terms": [
+      "十三點"
+    ],
+    "readings": [
+      "zeq8se1tie3"
+    ],
+    "tone": [
+      "調值特殊2-34-51"
+    ],
+    "definition": "言語不得體的人",
+    "raw": "十三點zeq8se1tie3(調值特殊2-34-51):言語不得體的人"
+  },
+  {
+    "id": 328,
+    "terms": [
+      "喥頭"
+    ],
+    "readings": [
+      "doq8deu2"
+    ],
+    "tone": [
+      "8XA"
+    ],
+    "definition": "一根筋的人，二愣子，二敢子",
+    "raw": "喥頭doq8deu2(8XA):一根筋的人，二愣子，二敢子"
+  },
+  {
+    "id": 329,
+    "terms": [
+      "壽頭"
+    ],
+    "readings": [
+      "zeu6deu2"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "不知好歹的人",
+    "raw": "壽頭zeu6deu2(2X):不知好歹的人"
+  },
+  {
+    "id": 330,
+    "terms": [
+      "癡子"
+    ],
+    "readings": [
+      "tshyu1tsy3"
+    ],
+    "tone": [],
+    "definition": "瘋子",
+    "raw": "癡子tshyu1tsy3:瘋子"
+  },
+  {
+    "id": 331,
+    "terms": [
+      "身胚"
+    ],
+    "readings": [
+      "sen1phe1"
+    ],
+    "tone": [],
+    "definition": "身材",
+    "raw": "身胚sen1phe1:身材"
+  },
+  {
+    "id": 332,
+    "terms": [
+      "髈"
+    ],
+    "readings": [
+      "phaon3"
+    ],
+    "tone": [],
+    "definition": "腿",
+    "raw": "髈phaon3:腿"
+  },
+  {
+    "id": 333,
+    "terms": [
+      "大髈"
+    ],
+    "readings": [
+      "dou6phaon3"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "大腿",
+    "raw": "大髈dou6phaon3(6x):大腿"
+  },
+  {
+    "id": 334,
+    "terms": [
+      "小髈"
+    ],
+    "readings": [
+      "siau3phaon3"
+    ],
+    "tone": [],
+    "definition": "小腿",
+    "raw": "小髈siau3phaon3:小腿"
+  },
+  {
+    "id": 335,
+    "terms": [
+      "髈彎子"
+    ],
+    "readings": [
+      "phaon3ue1tsy"
+    ],
+    "tone": [],
+    "definition": "大小腿間的關節",
+    "raw": "髈彎子phaon3ue1tsy:大小腿間的關節"
+  },
+  {
+    "id": 336,
+    "terms": [
+      "腳"
+    ],
+    "readings": [
+      "ciaq7"
+    ],
+    "tone": [],
+    "definition": "足，腳",
+    "raw": "腳ciaq7:足，腳"
+  },
+  {
+    "id": 337,
+    "terms": [
+      "腳饅頭"
+    ],
+    "readings": [
+      "ciaq7moe2deu2"
+    ],
+    "tone": [],
+    "definition": "膝蓋(tshiq7ke5)",
+    "raw": "腳饅頭ciaq7moe2deu2:膝蓋(tshiq7ke5)"
+  },
+  {
+    "id": 338,
+    "terms": [
+      "腳彎子",
+      "腳骱子"
+    ],
+    "readings": [
+      "ciaq7ga6tsy"
+    ],
+    "tone": [],
+    "definition": "腳腕uoe5",
+    "raw": "腳彎子/腳骱子ciaq7ga6tsy:腳腕uoe5"
+  },
+  {
+    "id": 339,
+    "terms": [
+      "屁股"
+    ],
+    "readings": [
+      "phi5kou3"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "臀 屁股爿:屁股蛋兒",
+    "raw": "屁股phi5kou3(1x):臀 屁股爿:屁股蛋兒"
+  },
+  {
+    "id": 340,
+    "terms": [
+      "肩架"
+    ],
+    "readings": [
+      "cie1ka5"
+    ],
+    "tone": [],
+    "definition": "肩膀",
+    "raw": "肩架cie1ka5:肩膀"
+  },
+  {
+    "id": 341,
+    "terms": [
+      "臂膊"
+    ],
+    "readings": [
+      "pi5poq7"
+    ],
+    "tone": [],
+    "definition": "胳膊",
+    "raw": "臂膊pi5poq7:胳膊"
+  },
+  {
+    "id": 342,
+    "terms": [
+      "大臂膊"
+    ],
+    "readings": [],
+    "tone": [
+      "6x"
+    ],
+    "definition": "大臂",
+    "raw": "大臂膊(6x):大臂"
+  },
+  {
+    "id": 343,
+    "terms": [
+      "小臂膊"
+    ],
+    "readings": [],
+    "tone": [
+      "5x"
+    ],
+    "definition": "小臂",
+    "raw": "小臂膊(5x):小臂"
+  },
+  {
+    "id": 344,
+    "terms": [
+      "臂膊撑子"
+    ],
+    "readings": [
+      "pi5poq7tshan1tsy3"
+    ],
+    "tone": [],
+    "definition": "胳膊肘",
+    "raw": "臂膊撑子pi5poq7tshan1tsy3:胳膊肘"
+  },
+  {
+    "id": 345,
+    "terms": [
+      "長遠"
+    ],
+    "readings": [
+      "zan2yoe6"
+    ],
+    "tone": [],
+    "definition": "好久",
+    "raw": "長遠zan2yoe6:好久"
+  },
+  {
+    "id": 346,
+    "terms": [
+      "長遠弗見"
+    ],
+    "readings": [
+      "zan2yoe6feq7cie5"
+    ],
+    "tone": [],
+    "definition": "好久不見，你好（打招呼）",
+    "raw": "長遠弗見zan2yoe6feq7cie5:好久不見，你好（打招呼）"
+  },
+  {
+    "id": 347,
+    "terms": [
+      "阿有介事"
+    ],
+    "readings": [
+      "aeq7yeu6ka5zy6"
+    ],
+    "tone": [
+      "介事1x"
+    ],
+    "definition": "有沒有這事;是否",
+    "raw": "阿有介事aeq7yeu6ka5zy6(介事1x):有沒有這事;是否"
+  },
+  {
+    "id": 348,
+    "terms": [
+      "樁"
+    ],
+    "readings": [
+      "tsaon1"
+    ],
+    "tone": [],
+    "definition": "件（事）eg.一樁事體",
+    "raw": "樁tsaon1:件（事）eg.一樁事體"
+  },
+  {
+    "id": 349,
+    "terms": [
+      "隻"
+    ],
+    "readings": [
+      "tsaq7"
+    ],
+    "tone": [],
+    "definition": "量詞eg.一隻手/一隻牛/一隻馬/一隻檯子/一隻棋子/唉隻款式",
+    "raw": "隻tsaq7:量詞eg.一隻手/一隻牛/一隻馬/一隻檯子/一隻棋子/唉隻款式"
+  },
+  {
+    "id": 350,
+    "terms": [
+      "爿"
+    ],
+    "readings": [
+      "be2"
+    ],
+    "tone": [],
+    "definition": "量詞，片狀物eg.竹爿，紙爿；量詞，家eg.一爿店",
+    "raw": "爿be2:量詞，片狀物eg.竹爿，紙爿；量詞，家eg.一爿店"
+  },
+  {
+    "id": 351,
+    "terms": [
+      "部"
+    ],
+    "readings": [
+      "bu6"
+    ],
+    "tone": [],
+    "definition": "量詞，車輛/整套書籍eg.一部手機，一部車，一部書",
+    "raw": "部bu6:量詞，車輛/整套書籍eg.一部手機，一部車，一部書"
+  },
+  {
+    "id": 352,
+    "terms": [
+      "本"
+    ],
+    "readings": [
+      "pen3"
+    ],
+    "tone": [],
+    "definition": "量詞，注意可用於「電影」「劇本」等",
+    "raw": "本pen3:量詞，注意可用於「電影」「劇本」等"
+  },
+  {
+    "id": 353,
+    "terms": [
+      "記"
+    ],
+    "readings": [
+      "ci5"
+    ],
+    "tone": [],
+    "definition": "量詞，用於「耳光」等",
+    "raw": "記ci5:量詞，用於「耳光」等"
+  },
+  {
+    "id": 354,
+    "terms": [
+      "合"
+    ],
+    "readings": [
+      "keq7"
+    ],
+    "tone": [],
+    "definition": "量詞，十合爲一。",
+    "raw": "合keq7:量詞，十合爲一。"
+  },
+  {
+    "id": 355,
+    "terms": [
+      "爹爹"
+    ],
+    "readings": [
+      "tia1tia1"
+    ],
+    "tone": [],
+    "definition": "父(面稱)",
+    "raw": "爹爹tia1tia1:父(面稱)"
+  },
+  {
+    "id": 356,
+    "terms": [
+      "爺"
+    ],
+    "readings": [
+      "ya2"
+    ],
+    "tone": [],
+    "definition": "父（背稱）",
+    "raw": "爺ya2:父（背稱）"
+  },
+  {
+    "id": 357,
+    "terms": [
+      "姆媽"
+    ],
+    "readings": [
+      "m1ma1"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "母（面稱，背稱）",
+    "raw": "姆媽m1ma1(1x):母（面稱，背稱）"
+  },
+  {
+    "id": 358,
+    "terms": [
+      "孃"
+    ],
+    "readings": [
+      "gnian2"
+    ],
+    "tone": [],
+    "definition": "母（背稱）",
+    "raw": "孃gnian2:母（背稱）"
+  },
+  {
+    "id": 359,
+    "terms": [
+      "阿爹"
+    ],
+    "readings": [
+      "aeq7tia1"
+    ],
+    "tone": [],
+    "definition": "祖父(面/背)；外祖父(面稱)",
+    "raw": "阿爹aeq7tia1:祖父(面/背)；外祖父(面稱)"
+  },
+  {
+    "id": 360,
+    "terms": [
+      "外公阿爹"
+    ],
+    "readings": [
+      "nga6kon1aeq7tia1"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外祖父(背稱)",
+    "raw": "外公阿爹nga6kon1aeq7tia1(2X):外祖父(背稱)"
+  },
+  {
+    "id": 361,
+    "terms": [
+      "好婆"
+    ],
+    "readings": [
+      "hau3bu2"
+    ],
+    "tone": [],
+    "definition": "祖母(面/背)；外祖母(面稱)",
+    "raw": "好婆hau3bu2:祖母(面/背)；外祖母(面稱)"
+  },
+  {
+    "id": 362,
+    "terms": [
+      "外婆"
+    ],
+    "readings": [],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外祖母(背稱)",
+    "raw": "外婆(2X):外祖母(背稱)"
+  },
+  {
+    "id": 363,
+    "terms": [
+      "太公"
+    ],
+    "readings": [
+      "tha5kon1"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "曾祖父(面/背)",
+    "raw": "太公tha5kon1(1X):曾祖父(面/背)"
+  },
+  {
+    "id": 364,
+    "terms": [
+      "太太"
+    ],
+    "readings": [
+      "tha5tha5"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "曾祖母(面/背)",
+    "raw": "太太tha5tha5(1X):曾祖母(面/背)"
+  },
+  {
+    "id": 365,
+    "terms": [
+      "男人"
+    ],
+    "readings": [
+      "noe2gnin2"
+    ],
+    "tone": [],
+    "definition": "丈夫(背稱)",
+    "raw": "男人noe2gnin2:丈夫(背稱)"
+  },
+  {
+    "id": 366,
+    "terms": [
+      "家主",
+      "家主公"
+    ],
+    "readings": [
+      "ka1tsyu3kon1"
+    ],
+    "tone": [],
+    "definition": "丈夫(背稱)",
+    "raw": "家主/家主公ka1tsyu3kon1:丈夫(背稱)"
+  },
+  {
+    "id": 367,
+    "terms": [
+      "家小"
+    ],
+    "readings": [
+      "ka1siau3"
+    ],
+    "tone": [],
+    "definition": "妻子(背稱)",
+    "raw": "家小ka1siau3:妻子(背稱)"
+  },
+  {
+    "id": 368,
+    "terms": [
+      "家主婆"
+    ],
+    "readings": [
+      "ka1tsyu3bu2"
+    ],
+    "tone": [],
+    "definition": "妻子(背稱)",
+    "raw": "家主婆ka1tsyu3bu2:妻子(背稱)"
+  },
+  {
+    "id": 369,
+    "terms": [
+      "弟兄"
+    ],
+    "readings": [
+      "di6shion1"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "兄弟",
+    "raw": "弟兄di6shion1(2X):兄弟"
+  },
+  {
+    "id": 370,
+    "terms": [
+      "姊妹"
+    ],
+    "readings": [
+      "tsi3me6"
+    ],
+    "tone": [
+      "5X"
+    ],
+    "definition": "姐妹；兄弟姐妹",
+    "raw": "姊妹tsi3me6(5X):姐妹；兄弟姐妹"
+  },
+  {
+    "id": 371,
+    "terms": [
+      "哥哥"
+    ],
+    "readings": [
+      "kou1kou1"
+    ],
+    "tone": [],
+    "definition": "哥哥(面稱)",
+    "raw": "哥哥kou1kou1:哥哥(面稱)"
+  },
+  {
+    "id": 372,
+    "terms": [
+      "阿哥"
+    ],
+    "readings": [
+      "aeq7kou1"
+    ],
+    "tone": [],
+    "definition": "哥哥(多背稱)",
+    "raw": "阿哥aeq7kou1:哥哥(多背稱)"
+  },
+  {
+    "id": 373,
+    "terms": [
+      "嫂嫂"
+    ],
+    "readings": [
+      "sau3sau3"
+    ],
+    "tone": [],
+    "definition": "嫂子(面稱)",
+    "raw": "嫂嫂sau3sau3:嫂子(面稱)"
+  },
+  {
+    "id": 374,
+    "terms": [
+      "阿嫂"
+    ],
+    "readings": [
+      "aeq7sau3"
+    ],
+    "tone": [
+      "7XB"
+    ],
+    "definition": "嫂子(多背稱)",
+    "raw": "阿嫂aeq7sau3(7XB):嫂子(多背稱)"
+  },
+  {
+    "id": 375,
+    "terms": [
+      "弟弟"
+    ],
+    "readings": [
+      "di6di6"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "弟弟(背稱，面多稱名)",
+    "raw": "弟弟di6di6(2X):弟弟(背稱，面多稱名)"
+  },
+  {
+    "id": 376,
+    "terms": [
+      "兄弟"
+    ],
+    "readings": [
+      "shion1di6"
+    ],
+    "tone": [],
+    "definition": "弟弟(多背稱)",
+    "raw": "兄弟shion1di6:弟弟(多背稱)"
+  },
+  {
+    "id": 377,
+    "terms": [
+      "弟新婦"
+    ],
+    "readings": [
+      "di6sin1vu6"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "弟媳，弟之妻",
+    "raw": "弟新婦di6sin1vu6(2X):弟媳，弟之妻"
+  },
+  {
+    "id": 378,
+    "terms": [
+      "姐姐"
+    ],
+    "readings": [
+      "tsia3tsia3"
+    ],
+    "tone": [
+      "5X"
+    ],
+    "definition": "姊姊(面稱)",
+    "raw": "姐姐tsia3tsia3(5X):姊姊(面稱)"
+  },
+  {
+    "id": 379,
+    "terms": [
+      "阿姐"
+    ],
+    "readings": [
+      "aeq7tsia3"
+    ],
+    "tone": [
+      "7XB"
+    ],
+    "definition": "姊姊(背稱)",
+    "raw": "阿姐aeq7tsia3(7XB):姊姊(背稱)"
+  },
+  {
+    "id": 380,
+    "terms": [
+      "姐夫"
+    ],
+    "readings": [
+      "tsia3fu1"
+    ],
+    "tone": [
+      "5X"
+    ],
+    "definition": "姐夫",
+    "raw": "姐夫tsia3fu1(5X):姐夫"
+  },
+  {
+    "id": 381,
+    "terms": [
+      "妹妹"
+    ],
+    "readings": [
+      "me6me6"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "妹妹(背稱，面多稱名)",
+    "raw": "妹妹me6me6(2X):妹妹(背稱，面多稱名)"
+  },
+  {
+    "id": 382,
+    "terms": [
+      "妹子"
+    ],
+    "readings": [
+      "me6tsy3"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "妹妹(只背稱)",
+    "raw": "妹子me6tsy3(2X):妹妹(只背稱)"
+  },
+  {
+    "id": 383,
+    "terms": [
+      "妹夫"
+    ],
+    "readings": [
+      "me6fu1"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "妹夫",
+    "raw": "妹夫me6fu1(2X):妹夫"
+  },
+  {
+    "id": 384,
+    "terms": [
+      "兒子"
+    ],
+    "readings": [
+      "gni2tsy3"
+    ],
+    "tone": [],
+    "definition": "兒子",
+    "raw": "兒子gni2tsy3:兒子"
+  },
+  {
+    "id": 385,
+    "terms": [
+      "新婦"
+    ],
+    "readings": [
+      "sin1vu6"
+    ],
+    "tone": [],
+    "definition": "兒媳，兒之妻",
+    "raw": "新婦sin1vu6:兒媳，兒之妻"
+  },
+  {
+    "id": 386,
+    "terms": [
+      "孫子"
+    ],
+    "readings": [
+      "sen1tsy3"
+    ],
+    "tone": [],
+    "definition": "孫子",
+    "raw": "孫子sen1tsy3:孫子"
+  },
+  {
+    "id": 387,
+    "terms": [
+      "孫新婦"
+    ],
+    "readings": [
+      "sen1sin1vu6"
+    ],
+    "tone": [],
+    "definition": "孫媳",
+    "raw": "孫新婦sen1sin1vu6:孫媳"
+  },
+  {
+    "id": 388,
+    "terms": [
+      "孫囡兒"
+    ],
+    "readings": [
+      "sen1noe6ng6"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "孫女",
+    "raw": "孫囡兒sen1noe6ng6(1X):孫女"
+  },
+  {
+    "id": 389,
+    "terms": [
+      "孫女婿"
+    ],
+    "readings": [
+      "sen1gniu6si5"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "孫女婿",
+    "raw": "孫女婿sen1gniu6si5(1X):孫女婿"
+  },
+  {
+    "id": 390,
+    "terms": [
+      "外生"
+    ],
+    "readings": [
+      "nga6san1"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外孫",
+    "raw": "外生nga6san1(2X):外孫"
+  },
+  {
+    "id": 391,
+    "terms": [
+      "外生囡兒"
+    ],
+    "readings": [
+      "nga6san1noe6ng6"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外孫女",
+    "raw": "外生囡兒nga6san1noe6ng6(2X):外孫女"
+  },
+  {
+    "id": 392,
+    "terms": [
+      "阿侄"
+    ],
+    "readings": [
+      "aeq7zeq8"
+    ],
+    "tone": [
+      "7XC"
+    ],
+    "definition": "侄子",
+    "raw": "阿侄aeq7zeq8(7XC):侄子"
+  },
+  {
+    "id": 393,
+    "terms": [
+      "侄囡兒"
+    ],
+    "readings": [
+      "zeq8noe6ng6"
+    ],
+    "tone": [],
+    "definition": "侄女",
+    "raw": "侄囡兒zeq8noe6ng6:侄女"
+  },
+  {
+    "id": 394,
+    "terms": [
+      "囡兒"
+    ],
+    "readings": [
+      "noe6ng6"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "女兒",
+    "raw": "囡兒noe6ng6(2x):女兒"
+  },
+  {
+    "id": 395,
+    "terms": [
+      "小囡"
+    ],
+    "readings": [
+      "siau3noe6"
+    ],
+    "tone": [
+      "3X"
+    ],
+    "definition": "小孩子(男小囡/女小囡)",
+    "raw": "小囡siau3noe6(3X):小孩子(男小囡/女小囡)"
+  },
+  {
+    "id": 396,
+    "terms": [
+      "小倌"
+    ],
+    "readings": [
+      "siau3koe3"
+    ],
+    "tone": [],
+    "definition": "小孩子(男小倌/女小倌）",
+    "raw": "小倌siau3koe3:小孩子(男小倌/女小倌）"
+  },
+  {
+    "id": 397,
+    "terms": [
+      "孃囡"
+    ],
+    "readings": [
+      "gnian6noe6"
+    ],
+    "tone": [],
+    "definition": "母女（「孃」不作「娘」）",
+    "raw": "孃囡gnian6noe6:母女（「孃」不作「娘」）"
+  },
+  {
+    "id": 398,
+    "terms": [
+      "私囡兒"
+    ],
+    "readings": [
+      "sy1noe6ng6"
+    ],
+    "tone": [],
+    "definition": "私生子",
+    "raw": "私囡兒sy1noe6ng6:私生子"
+  },
+  {
+    "id": 399,
+    "terms": [
+      "男兒"
+    ],
+    "readings": [
+      "noe2ng6"
+    ],
+    "tone": [],
+    "definition": "男孩子",
+    "raw": "男兒noe2ng6:男孩子"
+  },
+  {
+    "id": 400,
+    "terms": [
+      "女小娘兒",
+      "小娘兒"
+    ],
+    "readings": [
+      "gniu6siau3gnian6ng6"
+    ],
+    "tone": [],
+    "definition": "女孩子（「娘」不作「孃」）",
+    "raw": "女小娘兒/小娘兒gniu6siau3gnian6ng6:女孩子（「娘」不作「孃」）"
+  },
+  {
+    "id": 401,
+    "terms": [
+      "外甥"
+    ],
+    "readings": [
+      "nga6san1"
+    ],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外甥",
+    "raw": "外甥nga6san1(2X):外甥"
+  },
+  {
+    "id": 402,
+    "terms": [
+      "外甥囡兒"
+    ],
+    "readings": [],
+    "tone": [
+      "2X"
+    ],
+    "definition": "外甥女",
+    "raw": "外甥囡兒(2X):外甥女"
+  },
+  {
+    "id": 403,
+    "terms": [
+      "囡囡"
+    ],
+    "readings": [
+      "noe1noe1"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "對小孩子地的暱稱",
+    "raw": "囡囡noe1noe1(1x):對小孩子地的暱稱"
+  },
+  {
+    "id": 404,
+    "terms": [
+      "小人"
+    ],
+    "readings": [
+      "siau3gnin2"
+    ],
+    "tone": [],
+    "definition": "小孩子",
+    "raw": "小人siau3gnin2:小孩子"
+  },
+  {
+    "id": 405,
+    "terms": [
+      "大人"
+    ],
+    "readings": [
+      "dou6gnin2"
+    ],
+    "tone": [],
+    "definition": "成人",
+    "raw": "大人dou6gnin2:成人"
+  },
+  {
+    "id": 406,
+    "terms": [
+      "官"
+    ],
+    "readings": [
+      "kuoe1"
+    ],
+    "tone": [],
+    "definition": "蘇州對兒童的尊稱，如按排名稱大官、二官或起小名稱玉官、金官等。不知兒童的排名或小名可統稱阿官。",
+    "raw": "官kuoe1:蘇州對兒童的尊稱，如按排名稱大官、二官或起小名稱玉官、金官等。不知兒童的排名或小名可統稱阿官。"
+  },
+  {
+    "id": 407,
+    "terms": [
+      "官人"
+    ],
+    "readings": [
+      "kuoe1gnin2"
+    ],
+    "tone": [],
+    "definition": "蘇州傳統對妓女的尊稱。蘇錫等地有妓名如李某官、張某官等。",
+    "raw": "官人kuoe1gnin2:蘇州傳統對妓女的尊稱。蘇錫等地有妓名如李某官、張某官等。"
+  },
+  {
+    "id": 408,
+    "terms": [
+      "親眷"
+    ],
+    "readings": [
+      "tshin1cioe5"
+    ],
+    "tone": [],
+    "definition": "親戚",
+    "raw": "親眷tshin1cioe5:親戚"
+  },
+  {
+    "id": 409,
+    "terms": [
+      "小姐"
+    ],
+    "readings": [
+      "siau3tsia3"
+    ],
+    "tone": [
+      "1X"
+    ],
+    "definition": "小姐，姑娘",
+    "raw": "小姐siau3tsia3(1X):小姐，姑娘"
+  },
+  {
+    "id": 410,
+    "terms": [
+      "堂倌"
+    ],
+    "readings": [
+      "daon2kuoe3"
+    ],
+    "tone": [],
+    "definition": "服務生",
+    "raw": "堂倌daon2kuoe3:服務生"
+  },
+  {
+    "id": 411,
+    "terms": [
+      "鑊",
+      "鑊子"
+    ],
+    "readings": [
+      "ghoq8tsy3"
+    ],
+    "tone": [],
+    "definition": "用來做飯的鍋",
+    "raw": "鑊/鑊子ghoq8tsy3:用來做飯的鍋"
+  },
+  {
+    "id": 412,
+    "terms": [
+      "㔶"
+    ],
+    "readings": [
+      "koe3"
+    ],
+    "tone": [],
+    "definition": "蓋子（僮侗語成分）",
+    "raw": "㔶koe3:蓋子（僮侗語成分）"
+  },
+  {
+    "id": 413,
+    "terms": [
+      "鑊㔶"
+    ],
+    "readings": [
+      "ghoq8koe3"
+    ],
+    "tone": [],
+    "definition": "鍋蓋",
+    "raw": "鑊㔶ghoq8koe3:鍋蓋"
+  },
+  {
+    "id": 414,
+    "terms": [
+      "脬"
+    ],
+    "readings": [
+      "phau1"
+    ],
+    "tone": [],
+    "definition": "膀胱（僮侗語成分）eg.一脬尿",
+    "raw": "脬phau1:膀胱（僮侗語成分）eg.一脬尿"
+  },
+  {
+    "id": 415,
+    "terms": [
+      "香脬"
+    ],
+    "readings": [
+      "shian1phau1"
+    ],
+    "tone": [],
+    "definition": "柚子",
+    "raw": "香脬shian1phau1:柚子"
+  },
+  {
+    "id": 416,
+    "terms": [
+      "文旦"
+    ],
+    "readings": [
+      "ven2te5"
+    ],
+    "tone": [],
+    "definition": "柚子",
+    "raw": "文旦ven2te5:柚子"
+  },
+  {
+    "id": 417,
+    "terms": [
+      "薸"
+    ],
+    "readings": [
+      "biau2"
+    ],
+    "tone": [],
+    "definition": "浮萍",
+    "raw": "薸biau2:浮萍"
+  },
+  {
+    "id": 418,
+    "terms": [
+      "御麥"
+    ],
+    "readings": [
+      "yu6maq6"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "玉米（古城區，吳語有玉米、御麥、番麥、六穀、粟、珍珠米等說法）",
+    "raw": "御麥yu6maq6(6x):玉米（古城區，吳語有玉米、御麥、番麥、六穀、粟、珍珠米等說法）"
+  },
+  {
+    "id": 419,
+    "terms": [
+      "辣火"
+    ],
+    "readings": [
+      "laeq8hou3"
+    ],
+    "tone": [],
+    "definition": "辣椒",
+    "raw": "辣火laeq8hou3:辣椒"
+  },
+  {
+    "id": 420,
+    "terms": [
+      "落蘇"
+    ],
+    "readings": [
+      "loq8sou1"
+    ],
+    "tone": [],
+    "definition": "茄子",
+    "raw": "落蘇loq8sou1:茄子"
+  },
+  {
+    "id": 421,
+    "terms": [
+      "芋艿"
+    ],
+    "readings": [
+      "iu3naeq8"
+    ],
+    "tone": [
+      "5x"
+    ],
+    "definition": "芋塊莖的總稱。",
+    "raw": "芋艿iu3naeq8(5x):芋塊莖的總稱。"
+  },
+  {
+    "id": 422,
+    "terms": [
+      "洋芋艿"
+    ],
+    "readings": [
+      "yan2iu3naeq8"
+    ],
+    "tone": [],
+    "definition": "土豆。",
+    "raw": "洋芋艿yan2iu3naeq8:土豆。"
+  },
+  {
+    "id": 423,
+    "terms": [
+      "大豆芋艿"
+    ],
+    "readings": [
+      "dou6deu6iu3naeq8"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "芋頭。",
+    "raw": "大豆芋艿dou6deu6iu3naeq8(2x):芋頭。"
+  },
+  {
+    "id": 424,
+    "terms": [
+      "筷",
+      "筷兒"
+    ],
+    "readings": [
+      "khue5ng"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "筷子",
+    "raw": "筷/筷兒khue5ng(1x):筷子"
+  },
+  {
+    "id": 425,
+    "terms": [
+      "踏渡級"
+    ],
+    "readings": [
+      "daeq8dou6ciq7"
+    ],
+    "tone": [],
+    "definition": "從駁岸上走下河沿的石級",
+    "raw": "踏渡級daeq8dou6ciq7:從駁岸上走下河沿的石級"
+  },
+  {
+    "id": 426,
+    "terms": [
+      "紙頭"
+    ],
+    "readings": [
+      "tsy3deu6"
+    ],
+    "tone": [
+      "5x"
+    ],
+    "definition": "紙",
+    "raw": "紙頭tsy3deu6(5x):紙"
+  },
+  {
+    "id": 427,
+    "terms": [
+      "抄"
+    ],
+    "readings": [
+      "tshau1"
+    ],
+    "tone": [],
+    "definition": "勺子（城內用詞，吳語另有「調羹」「瓢」等說法）",
+    "raw": "抄tshau1:勺子（城內用詞，吳語另有「調羹」「瓢」等說法）"
+  },
+  {
+    "id": 428,
+    "terms": [
+      "畚箕"
+    ],
+    "readings": [
+      "pen1ci1"
+    ],
+    "tone": [],
+    "definition": "簸箕",
+    "raw": "畚箕pen1ci1:簸箕"
+  },
+  {
+    "id": 429,
+    "terms": [
+      "畚"
+    ],
+    "readings": [
+      "pen1"
+    ],
+    "tone": [],
+    "definition": "撮垃圾leq8seq7eg.垃圾畚脫",
+    "raw": "畚pen1:撮垃圾leq8seq7eg.垃圾畚脫"
+  },
+  {
+    "id": 430,
+    "terms": [
+      "撮"
+    ],
+    "readings": [
+      "tsheq7"
+    ],
+    "tone": [],
+    "definition": "以手抓取，今多用於抓藥；以手抓並上擡，多需多人協力",
+    "raw": "撮tsheq7:以手抓取，今多用於抓藥；以手抓並上擡，多需多人協力"
+  },
+  {
+    "id": 431,
+    "terms": [
+      "料作"
+    ],
+    "readings": [
+      "liau6tsoq7"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "布料",
+    "raw": "料作liau6tsoq7(2x):布料"
+  },
+  {
+    "id": 432,
+    "terms": [
+      "行"
+    ],
+    "readings": [
+      "ghan2"
+    ],
+    "tone": [],
+    "definition": "走",
+    "raw": "行ghan2:走"
+  },
+  {
+    "id": 433,
+    "terms": [
+      "跍"
+    ],
+    "readings": [
+      "gu2"
+    ],
+    "tone": [],
+    "definition": "蹲eg.跍落來（蹲下來）",
+    "raw": "跍gu2:蹲eg.跍落來（蹲下來）"
+  },
+  {
+    "id": 434,
+    "terms": [
+      "睬"
+    ],
+    "readings": [
+      "tshe3"
+    ],
+    "tone": [],
+    "definition": "理會，理睬 eg.睬也弗睬",
+    "raw": "睬tshe3：理會，理睬 eg.睬也弗睬"
+  },
+  {
+    "id": 435,
+    "terms": [
+      "傍"
+    ],
+    "readings": [
+      "baon6"
+    ],
+    "tone": [],
+    "definition": "趁",
+    "raw": "傍baon6:趁"
+  },
+  {
+    "id": 436,
+    "terms": [
+      "趁"
+    ],
+    "readings": [
+      "tshen5"
+    ],
+    "tone": [],
+    "definition": "趁；乘",
+    "raw": "趁tshen5:趁；乘"
+  },
+  {
+    "id": 437,
+    "terms": [
+      "哢"
+    ],
+    "readings": [
+      "khaeq7"
+    ],
+    "tone": [],
+    "definition": "壓住",
+    "raw": "哢khaeq7:壓住"
+  },
+  {
+    "id": 438,
+    "terms": [
+      "踏"
+    ],
+    "readings": [
+      "daeq8"
+    ],
+    "tone": [],
+    "definition": "踩",
+    "raw": "踏daeq8:踩"
+  },
+  {
+    "id": 439,
+    "terms": [
+      "妗"
+    ],
+    "readings": [
+      "shie1"
+    ],
+    "tone": [],
+    "definition": "輕浮，騷(今義)；炫耀",
+    "raw": "妗shie1:輕浮，騷(今義)；炫耀"
+  },
+  {
+    "id": 440,
+    "terms": [
+      "嚇"
+    ],
+    "readings": [
+      "haq7"
+    ],
+    "tone": [],
+    "definition": "害怕，喫驚",
+    "raw": "嚇haq7:害怕，喫驚"
+  },
+  {
+    "id": 441,
+    "terms": [
+      "隑"
+    ],
+    "readings": [
+      "ge6"
+    ],
+    "tone": [],
+    "definition": "倚仗，倚靠eg.隑吇（仗着）",
+    "raw": "隑ge6:倚仗，倚靠eg.隑吇（仗着）"
+  },
+  {
+    "id": 442,
+    "terms": [
+      "除"
+    ],
+    "readings": [
+      "zyu2"
+    ],
+    "tone": [],
+    "definition": "摘掉，取下",
+    "raw": "除zyu2:摘掉，取下"
+  },
+  {
+    "id": 443,
+    "terms": [
+      "嗪",
+      "情"
+    ],
+    "readings": [
+      "zin2"
+    ],
+    "tone": [],
+    "definition": "開心（僮侗語成分，與《越人歌》中「秦」字對應詞同源）eg.嗪在許（開心着呢，挺开心）",
+    "raw": "嗪/情zin2:開心（僮侗語成分，與《越人歌》中「秦」字對應詞同源）eg.嗪在許（開心着呢，挺开心）"
+  },
+  {
+    "id": 444,
+    "terms": [
+      "㫰"
+    ],
+    "readings": [
+      "laon6"
+    ],
+    "tone": [],
+    "definition": "晾，曬eg.衣裳㫰也㫰弗乾",
+    "raw": "㫰laon6:晾，曬eg.衣裳㫰也㫰弗乾"
+  },
+  {
+    "id": 445,
+    "terms": [
+      "韌"
+    ],
+    "readings": [
+      "gnin6"
+    ],
+    "tone": [],
+    "definition": "受潮變軟",
+    "raw": "韌gnin6:受潮變軟"
+  },
+  {
+    "id": 446,
+    "terms": [
+      "回韌"
+    ],
+    "readings": [
+      "we2gnin6"
+    ],
+    "tone": [],
+    "definition": "原來乾燥的東西受潮變軟",
+    "raw": "回韌we2gnin6:原來乾燥的東西受潮變軟"
+  },
+  {
+    "id": 447,
+    "terms": [
+      "標緻"
+    ],
+    "readings": [
+      "piau1tsyu5"
+    ],
+    "tone": [],
+    "definition": "漂亮",
+    "raw": "標緻piau1tsyu5:漂亮"
+  },
+  {
+    "id": 448,
+    "terms": [
+      "清爽"
+    ],
+    "readings": [
+      "tshin1saon3"
+    ],
+    "tone": [],
+    "definition": "清楚，乾淨",
+    "raw": "清爽tshin1saon3:清楚，乾淨"
+  },
+  {
+    "id": 449,
+    "terms": [
+      "着實"
+    ],
+    "readings": [
+      "zaq8zeq8"
+    ],
+    "tone": [],
+    "definition": "實在",
+    "raw": "着實zaq8zeq8:實在"
+  },
+  {
+    "id": 450,
+    "terms": [
+      "實頭"
+    ],
+    "readings": [
+      "zeq8deu2"
+    ],
+    "tone": [],
+    "definition": "實在",
+    "raw": "實頭zeq8deu2:實在"
+  },
+  {
+    "id": 451,
+    "terms": [
+      "認真"
+    ],
+    "readings": [
+      "gnin6zen2"
+    ],
+    "tone": [],
+    "definition": "認真",
+    "raw": "認真gnin6zen2:認真"
+  },
+  {
+    "id": 452,
+    "terms": [
+      "顯煥"
+    ],
+    "readings": [
+      "shie5huoe5"
+    ],
+    "tone": [
+      "3x"
+    ],
+    "definition": "體面",
+    "raw": "顯煥shie5huoe5(3x):體面"
+  },
+  {
+    "id": 453,
+    "terms": [
+      "膯"
+    ],
+    "readings": [
+      "ten1"
+    ],
+    "tone": [],
+    "definition": "喫撐eg.喫膯脫",
+    "raw": "膯ten1:喫撐eg.喫膯脫"
+  },
+  {
+    "id": 454,
+    "terms": [
+      "蹬脫"
+    ],
+    "readings": [
+      "ten1theq7"
+    ],
+    "tone": [],
+    "definition": "扔掉，拋棄掉",
+    "raw": "蹬脫ten1theq7:扔掉，拋棄掉"
+  },
+  {
+    "id": 455,
+    "terms": [
+      "尿"
+    ],
+    "readings": [
+      "syu1"
+    ],
+    "tone": [],
+    "definition": "尿",
+    "raw": "尿syu1:尿"
+  },
+  {
+    "id": 456,
+    "terms": [
+      "拆尿"
+    ],
+    "readings": [
+      "tshaq7gniau3"
+    ],
+    "tone": [
+      "7XA"
+    ],
+    "definition": "尿。也讀tshaqzau。可接「脫」等。「拆」表音。",
+    "raw": "拆尿tshaq7gniau3(7XA):尿。也讀tshaqzau。可接「脫」等。「拆」表音。"
+  },
+  {
+    "id": 457,
+    "terms": [
+      "淴浴"
+    ],
+    "readings": [
+      "hoq7yoq8"
+    ],
+    "tone": [],
+    "definition": "洗澡",
+    "raw": "淴浴hoq7yoq8:洗澡"
+  },
+  {
+    "id": 458,
+    "terms": [
+      "佮算"
+    ],
+    "readings": [
+      "keq7soe5"
+    ],
+    "tone": [],
+    "definition": "合算，划算",
+    "raw": "佮算keq7soe5:合算，划算"
+  },
+  {
+    "id": 459,
+    "terms": [
+      "發寒熱"
+    ],
+    "readings": [
+      "faeq7ghoe2zeq8"
+    ],
+    "tone": [],
+    "definition": "發燒",
+    "raw": "發寒熱faeq7ghoe2zeq8:發燒"
+  },
+  {
+    "id": 460,
+    "terms": [
+      "摜跟斗"
+    ],
+    "readings": [
+      "gue6ken1teu3"
+    ],
+    "tone": [],
+    "definition": "摔倒",
+    "raw": "摜跟斗gue6ken1teu3:摔倒"
+  },
+  {
+    "id": 461,
+    "terms": [
+      "踏天",
+      "踏添"
+    ],
+    "readings": [
+      "daeq8thie1"
+    ],
+    "tone": [],
+    "definition": "前腳失足eg.走胡梯當心踏天",
+    "raw": "踏天/踏添daeq8thie1:前腳失足eg.走胡梯當心踏天"
+  },
+  {
+    "id": 462,
+    "terms": [
+      "尋休思"
+    ],
+    "readings": [
+      "zin2heu1sy1"
+    ],
+    "tone": [],
+    "definition": "找茬兒，找事兒",
+    "raw": "尋休思zin2heu1sy1:找茬兒，找事兒"
+  },
+  {
+    "id": 463,
+    "terms": [
+      "搭界"
+    ],
+    "readings": [
+      "taeq7ka5"
+    ],
+    "tone": [],
+    "definition": "沾邊，有關",
+    "raw": "搭界taeq7ka5:沾邊，有關"
+  },
+  {
+    "id": 464,
+    "terms": [
+      "到家"
+    ],
+    "readings": [
+      "tau5ka1"
+    ],
+    "tone": [],
+    "definition": "周到，到位",
+    "raw": "到家tau5ka1:周到，到位"
+  },
+  {
+    "id": 465,
+    "terms": [
+      "河浜"
+    ],
+    "readings": [
+      "ghou2pan1"
+    ],
+    "tone": [],
+    "definition": "河流",
+    "raw": "河浜ghou2pan1:河流"
+  },
+  {
+    "id": 466,
+    "terms": [
+      "腦袋"
+    ],
+    "readings": [
+      "nau6de6"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "腦子",
+    "raw": "腦袋nau6de6(1x):腦子"
+  },
+  {
+    "id": 467,
+    "terms": [
+      "腦筋"
+    ],
+    "readings": [
+      "nau6cin1"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "腦子，腦筋",
+    "raw": "腦筋nau6cin1(6x):腦子，腦筋"
+  },
+  {
+    "id": 468,
+    "terms": [
+      "肝火"
+    ],
+    "readings": [
+      "koe1hou3"
+    ],
+    "tone": [],
+    "definition": "容易生氣的情緒",
+    "raw": "肝火koe1hou3:容易生氣的情緒"
+  },
+  {
+    "id": 469,
+    "terms": [
+      "光火"
+    ],
+    "readings": [
+      "kuan1hou3"
+    ],
+    "tone": [],
+    "definition": "生氣eg.大爲光火",
+    "raw": "光火kuan1hou3:生氣eg.大爲光火"
+  },
+  {
+    "id": 470,
+    "terms": [
+      "鼻頭"
+    ],
+    "readings": [
+      "beq8deu2"
+    ],
+    "tone": [],
+    "definition": "鼻子",
+    "raw": "鼻頭beq8deu2:鼻子"
+  },
+  {
+    "id": 471,
+    "terms": [
+      "齁斯",
+      "齁勢"
+    ],
+    "readings": [
+      "heu1sy",
+      "syu"
+    ],
+    "tone": [],
+    "definition": "悶熱",
+    "raw": "齁斯/齁勢heu1sy/syu:悶熱"
+  },
+  {
+    "id": 472,
+    "terms": [
+      "～頭勢"
+    ],
+    "readings": [
+      "deu2syu5"
+    ],
+    "tone": [],
+    "definition": "「～相兒」「～樣兒」。後綴，接於形容詞/少量動詞後形成抽象名詞以表程度或狀況eg.上頭勢，矮頭勢，俚个矮頭勢實頭少見",
+    "raw": "～頭勢deu2syu5:「～相兒」「～樣兒」。後綴，接於形容詞/少量動詞後形成抽象名詞以表程度或狀況eg.上頭勢，矮頭勢，俚个矮頭勢實頭少見"
+  },
+  {
+    "id": 473,
+    "terms": [
+      "活猻"
+    ],
+    "readings": [
+      "weq8sen1"
+    ],
+    "tone": [],
+    "definition": "猴子(猢猻)",
+    "raw": "活猻weq8sen1:猴子(猢猻)"
+  },
+  {
+    "id": 474,
+    "terms": [
+      "田雞"
+    ],
+    "readings": [
+      "die2ci1"
+    ],
+    "tone": [],
+    "definition": "青蛙",
+    "raw": "田雞die2ci1:青蛙"
+  },
+  {
+    "id": 475,
+    "terms": [
+      "癩團"
+    ],
+    "readings": [
+      "la6doe2"
+    ],
+    "tone": [
+      "2x/6x"
+    ],
+    "definition": "蟾蜍",
+    "raw": "癩團la6doe2(2x/6x):蟾蜍"
+  },
+  {
+    "id": 476,
+    "terms": [
+      "生活"
+    ],
+    "readings": [
+      "san1weq8"
+    ],
+    "tone": [],
+    "definition": "活計，活兒",
+    "raw": "生活san1weq8:活計，活兒"
+  },
+  {
+    "id": 477,
+    "terms": [
+      "喫生活"
+    ],
+    "readings": [
+      "chiq7san1weq8"
+    ],
+    "tone": [
+      "7xa"
+    ],
+    "definition": "挨打",
+    "raw": "喫生活chiq7san1weq8(7xa):挨打"
+  },
+  {
+    "id": 478,
+    "terms": [
+      "滑頭"
+    ],
+    "readings": [
+      "waeq8deu2"
+    ],
+    "tone": [],
+    "definition": "圓滑不老實的人",
+    "raw": "滑頭waeq8deu2:圓滑不老實的人"
+  },
+  {
+    "id": 479,
+    "terms": [
+      "搲啦弗出"
+    ],
+    "readings": [
+      "o1la1feq7tsheq7"
+    ],
+    "tone": [],
+    "definition": "說不出話，不舒服",
+    "raw": "搲啦弗出o1la1feq7tsheq7:說不出話，不舒服"
+  },
+  {
+    "id": 480,
+    "terms": [
+      "便當"
+    ],
+    "readings": [
+      "bie6taon1"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "方便",
+    "raw": "便當bie6taon1(2x):方便"
+  },
+  {
+    "id": 481,
+    "terms": [
+      "特爲"
+    ],
+    "readings": [
+      "diq8we"
+    ],
+    "tone": [],
+    "definition": "特地",
+    "raw": "特爲diq8we:特地"
+  },
+  {
+    "id": 482,
+    "terms": [
+      "豁邊"
+    ],
+    "readings": [
+      "huaeq7pie1"
+    ],
+    "tone": [],
+    "definition": "過頭，超出限度；出錯",
+    "raw": "豁邊huaeq7pie1:過頭，超出限度；出錯"
+  },
+  {
+    "id": 483,
+    "terms": [
+      "穿繃"
+    ],
+    "readings": [
+      "tshoe1pan1"
+    ],
+    "tone": [],
+    "definition": "穿幫",
+    "raw": "穿繃tshoe1pan1:穿幫"
+  },
+  {
+    "id": 484,
+    "terms": [
+      "放生"
+    ],
+    "readings": [
+      "faon5san1"
+    ],
+    "tone": [
+      "1x"
+    ],
+    "definition": "失約",
+    "raw": "放生faon5san1(1x):失約"
+  },
+  {
+    "id": 485,
+    "terms": [
+      "豪娝",
+      "豪稍"
+    ],
+    "readings": [
+      "ghau2sau1"
+    ],
+    "tone": [],
+    "definition": "快點",
+    "raw": "豪娝/豪稍ghau2sau1:快點"
+  },
+  {
+    "id": 486,
+    "terms": [
+      "罪過"
+    ],
+    "readings": [
+      "ze6kou5"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "不敢當eg:罪過煞哉",
+    "raw": "罪過ze6kou5(6x):不敢當eg:罪過煞哉"
+  },
+  {
+    "id": 487,
+    "terms": [
+      "下作"
+    ],
+    "readings": [
+      "gho6tsoq7"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "下流",
+    "raw": "下作gho6tsoq7(2x):下流"
+  },
+  {
+    "id": 488,
+    "terms": [
+      "敗兆"
+    ],
+    "readings": [
+      "ba6zau6"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "做人失敗的樣子，形容人下流、貪心",
+    "raw": "敗兆ba6zau6(2x):做人失敗的樣子，形容人下流、貪心"
+  },
+  {
+    "id": 489,
+    "terms": [
+      "熱絡"
+    ],
+    "readings": [
+      "gniq8loq8"
+    ],
+    "tone": [],
+    "definition": "親熱",
+    "raw": "熱絡gniq8loq8:親熱"
+  },
+  {
+    "id": 490,
+    "terms": [
+      "活絡"
+    ],
+    "readings": [
+      "weq8loq8"
+    ],
+    "tone": [],
+    "definition": "機靈",
+    "raw": "活絡weq8loq8:機靈"
+  },
+  {
+    "id": 491,
+    "terms": [
+      "連牽"
+    ],
+    "readings": [
+      "lie2chie1"
+    ],
+    "tone": [],
+    "definition": "流利，順利",
+    "raw": "連牽lie2chie1:流利，順利"
+  },
+  {
+    "id": 492,
+    "terms": [
+      "V得連牽"
+    ],
+    "readings": [],
+    "tone": [],
+    "definition": "V得了，V得成，V得好",
+    "raw": "V得連牽：V得了，V得成，V得好"
+  },
+  {
+    "id": 493,
+    "terms": [
+      "V弗連牽"
+    ],
+    "readings": [],
+    "tone": [],
+    "definition": "V不了，V不成，V不好",
+    "raw": "V弗連牽：V不了，V不成，V不好"
+  },
+  {
+    "id": 494,
+    "terms": [
+      "辣手"
+    ],
+    "readings": [
+      "laeq8seu3"
+    ],
+    "tone": [],
+    "definition": "手段毒辣，手辣",
+    "raw": "辣手laeq8seu3:手段毒辣，手辣"
+  },
+  {
+    "id": 495,
+    "terms": [
+      "豪娝點"
+    ],
+    "readings": [
+      "ghau2sau1tie3"
+    ],
+    "tone": [],
+    "definition": "趕緊",
+    "raw": "豪娝點ghau2sau1tie3:趕緊"
+  },
+  {
+    "id": 496,
+    "terms": [
+      "阿殼張"
+    ],
+    "readings": [
+      "aeq7khoq7tsan1"
+    ],
+    "tone": [],
+    "definition": "誰知，没想到（表反問）eg.我倒在裏等，阿殼張渠放生哉",
+    "raw": "阿殼張aeq7khoq7tsan1:誰知，没想到（表反問）eg.我倒在裏等，阿殼張渠放生哉"
+  },
+  {
+    "id": 497,
+    "terms": [
+      "相罵"
+    ],
+    "readings": [
+      "sian1mo6"
+    ],
+    "tone": [],
+    "definition": "吵架",
+    "raw": "相罵sian1mo6:吵架"
+  },
+  {
+    "id": 498,
+    "terms": [
+      "相打"
+    ],
+    "readings": [
+      "sian1tan3"
+    ],
+    "tone": [],
+    "definition": "打架",
+    "raw": "相打sian1tan3:打架"
+  },
+  {
+    "id": 499,
+    "terms": [
+      "搭漿"
+    ],
+    "readings": [
+      "taeq7tsian1"
+    ],
+    "tone": [],
+    "definition": "不地道；東西不結實；活兒不地道eg.唉種生活搭漿得來，榫頭也朆栿縫",
+    "raw": "搭漿taeq7tsian1:不地道；東西不結實；活兒不地道eg.唉種生活搭漿得來，榫頭也朆栿縫"
+  },
+  {
+    "id": 500,
+    "terms": [
+      "現世"
+    ],
+    "readings": [
+      "ye6syu5"
+    ],
+    "tone": [
+      "6x"
+    ],
+    "definition": "丟人，出醜",
+    "raw": "現世ye6syu5(6x):丟人，出醜"
+  },
+  {
+    "id": 501,
+    "terms": [
+      "鬧猛"
+    ],
+    "readings": [
+      "nau6man6"
+    ],
+    "tone": [
+      "2x"
+    ],
+    "definition": "熱鬧",
+    "raw": "鬧猛nau6man6(2x):熱鬧"
+  },
+  {
+    "id": 502,
+    "terms": [
+      "觸氣"
+    ],
+    "readings": [
+      "tshoq7chi5"
+    ],
+    "tone": [],
+    "definition": "討厭",
+    "raw": "觸氣tshoq7chi5:討厭"
+  },
+  {
+    "id": 503,
+    "terms": [
+      "酌斂"
+    ],
+    "readings": [
+      "tsaq7lie6"
+    ],
+    "tone": [],
+    "definition": "能約束自己的言行，不給人麻煩",
+    "raw": "酌斂tsaq7lie6:能約束自己的言行，不給人麻煩"
+  },
+  {
+    "id": 504,
+    "terms": [
+      "便宜"
+    ],
+    "readings": [
+      "bie2gniq8"
+    ],
+    "tone": [],
+    "definition": "便宜（不讀本音gni2）",
+    "raw": "便宜bie2gniq8:便宜（不讀本音gni2）"
+  },
+  {
+    "id": 505,
+    "terms": [
+      "搭便宜"
+    ],
+    "readings": [
+      "thaeq7bie2gniq8"
+    ],
+    "tone": [],
+    "definition": "佔便宜",
+    "raw": "搭便宜thaeq7bie2gniq8:佔便宜"
+  },
+  {
+    "id": 506,
+    "terms": [
+      "煊煊紅"
+    ],
+    "readings": [
+      "shioe1shioeghon2"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "煊煊紅 shioe1shioeghon2"
+  },
+  {
+    "id": 507,
+    "terms": [
+      "蠟蠟黃"
+    ],
+    "readings": [
+      "laeq8laeqwaon2"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "蠟蠟黃laeq8laeqwaon2"
+  },
+  {
+    "id": 508,
+    "terms": [
+      "碧碧綠"
+    ],
+    "readings": [
+      "piq7piqloq8"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "碧碧綠piq7piqloq8"
+  },
+  {
+    "id": 509,
+    "terms": [
+      "生生青"
+    ],
+    "readings": [
+      "san1santshin1"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "生生青san1santshin1"
+  },
+  {
+    "id": 510,
+    "terms": [
+      "墨墨黑"
+    ],
+    "readings": [
+      "meq8meqheq7"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "墨墨黑 meq8meqheq7"
+  },
+  {
+    "id": 511,
+    "terms": [
+      "雪雪白"
+    ],
+    "readings": [
+      "siq7siqbaq8"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "雪雪白siq7siqbaq8"
+  },
+  {
+    "id": 512,
+    "terms": [
+      "紅通通"
+    ],
+    "readings": [
+      "ghon2thon1thon"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "紅通通ghon2thon1thon(彤don2)"
+  },
+  {
+    "id": 513,
+    "terms": [
+      "紅怦怦"
+    ],
+    "readings": [
+      "ghon2phen1phen"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "紅怦怦ghon2phen1phen"
+  },
+  {
+    "id": 514,
+    "terms": [
+      "黑黢黢"
+    ],
+    "readings": [
+      "heq7tsheq7tsheq"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "黑黢黢heq7tsheq7tsheq"
+  },
+  {
+    "id": 515,
+    "terms": [
+      "黃澄澄"
+    ],
+    "readings": [
+      "waon2zen2zen"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "黃澄澄waon2zen2zen"
+  },
+  {
+    "id": 516,
+    "terms": [
+      "墨等黢黑"
+    ],
+    "readings": [
+      "meq8tentsheq7heq7"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "墨等黢黑meq8tentsheq7heq7(「等」亦可寫作「登」等，只記錄ten音)"
+  },
+  {
+    "id": 517,
+    "terms": [
+      "碧綠生青"
+    ],
+    "readings": [
+      "piq7loq8san1tshin1"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "碧綠生青piq7loq8san1tshin1"
+  },
+  {
+    "id": 518,
+    "terms": [
+      "赤蠟焦黃"
+    ],
+    "readings": [
+      "tsheq7laeq8tsiau1waon2"
+    ],
+    "tone": [],
+    "definition": "",
+    "raw": "赤蠟焦黃tsheq7laeq8tsiau1waon2"
+  },
+  {
+    "id": 519,
+    "terms": [
+      "冰瀴結骨"
+    ],
+    "readings": [
+      "pin1in5ciq7kueq7"
+    ],
+    "tone": [],
+    "definition": "凍得徹骨",
+    "raw": "冰瀴結骨pin1in5ciq7kueq7:凍得徹骨"
+  }
+]
