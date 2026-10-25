@@ -39,6 +39,9 @@ function __vis(el){
       if(n.tagName==='SCRIPT'||n.tagName==='STYLE') return;
       var cs=getComputedStyle(n);
       if(cs.display==='none'||cs.visibility==='hidden') return;
+      /* placeholder 弗是文本節點，但看得見，也要算進首屏字集
+         （否則只出現在 placeholder 裏的字——如日文新字体「国」——會漏掉） */
+      if((n.tagName==='INPUT'||n.tagName==='TEXTAREA')&&n.placeholder){ s+=n.placeholder; }
       for(var i=0;i<n.childNodes.length;i++) w(n.childNodes[i]);
     }
   })(el);
