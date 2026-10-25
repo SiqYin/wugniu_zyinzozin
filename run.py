@@ -14,7 +14,7 @@ BASE_DIRECTORY = Path(__file__).resolve().parent
 
 
 def create_app() -> Flask:
-    app = Flask(__name__, static_folder=None)
+    app = Flask(__name__, static_folder=str(BASE_DIRECTORY / "fonts"),static_url_path="/fonts",)
     service = SearchService(BASE_DIRECTORY / "data")
 
     @app.after_request
@@ -32,12 +32,19 @@ def create_app() -> Flask:
         payload = request.get_json(silent=True) or {}
         text = payload.get("text", "")
         dialects = payload.get("dialects")
+        include_dictionary = payload.get("dictionary", False)
         if not isinstance(text, str):
             return jsonify({"error": "text must be a string"}), 400
         if dialects is not None and not isinstance(dialects, list):
             return jsonify({"error": "dialects must be a list"}), 400
+        if not isinstance(include_dictionary, bool):
+            return jsonify({"error": "dictionary must be a boolean"}), 400
         try:
-            return jsonify(service.search_characters(text, dialects))
+            return jsonify(
+                service.search_characters(
+                    text, dialects, include_dictionary
+                )
+            )
         except ValueError as error:
             return jsonify({"error": str(error)}), 400
 

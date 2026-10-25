@@ -11,3 +11,6 @@ __*.html
 __*.png
 __*.txt
 __site/
+
+data/siqyin_dict
+changes.md

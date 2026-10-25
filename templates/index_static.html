@@ -112,6 +112,11 @@ button { -webkit-appearance: none; appearance: none; }
   margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(41,128,185,0.08);
 }
+.dictionary-card {
+  background: #e5eef7;
+  border-color: #b6cddd;
+}
+.char-card.dictionary-card > h2 { font-size: 1.35em; }
 .char-card h2 {
   font-size: 2.2em;
   color: #1a5276;
@@ -227,13 +232,24 @@ footer a { color: #2980b9; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 .dialect-filter {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 18px;
   padding: 8px 12px;
   background: #e8f0f8;
   border-radius: 8px;
+}
+.dialect-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: center;
+  width: 100%;
+}
+.dictionary-filter-row {
+  padding-top: 8px;
+  border-top: 1px solid #c8dae8;
 }
 .dialect-filter label {
   display: flex;
@@ -550,11 +566,16 @@ footer a:hover { text-decoration: underline; }
   </div>
 </div>
 <div class="dialect-filter">
-  <label><input type="checkbox" id="chk_suhu" checked> 蘇滬混合腔</label>
-  <label><input type="checkbox" id="chk_qingmo" checked> 清末蘇州話</label>
-  <label><input type="checkbox" id="chk_shanghai" checked> 上海話</label>
-  <label><input type="checkbox" id="chk_suzhou" checked> 蘇州話</label>
-  <label><input type="checkbox" id="chk_pingtan" checked> 蘇州評彈音</label>
+  <div class="dialect-filter-row">
+    <label><input type="checkbox" id="chk_suhu" checked> 蘇滬混合腔</label>
+    <label><input type="checkbox" id="chk_qingmo" checked> 清末蘇州話</label>
+    <label><input type="checkbox" id="chk_shanghai" checked> 上海話</label>
+    <label><input type="checkbox" id="chk_suzhou" checked> 蘇州話</label>
+    <label><input type="checkbox" id="chk_pingtan" checked> 蘇州評彈音</label>
+  </div>
+  <div class="dialect-filter-row dictionary-filter-row">
+    <label><input type="checkbox" id="chk_siqyin" checked> 雪螢吳語常用詞彙（蘇州閒話）</label>
+  </div>
 </div>
 <div class="lyric-rhyme-entry">
   <div class="btn-stack">
@@ -595,6 +616,8 @@ const OU_TO_U_MAP = {
 let dataLoadPromise = null;
 let readingIndexes = Object.create(null);
 let variantIndex = new Map();
+let dictionaryLoadPromise = null;
+let dictionaryRecords = [];
 
 function showError(msg) {
   document.getElementById('errorBox').innerHTML = '<div class="error-msg">' + escapeHtml(msg) + '</div>';
@@ -697,6 +720,44 @@ function buildVariantIndex(records) {
   return index;
 }
 
+function buildDictionaryRecords(records) {
+  if (!Array.isArray(records)) throw new Error('siqyin_dict.json must contain a JSON array.');
+  const ids = new Set();
+
+  records.forEach(function(record, position) {
+    if (!record || typeof record !== 'object' || Array.isArray(record)) {
+      throw new Error('siqyin_dict.json: invalid record ' + (position + 1));
+    }
+    if (!Number.isInteger(record.id) || ids.has(record.id)) {
+      throw new Error('siqyin_dict.json: invalid or duplicate id ' + record.id);
+    }
+    if (!Array.isArray(record.terms) || record.terms.length === 0 ||
+        !record.terms.every(function(value) { return typeof value === 'string'; }) ||
+        !Array.isArray(record.readings) ||
+        !record.readings.every(function(value) { return typeof value === 'string'; }) ||
+        !Array.isArray(record.tone) ||
+        !record.tone.every(function(value) { return typeof value === 'string'; }) ||
+        typeof record.definition !== 'string' || typeof record.raw !== 'string') {
+      throw new Error('siqyin_dict.json: invalid dictionary record ' + record.id);
+    }
+    ids.add(record.id);
+  });
+
+  return records;
+}
+
+function ensureDictionaryLoaded() {
+  if (dictionaryLoadPromise) return dictionaryLoadPromise;
+  dictionaryLoadPromise = fetchDataFile('siqyin_dict.json').then(function(records) {
+    dictionaryRecords = buildDictionaryRecords(records);
+  }).catch(function(error) {
+    dictionaryLoadPromise = null;
+    dictionaryRecords = [];
+    throw error;
+  });
+  return dictionaryLoadPromise;
+}
+
 function ensureDataLoaded() {
   if (dataLoadPromise) return dataLoadPromise;
 
@@ -725,6 +786,94 @@ function selectedDialectCodes() {
     if (document.getElementById(chkIds[i]).checked) selected.push(DBS[i].code);
   }
   return selected;
+}
+
+function dictionaryTermMatchesQuery(term, query) {
+  const termCharacters = Array.from(term);
+  const queryCharacters = Array.from(query);
+  if (termCharacters.length !== queryCharacters.length) return false;
+
+  for (let index = 0; index < queryCharacters.length; index++) {
+    const source = queryCharacters[index];
+    const target = termCharacters[index];
+    if (source === target) continue;
+    const traditionalTargets = variantIndex.get(source) || [];
+    if (traditionalTargets.indexOf(target) === -1) return false;
+  }
+  return true;
+}
+
+function searchDictionary(query) {
+  const matches = dictionaryRecords.filter(function(record) {
+    return record.terms.some(function(term) {
+      return dictionaryTermMatchesQuery(term, query);
+    });
+  });
+
+  matches.sort(function(left, right) {
+    const leftExact = left.terms.indexOf(query) !== -1 ? 0 : 1;
+    const rightExact = right.terms.indexOf(query) !== -1 ? 0 : 1;
+    return leftExact - rightExact || left.id - right.id;
+  });
+
+  const grouped = new Map();
+  for (const record of matches) {
+    const key = JSON.stringify([record.terms, record.readings, record.tone]);
+    let result = grouped.get(key);
+    if (!result) {
+      result = {
+        id: record.id,
+        terms: record.terms,
+        readings: record.readings,
+        tone: record.tone,
+        definitions: []
+      };
+      grouped.set(key, result);
+    }
+    if (record.definition && result.definitions.indexOf(record.definition) === -1) {
+      result.definitions.push(record.definition);
+    }
+  }
+  return Array.from(grouped.values());
+}
+
+function dictionaryDisplayName() {
+  const name = '雪螢吳語常用詞彙（蘇州閒話）';
+  return (typeof t === 'function' && t(name)) || name;
+}
+
+function renderDictionaryResults(records) {
+  let html = '';
+  const displayName = dictionaryDisplayName();
+
+  html += '<div class="char-card dictionary-card">';
+  html += '<h2><span class="char-main">' + escapeHtml(displayName) + '</span></h2>';
+
+  if (records.length === 0) {
+    html += '<div class="dialect-section">';
+    html += '<p class="no-result">' + (currentLang === 'en' ? 'Not in database' : currentLang === 'ja' ? '未収録' : '未收錄') + '</p>';
+    html += '</div></div>';
+    return html;
+  }
+
+  for (const record of records) {
+    html += '<div class="dialect-section"><h3>' + escapeHtml(record.terms.join('／')) + '</h3>';
+    html += '<div class="reading-item">';
+    if (record.readings.length > 0 || record.tone.length > 0) {
+      html += '<div class="reading-ipa">' + escapeHtml(record.readings.join(' / '));
+      if (record.tone.length > 0) {
+        html += ' <span class="reading-ipa-val">（' + escapeHtml(record.tone.join(' / ')) + '）</span>';
+      }
+      html += '</div>';
+    }
+    const definitions = record.definitions || (record.definition ? [record.definition] : []);
+    for (const definition of definitions) {
+      html += '<div class="reading-note">' + escapeHtml(definition).replace(/\n/g, '<br>') + '</div>';
+    }
+    html += '</div></div>';
+  }
+  html += '</div>';
+  return html;
 }
 
 function expandCharacters(inputCharacters) {
@@ -890,8 +1039,12 @@ async function doSearch() {
   }
 
   const selected = selectedDialectCodes();
+  const dictionaryEnabled = document.getElementById('chk_siqyin').checked;
   try {
-    const response = await searchCharacters(input, selected);
+    const pending = [searchCharacters(input, selected)];
+    if (dictionaryEnabled) pending.push(ensureDictionaryLoaded());
+    const loaded = await Promise.all(pending);
+    const response = loaded[0];
     const characters = response.characters || [];
     if (characters.length === 0) {
       showError(currentLang === 'en' ? 'Unable to recognize the entered characters.' : currentLang === 'ja' ? '入力された文字を識別できません。' : '無法識別輸入的漢字。');
@@ -902,7 +1055,7 @@ async function doSearch() {
        否則第一次查字會整欄都不顯示位置。抓不到就當沒有位置，不報錯。 */
     if (selected.indexOf('suhu') !== -1) await loadYuntuPos();
 
-    let html = '';
+    let html = dictionaryEnabled ? renderDictionaryResults(searchDictionary(input)) : '';
     for (const item of characters) {
       const ch = item.character;
       const altLabel = item.source === 'converted' ? '（簡體「' + item.from + '」對應）' : '';
@@ -1056,7 +1209,8 @@ var i18n = {
     '\u6e05\u672b\u8607\u5dde\u8a71': 'Late Qing Suzhounese',
     '\u4e0a\u6d77\u8a71': 'Shanghainese',
     '\u8607\u5dde\u8a71': 'Suzhounese',
-    '\u8607\u5dde\u8a55\u5f48\u97f3': 'pingtan pronunciation'
+    '\u8607\u5dde\u8a55\u5f48\u97f3': 'pingtan pronunciation',
+    '\u96ea\u87a2\u5433\u8a9e\u5e38\u7528\u8a5e\u5f59\uff08\u8607\u5dde\u9592\u8a71\uff09': 'Siqyin Common Wu Vocabulary (Suzhounese)'
   },
   ja: {
     title: '\u5449\u8d8a\u8a9e\u3000\u5b57\u97f3\u691c\u7d22',
@@ -1080,7 +1234,8 @@ var i18n = {
     '\u6e05\u672b\u8607\u5dde\u8a71': '\u6e05\u4ee3\u672b\u671f\u30ce\u8607\u5dde\u8a9e',
     '\u4e0a\u6d77\u8a71': '\u4e0a\u6d77\u8a9e',
     '\u8607\u5dde\u8a71': '\u8607\u5dde\u8a9e',
-    '\u8607\u5dde\u8a55\u5f48\u97f3': '\u8607\u5dde\u8a55\u5f3e\u97f3'
+    '\u8607\u5dde\u8a55\u5f48\u97f3': '\u8607\u5dde\u8a55\u5f3e\u97f3',
+    '\u96ea\u87a2\u5433\u8a9e\u5e38\u7528\u8a5e\u5f59\uff08\u8607\u5dde\u9592\u8a71\uff09': '\u96ea\u86cd\u5449\u8d8a\u8a9e\u5e38\u7528\u8a9e\u5f59\uff08\u8607\u5dde\u8a9e\uff09'
   }
 };
 function t(key) {
