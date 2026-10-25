@@ -55,13 +55,13 @@ setTimeout(function(){
   var out=[];
   try{
     __dump(out,'A');                                   // 初始畫面
-    // 兩個說明彈窗
+    // 兩個說明彈窗＋詞彙查詢彈窗（框架文字：標題／輸入框／按鈕）
     ['showPhonology','showPhonologyWu','showPhonologyJa','showPhonologyEn',
-     'showSourceInfo'].forEach(function(fn){
+     'showSourceInfo','showCihuiSearch'].forEach(function(fn){
       if(typeof window[fn]==='function'){ try{ window[fn]('suhu'); }catch(e){} }
     });    __dump(out,'B');                                   // 彈窗打開後
     ['closePhonology','closePhonologyWu','closePhonologyJa','closePhonologyEn',
-     'closeSourceInfo'].forEach(function(fn){
+     'closeSourceInfo','closeCihuiSearch'].forEach(function(fn){
       if(typeof window[fn]==='function'){ try{ window[fn](); }catch(e){} }
     });
     // 拼音反查（羅馬字 → 漢字結果卡）：要先展開那個面板

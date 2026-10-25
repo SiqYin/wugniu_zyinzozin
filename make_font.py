@@ -78,16 +78,29 @@ def clean(s):
 # ---------------------------------------------------------------- 字集
 def dict_chars():
     """字典裡可能出現在查詢結果中的字：漢字 ＋ 詞語解釋裡的字。"""
-    if not os.path.exists(DB):
-        print("  ⚠ 找不到 %s，字典片會是空的" % DB)
-        return set()
-    db = json.load(open(DB, encoding="utf-8"))
     s = set()
-    for e in db:
-        s.update(e.get("character", ""))
-        for m in e.get("meaning", []):
-            if m and isinstance(m[0], str):
-                s.update(m[0])
+    if os.path.exists(DB):
+        db = json.load(open(DB, encoding="utf-8"))
+        for e in db:
+            s.update(e.get("character", ""))
+            for m in e.get("meaning", []):
+                if m and isinstance(m[0], str):
+                    s.update(m[0])
+    else:
+        print("  ⚠ 找不到 %s" % DB)
+
+    # 雪螢吳語常用詞彙（詞彙查詢彈窗的結果會出現的字：詞目＋釋義＋聲調欄）
+    vocab_path = os.path.join(HERE, "data", "siqyin_dict.json")
+    if os.path.exists(vocab_path):
+        vocab = json.load(open(vocab_path, encoding="utf-8"))
+        for e in vocab:
+            for term in e.get("terms", []):
+                s.update(term)
+            s.update(e.get("definition", ""))
+            s.update("".join(e.get("tone", [])))
+    else:
+        print("  ⚠ 找不到 siqyin_dict.json，詞彙查詢的釋義字弗會收進字典片")
+
     return s
 
 

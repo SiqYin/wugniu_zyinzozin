@@ -27,6 +27,11 @@ def create_app() -> Flask:
     def index():
         return send_from_directory(BASE_DIRECTORY, "templates/index.html")
 
+    @app.get("/data/<path:filename>")
+    def data_file(filename: str):
+        """詞彙查詢彈窗在瀏覽器端直接抓 S2T.json／siqyin_dict.json（與靜態版同法）。"""
+        return send_from_directory(BASE_DIRECTORY / "data", filename)
+
     @app.post("/api/search")
     def search_characters():
         payload = request.get_json(silent=True) or {}
