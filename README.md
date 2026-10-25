@@ -38,7 +38,7 @@
 
 9.25.2026更新：
 
-讀音重複顯示个問題修復脱哉。箇隻改動來自ruaplayerowo先生，其項目在上https://ruaplayerowo.github.io/wugniu_zyinzozin/ 。
+讀音重複顯示个問題修復脱哉。箇個改動來自ruaplayerowo先生，其項目在上https://ruaplayerowo.github.io/wugniu_zyinzozin/ 。
 
 10.1.2026更新：
 
@@ -52,6 +52,11 @@ ruaplayerowo先生个Pull Request已經合併到本項目哉。
 
 網葉現在霞鶩文楷字體内置哉。
 
+10.25.2026更新：
+
+吳語拼音轉換器鏈接添加哉。
+
+吳語常用詞彙查詢功能添加哉。箇個改動在許ruaplayerowo先生个協力下向完成。
 搭韻圖網葉个聯動標籤做脱哉。韻圖網葉在上https://siqyin.github.io/wugniu_yundu/ 。
 
 10.11.2026更新：
