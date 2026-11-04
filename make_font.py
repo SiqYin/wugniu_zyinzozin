@@ -12,7 +12,7 @@
 
   · 韻圖站分三片，多一塊 wk-ext（7.4 MB）當「完整 CJK 回退」。那是因為韻圖頁會把
     字典裡大量生僻字鋪在表格裡，介面片＋字典片仍可能漏字。本站不會：查詢結果只可能
-    來自 DB_suhu.json 與介面文案兩處，兩片聯集即為全集，加 ext 只是白下載 7 MB。
+    來自 DB_suhu.json 與介面文案兩處，兩片聯集即為全集，加 ext 只是白下載 7 MB。簡體輸入另開第三片 zy-s2t。
     漏掉的字（霞鹜文楷本身沒有的 107 個擴展 B 生僻字）直接交給系統字型。
   · 韻圖站的兩片共用同一 font-family「LXGW WenKai」，靠互不重疊的精確 unicode-range
     決定誰出場。本站照做。
@@ -34,6 +34,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = r"D:\Wu\NetDisk Download\lxgw-wenkai-v1.530\lxgw-wenkai-v1.530\LXGWWenKai-Regular.ttf"
 DB = os.path.join(HERE, "data", "DB_suhu.json")
 OUT = os.path.join(HERE, "fonts")
+S2T = os.path.join(HERE, "data", "S2T.json")
 
 BASE_ARGS = [
     "--flavor=woff2", "--no-hinting", "--desubroutinize", "--layout-features=",
@@ -43,7 +44,7 @@ BASE_ARGS = [
 
 FAMILY = "LXGW WenKai"
 # 與韻圖站同一個字型版本（對應源字體檔名 lxgw-wenkai-v1.530），用來破 CDN 快取
-FONT_V = "1530b"
+FONT_V = "1530c"
 
 
 # ---------------------------------------------------------------- 工具
@@ -101,6 +102,22 @@ def dict_chars():
     else:
         print("  ⚠ 找不到 siqyin_dict.json，詞彙查詢的釋義字弗會收進字典片")
 
+    return s
+
+
+def s2t_chars():
+    """簡體片字集：S2T 兩側的字（簡體鍵與其繁體對應），供使用者輸入簡體時顯示。"""
+    if not os.path.exists(S2T):
+        print("  ⚠ 找不到 %s，簡體片為空" % S2T)
+        return set()
+    s = set()
+    for x in json.load(open(S2T, encoding="utf-8")):
+        v = x.get("s")
+        if isinstance(v, str):
+            s.update(v)
+        for v in (x.get("t") or []):
+            if isinstance(v, str):
+                s.update(v)
     return s
 
 
@@ -189,14 +206,18 @@ def main():
     dic -= vis
     print("  介面字集        %5d 字" % len(vis))
     print("  字典字集        %5d 字（已扣除介面片的 %d 字）" % (len(dic), len(vis)))
+    s2t = s2t_chars() - vis - dic
+    print("  簡體字集        %5d 字（S2T 兩側，已扣除 ui／dict 已有的字）" % len(s2t))
 
     src_cmap = cmap_codepoints(SRC)
     print("  源字體碼位      %5d 個" % len(src_cmap))
 
     ui_p = os.path.join(OUT, "_ui.txt")
     dt_p = os.path.join(OUT, "_dict.txt")
+    s2_p = os.path.join(OUT, "_s2t.txt")
     open(ui_p, "w", encoding="utf-8").write("".join(sorted(vis)))
     open(dt_p, "w", encoding="utf-8").write("".join(sorted(dic)))
+    open(s2_p, "w", encoding="utf-8").write("".join(sorted(s2t)))
 
     print("· 子集化")
     report = []
@@ -215,7 +236,14 @@ def main():
     report.append({"file": "zy-dict.woff2", "family": FAMILY,
                    "range": compact_ranges(cdt), "mb": round(mb, 2)})
 
-    for p in (ui_p, dt_p):
+    s2_text = open(s2_p, encoding="utf-8").read()
+    mb = run_cached("s2t", os.path.join(OUT, "zy-s2t.woff2"),
+                    ["--text-file=" + s2_p], "簡體字集（簡體輸入・簡繁對照）", s2_text)
+    cst = cmap_codepoints(os.path.join(OUT, "zy-s2t.woff2"))
+    report.append({"file": "zy-s2t.woff2", "family": FAMILY,
+                   "range": compact_ranges(cst), "mb": round(mb, 2)})
+
+    for p in (ui_p, dt_p, s2_p):
         os.remove(p)
 
     json.dump({"version": FONT_V, "faces": report},
@@ -224,18 +252,18 @@ def main():
 
     # ---- 覆蓋率自檢 ----
     print("· 覆蓋率自檢")
-    allneed = vis | dic
+    allneed = vis | dic | s2t
     need_in_src = {c for c in allneed if ord(c) in src_cmap}
-    covered = cui | cdt
+    covered = cui | cdt | cst
     missing = sorted(c for c in need_in_src if ord(c) not in covered)
-    print("  需要而源字體有的字 %5d，兩片未覆蓋 %d" % (len(need_in_src), len(missing)))
+    print("  需要而源字體有的字 %5d，三片未覆蓋 %d" % (len(need_in_src), len(missing)))
     if missing:
         print("    !! 未覆蓋：", "".join(missing[:40]))
     gone = sorted(c for c in allneed if ord(c) not in src_cmap)
     print("  源字體就沒有的字   %5d（%s%s）" % (len(gone), "".join(gone[:24]),
                                               "…" if len(gone) > 24 else ""))
-    ov = cui & cdt
-    print("  兩片重疊碼位       %5d%s"
+    ov = (cui & cdt) | (cui & cst) | (cdt & cst)
+    print("  三片重疊碼位       %5d%s"
           % (len(ov), "  ← 必須為 0，否則瀏覽器只會下載後宣告的那一片" if ov else "  ✓"))
     print("  完成，報告寫入 font_report.json；總計 %.2f MB"
           % sum(r["mb"] for r in report))
