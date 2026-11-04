@@ -1,0 +1,89 @@
+# LICENSE · 授权声明
+
+**项目**：吳語蘇滬混合腔字音查詢網葉 / `wugniu_zyinzozin`
+**版权人**：SiqYin and contributors
+
+本仓库混有性质不同的几类内容，各自适用不同条款，**请按内容类型分别遵守**。
+本声明以简体中文书写以便阅读；第一节的 MIT 条款以英文原文为准。
+
+---
+
+## 一、程序代码 —— MIT License
+
+**适用范围**：仓库根目录下的 `*.py`、`templates/` 中由本项目编写的代码与样式、
+`.github/` 下的构建配置，以及本项目作者与贡献者编写的网页界面代码。
+**不适用于** `data/` 与 `fonts/`（见第二、三节）。
+
+```
+MIT License
+
+Copyright (c) 2026 SiqYin and contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+社区贡献者（含通过 Pull Request 合入本项目的贡献）保留其各自贡献部分的权利；
+上述 MIT 授权仅及于本项目有权授权的部分。
+
+---
+
+## 二、字典与字音数据 —— 来源标注与第三方权利保留
+
+**适用范围**：`data/` 目录下全部 JSON / TSV 数据文件及其衍生、紧凑化格式。
+
+本项目对上述数据进行了整理、转录、校订与结构化，但**字表底本与录入成果来自多个第三方来源**，
+包括但不限于：
+
+- 数据来源平台：汉字音典；
+- 字表与参考文献：《苏州同音常用字汇》《苏州同音字汇 1892》《乡音字类》
+  《上海市区方言志》《苏州评弹音韵》《韵学骊珠》，
+  丁邦新《一百年前的苏州话》、李军《苏州方言字书〈乡音字类〉简介及同音字汇》、
+  蔡佞《十九世纪末的苏州话》等；
+- 录入、维护与贡献者：樛木、蔡子文、鹜髙赭纱匕、正心修身、青墩塘泊、ruaplayerowo 等；
+- 清末苏州话字表作者：陆懋修、美国圣经苏州协会、陆基；苏州评弹音韵作者：姜守良。
+
+各套数据的具体来源、录入人、版本、字数与音节数，见网页「数据来源」说明及 `data/` 内文件。
+
+**权利说明**：
+
+1. 本项目**不对上述第三方成果主张独占权利，亦不代其作出授权**；相关权利由各原权利人保留。
+2. 本项目对数据的整理方式、结构与校订成果，允许在**注明项目名称与数据来源**的前提下引用与再利用。
+3. 使用者若拟将数据用于本项目之外的用途（尤其是商业用途或再分发），
+   应自行核实各来源的权利状态并取得相应授权。
+4. 数据按「现状」提供，不对其准确性、完整性作任何担保。
+
+---
+
+## 三、字体 —— SIL Open Font License 1.1
+
+**适用范围**：`fonts/zy-ui.woff2`、`fonts/zy-dict.woff2`。
+
+两者为霞鹜文楷（LXGW WenKai Regular）的子集化衍生字体，
+依 **SIL Open Font License 1.1** 授权，完整条款见仓库内 `fonts/OFL.txt`。
+字体**不适用**本文件第一、二节条款；分发、再打包时须一并保留 `fonts/OFL.txt`，
+并遵守 OFL 关于保留字体名称与同许可证分发的要求。
+
+---
+
+## 四、其他说明
+
+- 基于本项目另行开发的微信小程序（独立工程）不在本仓库内；
+  其界面文案、内置数据版本与本项目 `data/` 的对应关系，见该工程的项目档案。
+- 本仓库 README 与网页界面使用吴语书面语及繁体字形，属内容表述，不影响本授权声明的效力。
+- 若某部分内容与本节划分不一致，以该部分文件所在目录的条款为准。
